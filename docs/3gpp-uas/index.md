@@ -25,3 +25,8 @@
 
 !!! note "版本说明"
     具体规范以 [3GPP 官网](https://www.3gpp.org) 发布版本为准，本页为学习笔记性质的梳理。
+
+## 延伸阅读
+
+- [Rel-20 ISAC for UAV 深度报告](isac-for-uav.md) — 通感一体探测非合作无人机（2026-09 基线）
+- [跟踪动态](tracking.md) — 里程碑、规范版本 Watchlist、月度跟踪日志

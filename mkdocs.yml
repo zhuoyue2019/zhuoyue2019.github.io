@@ -26,6 +26,8 @@ nav:
   - 3GPP UAS:
       - 总览: 3gpp-uas/index.md
       - 关键规范清单: 3gpp-uas/specs.md
+      - Rel-20 ISAC for UAV 深度报告: 3gpp-uas/isac-for-uav.md
+      - 跟踪动态: 3gpp-uas/tracking.md
   - 应急政策:
       - 总览: emergency/index.md
       - 法律法规: emergency/laws.md
