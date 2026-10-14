@@ -505,10 +505,32 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#r18r19-uas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        三、R18/R19 UAS 增强速览
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        待补充
+        四、各规范核心章节摘录
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remote-id3gpp-astm-f3411" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        五、Remote ID：3GPP 与 ASTM F3411 的对应关系
       
     </span>
   </a>
@@ -865,10 +887,32 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#r18r19-uas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        三、R18/R19 UAS 增强速览
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        待补充
+        四、各规范核心章节摘录
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remote-id3gpp-astm-f3411" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        五、Remote ID：3GPP 与 ASTM F3411 的对应关系
       
     </span>
   </a>
@@ -894,7 +938,7 @@
 
 <h1 id="_1">关键规范清单<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <blockquote>
-<p>版本：v1.1 ｜ 更新：2026-10-14 ｜ 数据基线：TSG#113（2026-09）；ISAC 家族版本号来自月度跟踪，每月 8/23 日检查更新</p>
+<p>版本：v1.2 ｜ 更新：2026-10-14 ｜ 数据基线：TSG#113（2026-09）；ISAC 家族版本号来自月度跟踪，每月 8/23 日检查更新</p>
 </blockquote>
 <h2 id="uas-r15r17">一、UAS 经典规范（R15–R17）<a class="headerlink" href="#uas-r15r17" title="Permanent link">&para;</a></h2>
 <table>
@@ -988,16 +1032,92 @@
 </tr>
 </tbody>
 </table>
+<h2 id="r18r19-uas">三、R18/R19 UAS 增强速览<a class="headerlink" href="#r18r19-uas" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>来源：TR 21.918《Release 18 Description》目录（8.1–8.4）、TS 38.300 §16.18、2024-09 TSG 全会纪要</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Release</th>
+<th>工作项</th>
+<th>内容要点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>R18</td>
+<td>Architecture for UAV and UAM Phase 2</td>
+<td>SA2 架构第二阶段：无人机与城市空中交通（UAM）架构增强</td>
+</tr>
+<tr>
+<td>R18</td>
+<td>Architecture for UAS Applications, Phase 2</td>
+<td>SA6 应用层架构第二阶段</td>
+</tr>
+<tr>
+<td>R18</td>
+<td>NR support for UAV（空口）</td>
+<td>把 R15 LTE 的 Aerial 特性搬到 NR：高度门限触发的测量上报、高度上报、按高度区分的配置、<strong>多小区同时满足触发条件的干扰检测</strong>、飞行路径信息上报（UE→NG-RAN、切换时源→目标 gNB）、含水平/垂直速度的位置上报、PC5 口传输 BRID/DAA 消息、Aerial UE 签约识别与授权（TS 23.502 §5.2.3.3.1）</td>
+</tr>
+<tr>
+<td>R18</td>
+<td>Enhanced LTE Support for UAV</td>
+<td>LTE 侧增强</td>
+</tr>
+<tr>
+<td>R19</td>
+<td>UAS Phase 3（SA2）</td>
+<td>探测与避让（detect and avoid）能力增强 + 通信增强（2024-09 TSG SA 全会立项方向）</td>
+</tr>
+<tr>
+<td>R19</td>
+<td>UAV enhancements（RAN）</td>
+<td>公共安全场景的无人机增强（R19 规划议题）</td>
+</tr>
+</tbody>
+</table>
+<p>一句话演进：R15（LTE 空中终端）→ R17（5GS 架构+USS 对接）→ R18（NR 对齐 LTE + 高度/干扰/航径等空口增强）→ R19（探测避让 Phase 3）→ R20（ISAC for UAV，基站直接感知非合作目标）。</p>
+<h2 id="_2">四、各规范核心章节摘录<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>TR 36.777（R15 研究）</strong>：识别了 LTE 服务空中终端的三大问题——上下行干扰（高空视距传播导致）、移动性（频繁切换/无线链路失败）、空中 UE 识别；结论直接催生 R15 LTE Aerial 特性（高度测量上报、飞行路径上报、签约识别）。</li>
+<li><strong>TR 22.829（R16 研究）</strong>：UAS 用例全集与需求可行性——C2 通信、Remote ID、USS 对接三大支柱在此定型，是 TS 22.125 的需求源头。</li>
+<li><strong>TS 22.125（R17 业务需求，Stage 1）</strong>：C2 链路 QoS 分级（时延 10ms~5s、可靠 99%~99.99%、速率 50~300km/h，按控制模式区分）、Remote ID 业务需求、USS 互通需求、UAS 定位需求。</li>
+<li><strong>TS 23.256（R17 系统架构，Stage 2）</strong>：UAS NF 网元、USS 发现与选择、C2 通信三种模式（直连/网络辅助/UTM 导航）、UAV-控制器配对、基于网络的 Remote ID 流程（无人机经 3GPP 网络向 USS 上报身份与位置）。</li>
+</ul>
+<h2 id="remote-id3gpp-astm-f3411">五、Remote ID：3GPP 与 ASTM F3411 的对应关系<a class="headerlink" href="#remote-id3gpp-astm-f3411" title="Permanent link">&para;</a></h2>
+<p>ASTM F3411 定义了两类 Remote ID 实现，二者是<strong>互补</strong>而非替代关系：</p>
+<table>
+<thead>
+<tr>
+<th>实现方式</th>
+<th>标准</th>
+<th>机制</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Broadcast RID（广播式）</td>
+<td>ASTM F3411</td>
+<td>无人机通过蓝牙/Wi-Fi 直接广播身份、位置、速度、方向；接收方可为普通智能手机；不依赖蜂窝网络</td>
+</tr>
+<tr>
+<td>Network RID（网络式）</td>
+<td>ASTM F3411（Net-RID 服务提供方/展示提供方角色，USS 互操作）</td>
+<td>无人机经无线连接向 USS 上报，USS 聚合后向展示应用提供</td>
+</tr>
+<tr>
+<td>Network-based Remote ID</td>
+<td>3GPP TS 22.125（需求）/ TS 23.256（架构）</td>
+<td>无人机经 <strong>3GPP 网络</strong>向 USS 上报身份与位置——即 ASTM Network RID 中"无人机→网络→USS"这一段的蜂窝承载实现</td>
+</tr>
+</tbody>
+</table>
+<p>对应关系：<strong>3GPP 解决的是 Network RID 的"空口+核心网"段</strong>（UAV→PLMN→USS），ASTM F3411 定义的是端到端框架（含广播式和 USS 间互操作）。做合规产品时，广播式按 F3411 做，网络式需同时满足 F3411 的 USS 接口与 3GPP 的网络流程。</p>
 <div class="admonition note">
 <p class="admonition-title">版本说明</p>
 <p>ISAC 家族版本号与 <a href="../tracking/">跟踪动态</a> 的 Watchlist 同步，具体章节以 <a href="https://www.3gpp.org">3GPP 官网</a> 发布版本为准。</p>
 </div>
-<h2 id="_2">待补充<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<ul>
-<li>[ ] R18/R19 UAS 相关增强（C2 可靠性、定位增强等）细节</li>
-<li>[ ] 各规范核心章节摘录</li>
-<li>[ ] Remote ID 与 ASTM F3411 的对应关系</li>
-</ul>
 <hr />
 <p><strong>本系列</strong>：<a href="../">总览</a> · <a href="./">关键规范清单</a> · <a href="../isac-for-uav/">Rel-20 ISAC 深度报告</a> · <a href="../tracking/">跟踪动态</a></p>
 
