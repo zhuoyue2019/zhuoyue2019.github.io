@@ -28,7 +28,16 @@ nav:
       - 关键规范清单: 3gpp-uas/specs.md
       - Rel-20 ISAC for UAV 深度报告: 3gpp-uas/isac-for-uav.md
       - 跟踪动态: 3gpp-uas/tracking.md
+  - MCX:
+      - 总览: mcx/index.md
+      - 关键规范清单: mcx/specs.md
+      - 逻辑架构: mcx/architecture.md
+      - 3GPP vs 中国对照: mcx/comparison.md
+      - 应急通信视角: mcx/emergency.md
+      - 跟踪动态: mcx/tracking.md
   - 应急政策:
       - 总览: emergency/index.md
       - 法律法规: emergency/laws.md
+  - 免费 API:
+      - 配置手册: free-api/config.md
   - 关于: about.md
