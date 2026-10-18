@@ -35,6 +35,12 @@ nav:
       - 3GPP vs 中国对照: mcx/comparison.md
       - 应急通信视角: mcx/emergency.md
       - 跟踪动态: mcx/tracking.md
+      - 问答:
+        - MCPTT vs 普通对讲机: mcx/faq-mcptt-vs-intercom.md
+        - MCX 与 5G 切片: mcx/faq-mcx-vs-5g-slicing.md
+        - QoS 优先级保障: mcx/faq-mcx-qos-priority.md
+        - MCVideo vs 视频通话: mcx/faq-mcvideo-vs-video-call.md
+        - 国内应急行业现状: mcx/faq-mcx-china-emergency.md
   - 应急政策:
       - 总览: emergency/index.md
       - 法律法规: emergency/laws.md
