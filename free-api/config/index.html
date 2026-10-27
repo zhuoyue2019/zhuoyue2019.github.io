@@ -1,0 +1,2420 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="3GPP UAS、无人机通信、应急政策等知识沉淀">
+      
+      
+        <meta name="author" content="Alex">
+      
+      
+      
+        <link rel="prev" href="../../emergency/laws/">
+      
+      
+        <link rel="next" href="../../about/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>配置手册 - Alex 的知识库</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#api-codex-openai" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="Alex 的知识库" class="md-header__button md-logo" aria-label="Alex 的知识库" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Alex 的知识库
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              配置手册
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../3gpp-uas/" class="md-tabs__link">
+          
+  
+  
+  3GPP UAS
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../tracking/" class="md-tabs__link">
+          
+  
+  
+  跟踪平台
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../mcx/" class="md-tabs__link">
+          
+  
+  
+  MCX
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../emergency/" class="md-tabs__link">
+          
+  
+  
+  应急政策
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+  免费 API
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../about/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  关于
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Alex 的知识库" class="md-nav__button md-logo" aria-label="Alex 的知识库" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Alex 的知识库
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3GPP UAS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    3GPP UAS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3gpp-uas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    总览
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3gpp-uas/specs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    关键规范清单
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3gpp-uas/isac-for-uav/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rel-20 ISAC for UAV 深度报告
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3gpp-uas/tracking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    跟踪动态
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    跟踪平台
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    跟踪平台
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tracking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    总览
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3gpp-uas/tracking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    跟踪动态
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tracking/policy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    低空政策跟踪
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mcx/tracking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MCX 规范跟踪
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MCX
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    MCX
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mcx/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    总览
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mcx/specs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    关键规范清单
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mcx/architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    逻辑架构
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mcx/comparison/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3GPP vs 中国对照
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mcx/emergency/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    应急通信视角
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mcx/tracking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MCX 规范跟踪
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    问答
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    问答
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mcx/faq-mcptt-vs-intercom/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MCPTT vs 普通对讲机
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mcx/faq-mcx-vs-5g-slicing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MCX 与 5G 切片
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mcx/faq-mcx-qos-priority/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    QoS 优先级保障
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mcx/faq-mcvideo-vs-video-call/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MCVideo vs 视频通话
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mcx/faq-mcx-china-emergency/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    国内应急行业现状
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    应急政策
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    应急政策
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../emergency/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    总览
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../emergency/laws/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    法律法规
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    免费 API
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    免费 API
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    配置手册
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    配置手册
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        通用填法（三件套）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        推荐组合（写代码）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-openrouter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. OpenRouter 免费模型池
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-apinex2026-10-09" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. APInex（2026-10-09 已用浏览器实地核实）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-glm-3-free-llm-intel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 智谱 GLM（国内大厂，据 3 天前更新的聚合情报 free-llm-intel，以官网为准）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 硅基流动（据聚合情报，以官网为准）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-groq" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Groq（免绑卡，速度快，据聚合情报，以官网为准）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-google-gemini" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Google Gemini（免绑卡，据聚合情报，以官网为准）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-nvidia-nim2026-10-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. NVIDIA NIM（2026-10-10 据官方文档核实）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-ovhcloud-ai-endpoints2026-10-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. OVHcloud AI Endpoints（2026-10-10 据官方文档核实）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-kilo-code-2026-10-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Kilo Code 网关（2026-10-10 据官方文档核实）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-token-harbor2026-10-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Token Harbor（2026-10-10 据官方文档核实）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#codex" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Codex 配置示例
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        注意事项
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    关于
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        通用填法（三件套）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        推荐组合（写代码）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-openrouter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. OpenRouter 免费模型池
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-apinex2026-10-09" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. APInex（2026-10-09 已用浏览器实地核实）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-glm-3-free-llm-intel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 智谱 GLM（国内大厂，据 3 天前更新的聚合情报 free-llm-intel，以官网为准）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 硅基流动（据聚合情报，以官网为准）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-groq" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Groq（免绑卡，速度快，据聚合情报，以官网为准）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-google-gemini" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Google Gemini（免绑卡，据聚合情报，以官网为准）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-nvidia-nim2026-10-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. NVIDIA NIM（2026-10-10 据官方文档核实）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-ovhcloud-ai-endpoints2026-10-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. OVHcloud AI Endpoints（2026-10-10 据官方文档核实）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-kilo-code-2026-10-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Kilo Code 网关（2026-10-10 据官方文档核实）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-token-harbor2026-10-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Token Harbor（2026-10-10 据官方文档核实）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#codex" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Codex 配置示例
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        注意事项
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="api-codex-openai">免费 API 配置手册（codex / OpenAI 兼容工具通用）<a class="headerlink" href="#api-codex-openai" title="Permanent link">&para;</a></h1>
+<p><strong>更新日期：2026-10-10</strong></p>
+<blockquote>
+<p>导读：免费政策随时会变，动手前以官网为准。</p>
+</blockquote>
+<h2 id="_1">通用填法（三件套）<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>任何 OpenAI 兼容工具（codex、Cherry Studio、NextChat、Cline 等）都只需填三样：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>含义</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>base_url</code></td>
+<td>供应商的 OpenAI 兼容端点</td>
+<td><code>https://openrouter.ai/api/v1</code></td>
+</tr>
+<tr>
+<td><code>api_key</code></td>
+<td>在供应商官网创建的 Key</td>
+<td><code>sk-apx…</code></td>
+</tr>
+<tr>
+<td><code>model</code></td>
+<td>模型名（原样照抄）</td>
+<td><code>cohere/north-mini-code:free</code></td>
+</tr>
+</tbody>
+</table>
+<p>WorkBuddy（腾讯代码助手）等工具的自定义 API / 模型设置中，同样填入这三项：<code>base_url</code>、<code>api_key</code>、<code>model</code>（具体入口以其客户端设置为准）。</p>
+<h2 id="_2">推荐组合（写代码）<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<ul>
+<li>首选：OpenRouter + <code>cohere/north-mini-code:free</code>（代码专用，免绑卡）</li>
+<li>备选：APInex + <code>free/deepseek-v4-flash-0731</code></li>
+<li>故障转移链（额度实在程度排序）：NVIDIA NIM（40 RPM + 1 万/天，需免费 Key）→ Kilo 网关（200/小时/IP，免 Key）→ OVHcloud 匿名（2 RPM/IP/模型，仅作末位兜底）</li>
+</ul>
+<h2 id="1-openrouter">1. OpenRouter 免费模型池<a class="headerlink" href="#1-openrouter" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>项</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>官网</td>
+<td>https://openrouter.ai</td>
+</tr>
+<tr>
+<td>base_url</td>
+<td>https://openrouter.ai/api/v1</td>
+</tr>
+<tr>
+<td>Key 获取</td>
+<td>https://openrouter.ai/keys 自行创建</td>
+</tr>
+</tbody>
+</table>
+<p>免费模型（2026-10-09 用 <code>or_models.py --free-only</code> 实测在池，共 19 个；免费池会轮换，失效时换其他 <code>:free</code> 后缀模型）：</p>
+<table>
+<thead>
+<tr>
+<th>模型名</th>
+<th>上下文</th>
+<th>特点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cohere/north-mini-code:free</td>
+<td>256K</td>
+<td>代码专用小模型，写代码首选</td>
+</tr>
+<tr>
+<td>poolside/laguna-s-2.1:free</td>
+<td>262K</td>
+<td>代码模型</td>
+</tr>
+<tr>
+<td>poolside/laguna-xs-2.1:free</td>
+<td>262K</td>
+<td>轻量代码模型</td>
+</tr>
+<tr>
+<td>nvidia/nemotron-3-ultra-550b-a55b:free</td>
+<td>1M</td>
+<td>550B 大模型</td>
+</tr>
+<tr>
+<td>nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free</td>
+<td>256K</td>
+<td>推理模型</td>
+</tr>
+<tr>
+<td>inclusionai/ling-3.1-flash</td>
+<td>262K</td>
+<td>长文本</td>
+</tr>
+<tr>
+<td>google/gemma-4-31b-it:free</td>
+<td>262K</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>免费限制：免费层约 20 RPM；免费模型更适合实验和低流量用途（以官网为准）</li>
+<li>备注：Muse 侧的 custom.openrouter 连接器 Key 由系统托管、不可见，不能直接拿来填，必须自己去官网创建一个。</li>
+</ul>
+<h2 id="2-apinex2026-10-09">2. APInex（2026-10-09 已用浏览器实地核实）<a class="headerlink" href="#2-apinex2026-10-09" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>项</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>官网</td>
+<td>https://apinex.bond</td>
+</tr>
+<tr>
+<td>base_url</td>
+<td>https://api.apinex.bond/v1</td>
+</tr>
+<tr>
+<td>Key 获取</td>
+<td>apinex.bond 注册（仅支持个人 Gmail 的 Google 登录），在 dashboard 创建，Key 以 sk-apx… 开头</td>
+</tr>
+</tbody>
+</table>
+<p>兼容：OpenAI（/v1/chat/completions、/v1/responses）与 Anthropic 接口；官方文档有 Cursor / OpenCode / Cline / Hermes / Codex / Claude 配置向导。</p>
+<table>
+<thead>
+<tr>
+<th>模型名</th>
+<th>上下文</th>
+<th>特点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>free/deepseek-v4-flash-0731</td>
+<td>未提供</td>
+<td>free/ 前缀免费模型</td>
+</tr>
+<tr>
+<td>free/glm-5.3-flash</td>
+<td>未提供</td>
+<td>同上</td>
+</tr>
+<tr>
+<td>free/gpt-6-luna</td>
+<td>未提供</td>
+<td>同上</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>免费限制：免费档每 IP 5 RPM；token 计费 $1=400万 tokens，free 模型按权重×2/×3 扣减每日免费额度；kimi-k3、muse-spark-1.3 的 free 版需订阅才能用</li>
+<li>风险：条款偏向平台（充值原则上不退、可单方变更促销）；其 X 公告的 10M 优惠码 APX-B3YF-ZGK9-DAVS 在公开页面无任何提及，真实性未证实</li>
+</ul>
+<h2 id="3-glm-3-free-llm-intel">3. 智谱 GLM（国内大厂，据 3 天前更新的聚合情报 free-llm-intel，以官网为准）<a class="headerlink" href="#3-glm-3-free-llm-intel" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>项</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>base_url</td>
+<td>https://open.bigmodel.cn/api/paas/v4</td>
+</tr>
+<tr>
+<td>Key 获取</td>
+<td>https://bigmodel.cn/apikey/platform（控制台 → API 平台 → API Key；旧 /usercenter/apikeys 已 404）</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>模型名</th>
+<th>上下文</th>
+<th>特点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>glm-4.7-flash</td>
+<td>未提供</td>
+<td>4.x 代 Flash 0 元</td>
+</tr>
+<tr>
+<td>glm-4-flash-250414</td>
+<td>未提供</td>
+<td>同上</td>
+</tr>
+</tbody>
+</table>
+<h2 id="4">4. 硅基流动（据聚合情报，以官网为准）<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>项</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>base_url</td>
+<td>https://api.siliconflow.cn/v1</td>
+</tr>
+<tr>
+<td>Key 获取</td>
+<td>https://cloud.siliconflow.cn/account/ak（注册送 14 元券，多款 0 元模型）</td>
+</tr>
+</tbody>
+</table>
+<p>模型：情报未列具体模型名，官网查看 0 元模型。</p>
+<h2 id="5-groq">5. Groq（免绑卡，速度快，据聚合情报，以官网为准）<a class="headerlink" href="#5-groq" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>项</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>base_url</td>
+<td>https://api.groq.com/openai/v1</td>
+</tr>
+<tr>
+<td>Key 获取</td>
+<td>https://console.groq.com/keys</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>模型名</th>
+<th>上下文</th>
+<th>特点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>openai/gpt-oss-120b</td>
+<td>未提供</td>
+<td>情报示例模型</td>
+</tr>
+<tr>
+<td>qwen/qwen3.6-27b</td>
+<td>未提供</td>
+<td>同上</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>免费：约 30 RPM / 1000 RPD</li>
+</ul>
+<h2 id="6-google-gemini">6. Google Gemini（免绑卡，据聚合情报，以官网为准）<a class="headerlink" href="#6-google-gemini" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>项</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>base_url</td>
+<td>https://generativelanguage.googleapis.com/v1beta/openai/</td>
+</tr>
+<tr>
+<td>Key 获取</td>
+<td>https://aistudio.google.com/apikey</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>模型名</th>
+<th>上下文</th>
+<th>特点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>gemini-2.5-flash</td>
+<td>未提供</td>
+<td>免费层每日滚动重置</td>
+</tr>
+<tr>
+<td>gemini-3.8-flash</td>
+<td>未提供</td>
+<td>同上</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>注意：国内直连可能需要网络条件</li>
+</ul>
+<h2 id="7-nvidia-nim2026-10-10">7. NVIDIA NIM（2026-10-10 据官方文档核实）<a class="headerlink" href="#7-nvidia-nim2026-10-10" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>项</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>官网</td>
+<td>https://build.nvidia.com</td>
+</tr>
+<tr>
+<td>base_url</td>
+<td>https://integrate.api.nvidia.com/v1</td>
+</tr>
+<tr>
+<td>Key 获取</td>
+<td>build.nvidia.com 注册 NVIDIA 开发者计划后免费创建，Key 以 nvapi- 开头；无需绑信用卡，需手机号验证；部分模型需先在模型页点 "Try API" 接受条款</td>
+</tr>
+</tbody>
+</table>
+<p>兼容：OpenAI 兼容接口。</p>
+<table>
+<thead>
+<tr>
+<th>模型名</th>
+<th>特点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>meta/llama-3.3-70b-instruct</td>
+<td>通用大模型，代码任务可用</td>
+</tr>
+<tr>
+<td>qwen/qwen2.5-coder-32b-instruct</td>
+<td>代码专用</td>
+</tr>
+<tr>
+<td>deepseek-ai/deepseek-r1</td>
+<td>推理模型</td>
+</tr>
+<tr>
+<td>mistralai/codestral-22b-instruct-v0.1</td>
+<td>代码专用</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>免费限制：约 40 RPM（社区实测基线，官方称限流取决于模型与整体流量）；约 10000 请求/天/账号；旧的"注册送 1000 credits"已废弃，现为纯限流制；部分国家/地区不可用；在官方论坛申请提额不会被批准</li>
+<li>注意：模型 ID 会轮换，以 build.nvidia.com 目录为准</li>
+</ul>
+<h2 id="8-ovhcloud-ai-endpoints2026-10-10">8. OVHcloud AI Endpoints（2026-10-10 据官方文档核实）<a class="headerlink" href="#8-ovhcloud-ai-endpoints2026-10-10" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>项</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>官网</td>
+<td>https://www.ovhcloud.com/en/public-cloud/ai-endpoints/</td>
+</tr>
+<tr>
+<td>base_url</td>
+<td>https://oai.endpoints.kepler.ai.cloud.ovh.net/v1</td>
+</tr>
+<tr>
+<td>Key 获取</td>
+<td>匿名通道免注册、免 Key、免绑卡；如需更高额度在 OVHcloud 控制台申请 API Key（按 token 计费，新 Public Cloud 账号有最多 200 美元试用额度）</td>
+</tr>
+</tbody>
+</table>
+<p>兼容：OpenAI 兼容（官网 Continue 教程直接用 openai provider 对接）。</p>
+<table>
+<thead>
+<tr>
+<th>模型名</th>
+<th>特点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>gpt-oss-120b</td>
+<td>开源大模型</td>
+</tr>
+<tr>
+<td>Qwen3-Coder-30B-A3B-Instruct</td>
+<td>代码专用</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>免费限制：匿名每 IP 每模型 2 请求/分钟（官网原文），超限 429；持 Key 每项目每模型 400 RPM；社区实测匿名 2 RPM 为全球匿名调用者共享，可用性波动大，只适合做故障转移链末位</li>
+<li>注意：模型托管在欧盟数据中心，GDPR 合规</li>
+</ul>
+<h2 id="9-kilo-code-2026-10-10">9. Kilo Code 网关（2026-10-10 据官方文档核实）<a class="headerlink" href="#9-kilo-code-2026-10-10" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>项</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>官网文档</td>
+<td>https://kilo.ai/docs/gateway</td>
+</tr>
+<tr>
+<td>base_url</td>
+<td>https://api.kilo.ai/api/gateway</td>
+</tr>
+<tr>
+<td>Key 获取</td>
+<td>免费模型免账号、免 Key 匿名调用；付费模型才需 Key</td>
+</tr>
+</tbody>
+</table>
+<p>兼容：OpenAI 兼容（可无缝替换 <code>/chat/completions</code>；支持 tool calling、流式、FIM 代码补全）。</p>
+<table>
+<thead>
+<tr>
+<th>模型名</th>
+<th>特点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cohere/north-mini-code:free</td>
+<td>代码专用小模型</td>
+</tr>
+<tr>
+<td>poolside/laguna-s-2.1:free</td>
+<td>代码模型</td>
+</tr>
+<tr>
+<td>poolside/laguna-xs-2.1:free</td>
+<td>轻量代码模型</td>
+</tr>
+<tr>
+<td>nvidia/nemotron-3-ultra-550b-a55b:free</td>
+<td>550B 大模型</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>免费限制：每 IP 每小时 200 请求，仅限 <code>:free</code> 后缀模型；免费模型名单会轮换，以网关目录为准；免费模型的 prompt 可能被用于训练；伊朗/叙利亚/古巴/朝鲜不可用</li>
+</ul>
+<h2 id="10-token-harbor2026-10-10">10. Token Harbor（2026-10-10 据官方文档核实）<a class="headerlink" href="#10-token-harbor2026-10-10" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>项</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>官网</td>
+<td>https://tokenharbor.ai</td>
+</tr>
+<tr>
+<td>base_url</td>
+<td>https://tokenharbor.ai/v1（官方 Quickstart 原文；api.tokenharbor.ai 与 tokenharbor.ai/api/v1 实测 404）</td>
+</tr>
+<tr>
+<td>Key 获取</td>
+<td>邮箱+密码或 Google 登录；<strong>免绑卡</strong>（官网原文 "no card is needed"）、免实名；Key 为 Universal Key，格式 <code>thk_live_…</code>，dashboard 只显示一次</td>
+</tr>
+</tbody>
+</table>
+<p>兼容：OpenAI 兼容（/chat/completions），Cherry Studio / Cursor / Continue 可直接对接。</p>
+<table>
+<thead>
+<tr>
+<th>模型名</th>
+<th>特点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>claude-haiku-5.5:free</td>
+<td>Haiku 5.5（Anthropic 10-07 新发布）限时免费，截止日期官方未公开</td>
+</tr>
+<tr>
+<td>deepseek-v4.1-flash:free</td>
+<td>免费</td>
+</tr>
+<tr>
+<td>mimo-v2.6-flash:free</td>
+<td>免费</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>免费规则：模型 ID 以 <code>:free</code> 结尾的走免费路由，永不扣余额；<strong>免费路由默认关闭，需在 dashboard 手动 opt-in</strong></li>
+<li>免费限制：额度按价值计算（value-based），<strong>未公布具体 RPM/RPD 数字</strong>；首次免费请求开启个人滚动 7 天周期，按 4 周分 4 个窗口发放，未用完不结转；<code>:free</code> 名单会轮换</li>
+<li>注意：① 限时免费模型可随时下线（条款 1.3 明确可随时移除、无需通知）；② 永久免费路由的 prompt/response 可能被保留用于诊断与模型改进，敏感代码走付费路由；③ 条款禁止用输出做蒸馏/训练；④ 官方用设备指纹+注册 IP 防多账号，勿用批量注册工具；法律实体 Token Harbor PTE. LTD.（新加坡）</li>
+</ul>
+<h2 id="codex">Codex 配置示例<a class="headerlink" href="#codex" title="Permanent link">&para;</a></h2>
+<p>配置文件：<code>~/.codex/config.toml</code>（Windows：<code>%USERPROFILE%\.codex\config.toml</code>）</p>
+<pre><code class="language-toml"># ~/.codex/config.toml
+model = &quot;cohere/north-mini-code:free&quot;
+model_provider = &quot;openrouter&quot;
+
+[model_providers.openrouter]
+name = &quot;OpenRouter&quot;
+base_url = &quot;https://openrouter.ai/api/v1&quot;
+env_key = &quot;OPENROUTER_API_KEY&quot;
+wire_api = &quot;chat&quot;
+
+[model_providers.apinex]
+name = &quot;APInex&quot;
+base_url = &quot;https://api.apinex.bond/v1&quot;
+env_key = &quot;APINEX_API_KEY&quot;
+wire_api = &quot;chat&quot;
+
+[model_providers.zhipu]
+name = &quot;智谱 GLM&quot;
+base_url = &quot;https://open.bigmodel.cn/api/paas/v4&quot;
+env_key = &quot;ZHIPU_API_KEY&quot;
+wire_api = &quot;chat&quot;
+
+[model_providers.nvidia_nim]
+name = &quot;NVIDIA NIM&quot;
+base_url = &quot;https://integrate.api.nvidia.com/v1&quot;
+env_key = &quot;NVIDIA_NIM_API_KEY&quot;
+wire_api = &quot;chat&quot;
+
+[model_providers.kilo]
+name = &quot;Kilo Code Gateway&quot;
+base_url = &quot;https://api.kilo.ai/api/gateway&quot;
+env_key = &quot;KILO_API_KEY&quot;
+wire_api = &quot;chat&quot;
+
+[model_providers.ovh]
+name = &quot;OVHcloud AI Endpoints&quot;
+base_url = &quot;https://oai.endpoints.kepler.ai.cloud.ovh.net/v1&quot;
+env_key = &quot;OVH_API_KEY&quot;
+wire_api = &quot;chat&quot;
+
+[model_providers.tokenharbor]
+name = &quot;Token Harbor&quot;
+base_url = &quot;https://tokenharbor.ai/v1&quot;
+env_key = &quot;TOKENHARBOR_API_KEY&quot;
+wire_api = &quot;chat&quot;
+</code></pre>
+<p>环境变量（Key 不写进文件）：</p>
+<pre><code class="language-bash">export OPENROUTER_API_KEY=&quot;&lt;在 https://openrouter.ai/keys 创建&gt;&quot;
+export APINEX_API_KEY=&quot;sk-apx…&quot;   # dashboard 创建
+export ZHIPU_API_KEY=&quot;&lt;在 https://bigmodel.cn/apikey/platform 创建&gt;&quot;
+export NVIDIA_NIM_API_KEY=&quot;nvapi-…&quot;   # build.nvidia.com 创建
+export KILO_API_KEY=&quot;not-needed&quot;      # 免费模型匿名调用，任意非空占位即可
+export OVH_API_KEY=&quot;not-needed&quot;       # 匿名通道同上
+export TOKENHARBOR_API_KEY=&quot;thk_live_…&quot;   # tokenharbor.ai 注册后创建（只显示一次）
+</code></pre>
+<p>切换供应商：改顶层 <code>model</code> 与 <code>model_provider</code> 即可。</p>
+<h2 id="_3">注意事项<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Key 不要硬编码</strong>：provider 块用 <code>env_key = "环境变量名"</code>，Key 通过 <code>export</code> 注入；环境变量名可自定义，<code>env_key</code> 与 export 名称保持一致。</li>
+<li><strong>免费池会轮换</strong>：OpenRouter 免费池会轮换，失效时换其他 <code>:free</code> 后缀模型；各平台免费额度与限制以官网为准。</li>
+<li><strong>wire_api 版本差异</strong>：第三方 OpenAI 兼容端点一般设 <code>wire_api = "chat"</code>；新版 codex 默认 <code>wire_api = "responses"</code>，如遇报错请按所装版本文档调整。</li>
+<li><strong>国内直连网络提示</strong>：Gemini 等境外服务国内直连可能需要网络条件；智谱、硅基流动为国内服务。</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
