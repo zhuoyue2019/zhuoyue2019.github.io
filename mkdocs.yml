@@ -28,6 +28,11 @@ nav:
       - 关键规范清单: 3gpp-uas/specs.md
       - Rel-20 ISAC for UAV 深度报告: 3gpp-uas/isac-for-uav.md
       - 跟踪动态: 3gpp-uas/tracking.md
+  - 跟踪平台:
+      - 总览: tracking/index.md
+      - 3GPP UAS 规范跟踪: 3gpp-uas/tracking.md
+      - 低空政策跟踪: tracking/policy.md
+      - MCX 规范跟踪: mcx/tracking.md
   - MCX:
       - 总览: mcx/index.md
       - 关键规范清单: mcx/specs.md
