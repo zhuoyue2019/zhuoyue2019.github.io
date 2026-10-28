@@ -81,6 +81,7 @@ nav:
         - 国内应急行业现状: mcx/faq-mcx-china-emergency.md
   - 应急政策:
       - 总览: emergency/index.md
+      - 近五年政策清单（2021–2026）: emergency/policy-list-2021-2026.md
       - 法律法规: emergency/laws.md
   - 免费 API:
       - 配置手册: free-api/config.md
