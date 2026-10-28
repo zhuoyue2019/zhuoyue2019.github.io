@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="350" viewBox="0 0 1000 350">
+<defs><marker id="arr" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 Z" fill="black"/></marker></defs>
+<rect x="0" y="0" width="1000" height="350" fill="white" stroke="none"/>
+<text x="500.0" y="34" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="18" text-anchor="middle" font-weight="bold">图3  私人呼叫 vs 组呼</text>
+<rect x="60" y="70" width="380" height="240" stroke="black" fill="white" stroke-width="2" stroke-dasharray="8,5"/>
+<text x="250.0" y="196.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="16" text-anchor="middle"></text>
+<text x="250" y="100" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="16" text-anchor="middle" font-weight="bold">私人呼叫（一对一）</text>
+<text x="250" y="140" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="14" text-anchor="middle">两个人直接通话</text>
+<text x="250" y="170" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="14" text-anchor="middle">手动启动：像打电话，对方可接/拒</text>
+<text x="250" y="200" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="14" text-anchor="middle">自动启动：像组呼，按下即通</text>
+<text x="250" y="230" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="14" text-anchor="middle">可有地板控制，也可全双工</text>
+<text x="250" y="260" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="14" text-anchor="middle">无地板控制仅支持在网</text>
+<rect x="560" y="70" width="380" height="240" stroke="black" fill="white" stroke-width="2" stroke-dasharray="8,5"/>
+<text x="750.0" y="196.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="16" text-anchor="middle"></text>
+<text x="750" y="100" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="16" text-anchor="middle" font-weight="bold">组呼（一对多）</text>
+<text x="750" y="140" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="14" text-anchor="middle">一个组内广播</text>
+<text x="750" y="170" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="14" text-anchor="middle">必须有地板控制：一人说话</text>
+<text x="750" y="200" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="14" text-anchor="middle">先归属、再选定当前组</text>
+<text x="750" y="230" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="14" text-anchor="middle">迟加入者可中途接入</text>
+<text x="750" y="260" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="14" text-anchor="middle">在网 / 离网都支持</text>
+</svg>

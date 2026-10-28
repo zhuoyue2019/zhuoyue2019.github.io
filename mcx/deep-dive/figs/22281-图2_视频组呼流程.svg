@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520">
+<defs><marker id="arr" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 Z" fill="black"/></marker></defs>
+<rect x="0" y="0" width="1000" height="520" fill="white" stroke="none"/>
+<text x="500.0" y="34" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="18" text-anchor="middle" font-weight="bold">图2  视频组呼流程：发起、授权、上行、多方收看</text>
+<rect x="330" y="64" width="340" height="56" stroke="black" fill="white" stroke-width="2"/>
+<text x="500.0" y="84.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="16" text-anchor="middle" font-weight="bold">① 发起</text>
+<text x="500.0" y="108.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="13" text-anchor="middle">用户请求上视频</text>
+<line x1="500" y1="120" x2="500" y2="148" stroke="black" stroke-width="2" marker-end="url(#arr)"/>
+<rect x="330" y="148" width="340" height="56" stroke="black" fill="white" stroke-width="2"/>
+<text x="500.0" y="168.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="16" text-anchor="middle" font-weight="bold">② 传输控制授权</text>
+<text x="500.0" y="192.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="13" text-anchor="middle">网络按优先级/容量决定是否允许</text>
+<line x1="500" y1="204" x2="500" y2="232" stroke="black" stroke-width="2" marker-end="url(#arr)"/>
+<rect x="330" y="232" width="340" height="56" stroke="black" fill="white" stroke-width="2"/>
+<text x="500.0" y="252.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="16" text-anchor="middle" font-weight="bold">③ 画面上行</text>
+<text x="500.0" y="276.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="13" text-anchor="middle">视频流从前端传向网络</text>
+<line x1="500" y1="288" x2="500" y2="316" stroke="black" stroke-width="2" marker-end="url(#arr)"/>
+<rect x="330" y="316" width="340" height="56" stroke="black" fill="white" stroke-width="2"/>
+<text x="500.0" y="336.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="16" text-anchor="middle" font-weight="bold">④ 多方收看</text>
+<text x="500.0" y="360.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="13" text-anchor="middle">群组成员、调度台同步接收</text>
+<line x1="500" y1="372" x2="500" y2="400" stroke="black" stroke-width="2" marker-end="url(#arr)"/>
+<rect x="330" y="400" width="340" height="56" stroke="black" fill="white" stroke-width="2"/>
+<text x="500.0" y="420.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="16" text-anchor="middle" font-weight="bold">⑤ 结束</text>
+<text x="500.0" y="444.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="13" text-anchor="middle">释放资源，保留必要记录</text>
+<rect x="40" y="232" width="250" height="56" stroke="black" fill="white" stroke-width="2" stroke-dasharray="8,5"/>
+<text x="165.0" y="252.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="16" text-anchor="middle" font-weight="bold">强制立即发送</text>
+<text x="165.0" y="276.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="13" text-anchor="middle">按住按钮：先抢通道再说</text>
+<line x1="290" y1="260" x2="330" y2="260" stroke="black" stroke-width="2" marker-end="url(#arr)"/>
+</svg>

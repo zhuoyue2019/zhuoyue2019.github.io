@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="590" viewBox="0 0 1000 590">
+<defs><marker id="arr" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 Z" fill="black"/></marker></defs>
+<rect x="0" y="0" width="1000" height="590" fill="white" stroke="none"/>
+<text x="500.0" y="34" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="18" text-anchor="middle" font-weight="bold">图4  优先级与抢占：紧急呼叫可以“插队”</text>
+<line x1="60" y1="300" x2="940" y2="300" stroke="black" stroke-width="2" marker-end="url(#arr)"/>
+<text x="60" y="330" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="13" text-anchor="start">时间 →</text>
+<line x1="140" y1="280" x2="140" y2="320" stroke="black" stroke-width="2"/>
+<text x="140" y="260" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="14" text-anchor="middle" font-weight="bold">T1</text>
+<rect x="45" y="340" width="190" height="84" stroke="black" fill="white" stroke-width="2"/>
+<text x="140.0" y="374.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="16" text-anchor="middle">普通用户 A</text>
+<text x="140.0" y="398.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="13" text-anchor="middle">发起组呼</text>
+<text x="140" y="448" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="13" text-anchor="middle">占用资源</text>
+<line x1="360" y1="280" x2="360" y2="320" stroke="black" stroke-width="2"/>
+<text x="360" y="260" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="14" text-anchor="middle" font-weight="bold">T2</text>
+<rect x="265" y="340" width="190" height="84" stroke="black" fill="white" stroke-width="2"/>
+<text x="360.0" y="374.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="16" text-anchor="middle">紧急用户 B</text>
+<text x="360.0" y="398.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="13" text-anchor="middle">发起紧急组呼</text>
+<text x="360" y="448" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="13" text-anchor="middle">要求更高优先级</text>
+<line x1="580" y1="280" x2="580" y2="320" stroke="black" stroke-width="2"/>
+<text x="580" y="260" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="14" text-anchor="middle" font-weight="bold">T3</text>
+<rect x="485" y="340" width="190" height="84" stroke="black" fill="white" stroke-width="2"/>
+<text x="580.0" y="374.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="16" text-anchor="middle">系统检测</text>
+<text x="580.0" y="398.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="13" text-anchor="middle">资源不足</text>
+<text x="580" y="448" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="13" text-anchor="middle">触发抢占判定</text>
+<line x1="800" y1="280" x2="800" y2="320" stroke="black" stroke-width="2"/>
+<text x="800" y="260" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="14" text-anchor="middle" font-weight="bold">T4</text>
+<rect x="705" y="340" width="190" height="84" stroke="black" fill="white" stroke-width="2"/>
+<text x="800.0" y="374.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="16" text-anchor="middle">执行抢占</text>
+<text x="800.0" y="398.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="13" text-anchor="middle">A 被排队 / 挂起</text>
+<text x="800" y="448" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="13" text-anchor="middle">资源让给 B</text>
+<rect x="300" y="500" width="400" height="56" stroke="black" fill="white" stroke-width="2"/>
+<text x="500.0" y="520.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="16" text-anchor="middle" font-weight="bold">T5  紧急通信建立</text>
+<text x="500.0" y="544.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="13" text-anchor="middle">B 通话；结束后 A 按优先级恢复 / 重排队</text>
+<line x1="800" y1="424" x2="800" y2="472" stroke="black" stroke-width="2"/>
+<line x1="800" y1="472" x2="500" y2="472" stroke="black" stroke-width="2"/>
+<line x1="500" y1="472" x2="500" y2="500" stroke="black" stroke-width="2" marker-end="url(#arr)"/>
+</svg>

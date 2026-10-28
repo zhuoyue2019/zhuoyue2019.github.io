@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="370" viewBox="0 0 1000 370">
+<defs><marker id="arr" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 Z" fill="black"/></marker></defs>
+<rect x="0" y="0" width="1000" height="370" fill="white" stroke="none"/>
+<text x="500.0" y="34" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="18" text-anchor="middle" font-weight="bold">图4  MCVideo vs MCPTT 对照</text>
+<rect x="60" y="70" width="380" height="260" stroke="black" fill="white" stroke-width="2" stroke-dasharray="8,5"/>
+<text x="250.0" y="206.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="16" text-anchor="middle"></text>
+<text x="250" y="100" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="16" text-anchor="middle" font-weight="bold">MCPTT 语音</text>
+<text x="250" y="140" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="14" text-anchor="middle">按讲即说（PTT）</text>
+<text x="250" y="170" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="14" text-anchor="middle">地板控制：一人说话</text>
+<text x="250" y="200" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="14" text-anchor="middle">核心是音频可懂度</text>
+<text x="250" y="230" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="14" text-anchor="middle">说话秩序</text>
+<text x="250" y="260" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="14" text-anchor="middle">KPI：接入时间、口耳时延</text>
+<rect x="560" y="70" width="380" height="260" stroke="black" fill="white" stroke-width="2" stroke-dasharray="8,5"/>
+<text x="750.0" y="206.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="16" text-anchor="middle"></text>
+<text x="750" y="100" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="16" text-anchor="middle" font-weight="bold">MCVideo 视频</text>
+<text x="750" y="140" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="14" text-anchor="middle">常开 / 多路可选</text>
+<text x="750" y="170" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="14" text-anchor="middle">传输（接入）控制：管资源</text>
+<text x="750" y="200" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="14" text-anchor="middle">核心是视频可用性</text>
+<text x="750" y="230" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="14" text-anchor="middle">画面资源与容量秩序</text>
+<text x="750" y="260" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="14" text-anchor="middle">硬指标：2 秒起传、1 秒端到端</text>
+</svg>

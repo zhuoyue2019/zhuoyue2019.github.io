@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="540" viewBox="0 0 1000 540">
+<defs><marker id="arr" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 Z" fill="black"/></marker></defs>
+<rect x="0" y="0" width="1000" height="540" fill="white" stroke="none"/>
+<text x="500.0" y="34" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="18" text-anchor="middle" font-weight="bold">图3  在网 / 离网切换：有网走基站，没网终端直连</text>
+<rect x="350" y="60" width="300" height="56" stroke="black" fill="white" stroke-width="2"/>
+<text x="500.0" y="80.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="16" text-anchor="middle" font-weight="bold">终端正在通话</text>
+<text x="500.0" y="104.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="13" text-anchor="middle">MCX UE</text>
+<line x1="500" y1="116" x2="500" y2="150" stroke="black" stroke-width="2" marker-end="url(#arr)"/>
+<polygon points="500,150 650,200 500,250 350,200" stroke="black" fill="white" stroke-width="2"/>
+<text x="500" y="205" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="15" text-anchor="middle">在覆盖内？</text>
+<line x1="350" y1="200" x2="220" y2="200" stroke="black" stroke-width="2"/>
+<line x1="220" y1="200" x2="220" y2="260" stroke="black" stroke-width="2" marker-end="url(#arr)"/>
+<text x="285" y="190" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="13" text-anchor="middle">是</text>
+<rect x="70" y="260" width="300" height="70" stroke="black" fill="white" stroke-width="2"/>
+<text x="220.0" y="287.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="16" text-anchor="middle" font-weight="bold">在网模式</text>
+<text x="220.0" y="311.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="13" text-anchor="middle">终端 → 基站 → 核心网</text>
+<text x="220" y="360" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="13" text-anchor="middle">覆盖广、稳定、可跨域</text>
+<line x1="650" y1="200" x2="780" y2="200" stroke="black" stroke-width="2"/>
+<line x1="780" y1="200" x2="780" y2="260" stroke="black" stroke-width="2" marker-end="url(#arr)"/>
+<text x="715" y="190" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="13" text-anchor="middle">否</text>
+<rect x="630" y="260" width="300" height="70" stroke="black" fill="white" stroke-width="2"/>
+<text x="780.0" y="287.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="16" text-anchor="middle" font-weight="bold">离网模式（自动切换）</text>
+<text x="780.0" y="311.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="13" text-anchor="middle">ProSe 终端直通，不经过基站</text>
+<text x="780" y="360" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="13" text-anchor="middle">如深山灭火：离最近基站 20 英里</text>
+<line x1="220" y1="330" x2="780" y2="330" stroke="black" stroke-width="2"/>
+<rect x="350" y="420" width="300" height="56" stroke="black" fill="white" stroke-width="2"/>
+<text x="500.0" y="440.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="16" text-anchor="middle" font-weight="bold">手动切换（授权用户）</text>
+<text x="500.0" y="464.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="13" text-anchor="middle">有覆盖时也可切到直通</text>
+<line x1="500" y1="330" x2="500" y2="420" stroke="black" stroke-width="2" marker-end="url(#arr)"/>
+<text x="500" y="510" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="14" text-anchor="middle">恢复覆盖 → 切回在网，切换时尽量不中断通话 [§7.13]</text>
+</svg>

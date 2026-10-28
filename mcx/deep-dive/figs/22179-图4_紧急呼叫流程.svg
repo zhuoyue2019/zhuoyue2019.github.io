@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520">
+<defs><marker id="arr" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 Z" fill="black"/></marker></defs>
+<rect x="0" y="0" width="1000" height="520" fill="white" stroke="none"/>
+<text x="500.0" y="34" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="18" text-anchor="middle" font-weight="bold">图4  紧急呼叫流程</text>
+<rect x="330" y="64" width="340" height="56" stroke="black" fill="white" stroke-width="2"/>
+<text x="500.0" y="84.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="16" text-anchor="middle" font-weight="bold">① 发起紧急呼叫</text>
+<text x="500.0" y="108.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="13" text-anchor="middle">进入紧急状态</text>
+<line x1="500" y1="120" x2="500" y2="148" stroke="black" stroke-width="2" marker-end="url(#arr)"/>
+<rect x="330" y="148" width="340" height="56" stroke="black" fill="white" stroke-width="2"/>
+<text x="500.0" y="168.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="16" text-anchor="middle" font-weight="bold">② 优先级提到最高</text>
+<text x="500.0" y="192.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="13" text-anchor="middle">高于一切普通通信</text>
+<line x1="500" y1="204" x2="500" y2="232" stroke="black" stroke-width="2" marker-end="url(#arr)"/>
+<rect x="330" y="232" width="340" height="56" stroke="black" fill="white" stroke-width="2"/>
+<text x="500.0" y="252.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="16" text-anchor="middle" font-weight="bold">③ 抢占资源</text>
+<text x="500.0" y="276.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="13" text-anchor="middle">低优先级通话被抢占或排队</text>
+<line x1="500" y1="288" x2="500" y2="316" stroke="black" stroke-width="2" marker-end="url(#arr)"/>
+<rect x="330" y="316" width="340" height="56" stroke="black" fill="white" stroke-width="2"/>
+<text x="500.0" y="336.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="16" text-anchor="middle" font-weight="bold">④ 紧急组呼建立</text>
+<text x="500.0" y="360.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="13" text-anchor="middle">指挥中心收到位置与状态</text>
+<line x1="500" y1="372" x2="500" y2="400" stroke="black" stroke-width="2" marker-end="url(#arr)"/>
+<rect x="330" y="400" width="340" height="56" stroke="black" fill="white" stroke-width="2"/>
+<text x="500.0" y="420.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="16" text-anchor="middle" font-weight="bold">⑤ 取消紧急状态</text>
+<text x="500.0" y="444.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="13" text-anchor="middle">用户明确取消后恢复正常</text>
+</svg>
