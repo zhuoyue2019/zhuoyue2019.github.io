@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="480" viewBox="0 0 1000 480">
+<defs><marker id="arr" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 Z" fill="black"/></marker></defs>
+<rect x="0" y="0" width="1000" height="480" fill="white" stroke="none"/>
+<text x="500.0" y="34" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="18" text-anchor="middle" font-weight="bold">图3  监控视频接入：多源画面汇入指挥中心</text>
+<rect x="60" y="80" width="250" height="56" stroke="black" fill="white" stroke-width="2"/>
+<text x="185.0" y="100.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="16" text-anchor="middle" font-weight="bold">固定摄像头</text>
+<text x="185.0" y="124.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="13" text-anchor="middle">路口 / 厂区</text>
+<rect x="375" y="80" width="250" height="56" stroke="black" fill="white" stroke-width="2"/>
+<text x="500.0" y="100.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="16" text-anchor="middle" font-weight="bold">无人机摄像头</text>
+<text x="500.0" y="124.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="13" text-anchor="middle">空中视角</text>
+<rect x="690" y="80" width="250" height="56" stroke="black" fill="white" stroke-width="2"/>
+<text x="815.0" y="100.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="16" text-anchor="middle" font-weight="bold">单兵摄像头</text>
+<text x="815.0" y="124.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="13" text-anchor="middle">随身画面</text>
+<line x1="185" y1="136" x2="185" y2="180" stroke="black" stroke-width="2" marker-end="url(#arr)"/>
+<line x1="500" y1="136" x2="500" y2="180" stroke="black" stroke-width="2" marker-end="url(#arr)"/>
+<line x1="815" y1="136" x2="815" y2="180" stroke="black" stroke-width="2" marker-end="url(#arr)"/>
+<rect x="250" y="180" width="500" height="64" stroke="black" fill="white" stroke-width="2"/>
+<text x="500.0" y="204.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="16" text-anchor="middle" font-weight="bold">3GPP 网络 / 外部监控接口</text>
+<text x="500.0" y="228.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="13" text-anchor="middle">如 TVNP；外部接口不在 3GPP 控制范围</text>
+<line x1="500" y1="244" x2="500" y2="278" stroke="black" stroke-width="2" marker-end="url(#arr)"/>
+<rect x="250" y="278" width="500" height="64" stroke="black" fill="white" stroke-width="2"/>
+<text x="500.0" y="302.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="16" text-anchor="middle" font-weight="bold">调度台 / 指挥中心</text>
+<text x="500.0" y="326.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="13" text-anchor="middle">可控制摄像头、可转发画面</text>
+<line x1="500" y1="342" x2="500" y2="376" stroke="black" stroke-width="2" marker-end="url(#arr)"/>
+<rect x="250" y="376" width="500" height="64" stroke="black" fill="white" stroke-width="2"/>
+<text x="500.0" y="400.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="16" text-anchor="middle" font-weight="bold">转发给群组或指定人员</text>
+<text x="500.0" y="424.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="13" text-anchor="middle">现场多源画面到指挥中心闭环</text>
+</svg>

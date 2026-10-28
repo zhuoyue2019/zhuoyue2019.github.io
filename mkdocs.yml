@@ -40,6 +40,12 @@ nav:
       - 3GPP vs 中国对照: mcx/comparison.md
       - 应急通信视角: mcx/emergency.md
       - 跟踪动态: mcx/tracking.md
+      - 标准深入理解:
+        - 总览: mcx/deep-dive/index.md
+        - TS 22.280 MCCoRe 通用需求: mcx/deep-dive/22280.md
+        - TS 22.179 MCPTT: mcx/deep-dive/22179.md
+        - TS 22.281 MCVideo: mcx/deep-dive/22281.md
+        - TS 22.282 MCData: mcx/deep-dive/22282.md
       - 问答:
         - MCPTT vs 普通对讲机: mcx/faq-mcptt-vs-intercom.md
         - MCX 与 5G 切片: mcx/faq-mcx-vs-5g-slicing.md

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="440" viewBox="0 0 1000 440">
+<defs><marker id="arr" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 Z" fill="black"/></marker></defs>
+<rect x="0" y="0" width="1000" height="440" fill="white" stroke="none"/>
+<text x="500.0" y="34" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="18" text-anchor="middle" font-weight="bold">图3  短数据 SDS 发送流程</text>
+<rect x="300" y="64" width="400" height="56" stroke="black" fill="white" stroke-width="2"/>
+<text x="500.0" y="84.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="16" text-anchor="middle" font-weight="bold">① 编辑消息</text>
+<text x="500.0" y="108.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="13" text-anchor="middle">文字 / 二进制指令 / 链接</text>
+<line x1="500" y1="120" x2="500" y2="148" stroke="black" stroke-width="2" marker-end="url(#arr)"/>
+<rect x="300" y="148" width="400" height="56" stroke="black" fill="white" stroke-width="2"/>
+<text x="500.0" y="168.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="16" text-anchor="middle" font-weight="bold">② 选择接收对象</text>
+<text x="500.0" y="192.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="13" text-anchor="middle">个人或群组（可按位置/权限过滤）</text>
+<line x1="500" y1="204" x2="500" y2="232" stroke="black" stroke-width="2" marker-end="url(#arr)"/>
+<rect x="300" y="232" width="400" height="56" stroke="black" fill="white" stroke-width="2"/>
+<text x="500.0" y="252.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="16" text-anchor="middle" font-weight="bold">③ 发送</text>
+<text x="500.0" y="276.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="13" text-anchor="middle">线程 ID 把相关消息串起来</text>
+<line x1="500" y1="288" x2="500" y2="316" stroke="black" stroke-width="2" marker-end="url(#arr)"/>
+<rect x="300" y="316" width="400" height="56" stroke="black" fill="white" stroke-width="2"/>
+<text x="500.0" y="336.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="16" text-anchor="middle" font-weight="bold">④ 接收确认</text>
+<text x="500.0" y="360.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="13" text-anchor="middle">已送达 / 已读回执（已读隐含已送达）</text>
+</svg>

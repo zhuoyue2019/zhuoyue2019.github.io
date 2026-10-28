@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="420" viewBox="0 0 1000 420">
+<defs><marker id="arr" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 Z" fill="black"/></marker></defs>
+<rect x="0" y="0" width="1000" height="420" fill="white" stroke="none"/>
+<text x="500.0" y="34" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="18" text-anchor="middle" font-weight="bold">图1  MCPTT 在 MCX 家族中的位置</text>
+<rect x="120" y="70" width="230" height="64" stroke="black" fill="white" stroke-width="2"/>
+<text x="235.0" y="94.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="16" text-anchor="middle" font-weight="bold">MCPTT（本篇）</text>
+<text x="235.0" y="118.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="13" text-anchor="middle">关键语音 · TS 22.179</text>
+<line x1="235" y1="134" x2="235" y2="168" stroke="black" stroke-width="2" marker-end="url(#arr)"/>
+<rect x="385" y="70" width="230" height="64" stroke="black" fill="white" stroke-width="2"/>
+<text x="500.0" y="94.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="16" text-anchor="middle">MCVideo</text>
+<text x="500.0" y="118.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="13" text-anchor="middle">关键视频 · TS 22.281</text>
+<line x1="500" y1="134" x2="500" y2="168" stroke="black" stroke-width="2" marker-end="url(#arr)"/>
+<rect x="650" y="70" width="230" height="64" stroke="black" fill="white" stroke-width="2"/>
+<text x="765.0" y="94.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="16" text-anchor="middle">MCData</text>
+<text x="765.0" y="118.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="13" text-anchor="middle">关键数据 · TS 22.282</text>
+<line x1="765" y1="134" x2="765" y2="168" stroke="black" stroke-width="2" marker-end="url(#arr)"/>
+<rect x="120" y="168" width="760" height="70" stroke="black" fill="white" stroke-width="2"/>
+<text x="500.0" y="195.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="17" text-anchor="middle" font-weight="bold">MCCoRe —— TS 22.280 通用需求总纲</text>
+<text x="500.0" y="219.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="13" text-anchor="middle">组、优先级、监听、离网……三大业务共用的部分</text>
+<line x1="500" y1="238" x2="500" y2="272" stroke="black" stroke-width="2" marker-end="url(#arr)"/>
+<rect x="120" y="272" width="370" height="64" stroke="black" fill="white" stroke-width="2"/>
+<text x="305.0" y="296.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="16" text-anchor="middle" font-weight="bold">GCSE</text>
+<text x="305.0" y="320.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="13" text-anchor="middle">组通信系统使能</text>
+<rect x="510" y="272" width="370" height="64" stroke="black" fill="white" stroke-width="2"/>
+<text x="695.0" y="296.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="16" text-anchor="middle" font-weight="bold">ProSe</text>
+<text x="695.0" y="320.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="13" text-anchor="middle">终端直通（离网）</text>
+<text x="500" y="380" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="14" text-anchor="middle">各业务专属需求不在 TS 22.280 里；架构在 TS 23 系列，协议在 TS 24 系列</text>
+</svg>

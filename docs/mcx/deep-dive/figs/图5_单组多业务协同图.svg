@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520">
+<defs><marker id="arr" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 Z" fill="black"/></marker></defs>
+<rect x="0" y="0" width="1000" height="520" fill="white" stroke="none"/>
+<text x="500.0" y="34" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="18" text-anchor="middle" font-weight="bold">图5  一个组同时跑三种业务：语音 + 视频 + 数据</text>
+<rect x="330" y="60" width="340" height="64" stroke="black" fill="white" stroke-width="2"/>
+<text x="500.0" y="84.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="17" text-anchor="middle" font-weight="bold">火灾现场组</text>
+<text x="500.0" y="108.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="13" text-anchor="middle">一个组，三种业务</text>
+<line x1="235" y1="124" x2="235" y2="158" stroke="black" stroke-width="2" marker-end="url(#arr)"/>
+<line x1="500" y1="124" x2="500" y2="158" stroke="black" stroke-width="2" marker-end="url(#arr)"/>
+<line x1="765" y1="124" x2="765" y2="158" stroke="black" stroke-width="2" marker-end="url(#arr)"/>
+<rect x="120" y="158" width="230" height="70" stroke="black" fill="white" stroke-width="2"/>
+<text x="235.0" y="185.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="16" text-anchor="middle" font-weight="bold">MCPTT 语音</text>
+<text x="235.0" y="209.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="13" text-anchor="middle">组呼对讲</text>
+<rect x="385" y="158" width="230" height="70" stroke="black" fill="white" stroke-width="2"/>
+<text x="500.0" y="185.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="16" text-anchor="middle" font-weight="bold">MCVideo 视频</text>
+<text x="500.0" y="209.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="13" text-anchor="middle">现场回传</text>
+<rect x="650" y="158" width="230" height="70" stroke="black" fill="white" stroke-width="2"/>
+<text x="765.0" y="185.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="16" text-anchor="middle" font-weight="bold">MCData 数据</text>
+<text x="765.0" y="209.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="13" text-anchor="middle">传感器 / 定位上报</text>
+<line x1="235" y1="228" x2="235" y2="262" stroke="black" stroke-width="2" marker-end="url(#arr)"/>
+<line x1="500" y1="228" x2="500" y2="262" stroke="black" stroke-width="2" marker-end="url(#arr)"/>
+<line x1="765" y1="228" x2="765" y2="262" stroke="black" stroke-width="2" marker-end="url(#arr)"/>
+<rect x="280" y="262" width="440" height="70" stroke="black" fill="white" stroke-width="2"/>
+<text x="500.0" y="289.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="15" text-anchor="middle" font-weight="bold">资源调度器</text>
+<text x="500.0" y="313.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="13" text-anchor="middle">按优先级分配带宽：紧急 ＞ 普通；语音 ＞ 视频 ＞ 数据</text>
+<line x1="500" y1="332" x2="500" y2="366" stroke="black" stroke-width="2" marker-end="url(#arr)"/>
+<rect x="200" y="366" width="600" height="84" stroke="black" fill="white" stroke-width="2"/>
+<text x="500.0" y="400.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="16" text-anchor="middle" font-weight="bold">融合界面（用户看到的）</text>
+<text x="500.0" y="424.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="13" text-anchor="middle">语音波形 + 视频画面 + 数据数值，同时呈现、联动操作</text>
+<text x="500" y="486" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="14" text-anchor="middle">对用户像一个协调一致的整体服务，而不是三个割裂的系统 [§8.4.1]</text>
+</svg>

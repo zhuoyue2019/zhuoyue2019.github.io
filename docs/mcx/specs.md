@@ -6,7 +6,7 @@
 
 | 编号 | 标题 | Stage | Release | 版本 | 状态备注 |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **TS 22.280** | Mission Critical Communication Interworking with Land Mobile Radio Systems（关键通信与陆地移动无线系统互通需求） | Stage 1 | Rel-20 | v20.2.0 | 关键通信与陆地移动无线系统（LMR）互通需求；Rel-21 v21.0.0 已出现（2026-10-02），仅跟踪 |
+| **TS 22.280** | Mission Critical Services Common Requirements (MCCoRe)（任务关键型服务通用业务需求） | Stage 1 | Rel-20 | v20.2.0 | MCX 三大业务（MCPTT/MCVideo/MCData）的通用需求总纲；Rel-21 v21.0.0 已出现（2026-10-02），仅跟踪 |
 | **TS 22.179** | Mission Critical Push To Talk (MCPTT)（MCPTT业务需求） | Stage 1 | Rel-19 | v19.3.0 | MCPTT业务需求 |
 | **TS 22.281** | Mission Critical Video over LTE（关键视频业务需求） | Stage 1 | Rel-19 | v19.0.0 | 关键视频业务需求 |
 | **TS 22.282** | Mission Critical Data over LTE（关键数据业务需求） | Stage 1 | Rel-19 | v19.0.0 | 关键数据业务需求 |

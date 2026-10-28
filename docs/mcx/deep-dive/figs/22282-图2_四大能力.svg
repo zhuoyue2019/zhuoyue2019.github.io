@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="320" viewBox="0 0 1000 320">
+<defs><marker id="arr" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 Z" fill="black"/></marker></defs>
+<rect x="0" y="0" width="1000" height="320" fill="white" stroke="none"/>
+<text x="500.0" y="34" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="18" text-anchor="middle" font-weight="bold">图2  MCData 四大能力</text>
+<rect x="40" y="90" width="220" height="90" stroke="black" fill="white" stroke-width="2"/>
+<text x="150.0" y="127.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="16" text-anchor="middle" font-weight="bold">短数据 SDS</text>
+<text x="150.0" y="151.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="13" text-anchor="middle">像短信：文字/指令</text>
+<line x1="150" y1="180" x2="150" y2="214" stroke="black" stroke-width="2" marker-end="url(#arr)"/>
+<rect x="280" y="90" width="220" height="90" stroke="black" fill="white" stroke-width="2"/>
+<text x="390.0" y="127.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="16" text-anchor="middle" font-weight="bold">文件分发</text>
+<text x="390.0" y="151.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="13" text-anchor="middle">群发文件：地图/预案</text>
+<line x1="390" y1="180" x2="390" y2="214" stroke="black" stroke-width="2" marker-end="url(#arr)"/>
+<rect x="520" y="90" width="220" height="90" stroke="black" fill="white" stroke-width="2"/>
+<text x="630.0" y="127.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="16" text-anchor="middle" font-weight="bold">数据流</text>
+<text x="630.0" y="151.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="13" text-anchor="middle">持续上报：位置/传感</text>
+<line x1="630" y1="180" x2="630" y2="214" stroke="black" stroke-width="2" marker-end="url(#arr)"/>
+<rect x="760" y="90" width="220" height="90" stroke="black" fill="white" stroke-width="2"/>
+<text x="870.0" y="127.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="16" text-anchor="middle" font-weight="bold">IP 连接</text>
+<text x="870.0" y="151.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="13" text-anchor="middle">安全门：访问内网服务</text>
+<line x1="870" y1="180" x2="870" y2="214" stroke="black" stroke-width="2" marker-end="url(#arr)"/>
+<rect x="200" y="214" width="600" height="64" stroke="black" fill="white" stroke-width="2"/>
+<text x="500.0" y="238.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="16" text-anchor="middle" font-weight="bold">统一的数据通道</text>
+<text x="500.0" y="262.0" font-family="Noto Sans CJK SC, sans-serif" fill="black" font-size="13" text-anchor="middle">单独用或组合用；不发明新协议，够用就复用现有协议</text>
+</svg>
