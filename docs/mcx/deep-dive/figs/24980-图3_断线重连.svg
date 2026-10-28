@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="490" viewBox="0 0 800 490" font-family="Noto Sans CJK SC, sans-serif" font-size="15">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<defs><marker id="arr" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><polygon points="0 0, 10 4, 0 8" fill="#000000"/></marker></defs>
+<text x="20" y="34" font-size="19" font-weight="bold">图 3 · 断线重连——资源管理与 SIP 结合</text>
+<rect x="180" y="70" width="440" height="46" rx="6" fill="#ffffff" stroke="#000000" stroke-width="1.6"/>
+<text x="400.0" y="93.0" text-anchor="middle" fill="#000000">手机发现 PDN 连接断了（如 TAU 过程察觉）</text>
+<rect x="180" y="148" width="440" height="46" rx="6" fill="#ffffff" stroke="#000000" stroke-width="1.6"/>
+<text x="400.0" y="171.0" text-anchor="middle" fill="#000000">手机尝试重建到 MCPTT 相关 APN 的 PDN 连接</text>
+<rect x="180" y="226" width="440" height="46" rx="6" fill="#ffffff" stroke="#000000" stroke-width="1.6"/>
+<text x="400.0" y="249.0" text-anchor="middle" fill="#000000">网络重建时顺带发起新的 SIP 信令承载</text>
+<rect x="180" y="304" width="440" height="46" rx="6" fill="#ffffff" stroke="#000000" stroke-width="1.6"/>
+<text x="400.0" y="327.0" text-anchor="middle" fill="#000000">IP 地址变了或注册过期，手机重新初始注册</text>
+<rect x="180" y="382" width="440" height="46" rx="6" fill="#ffffff" stroke="#000000" stroke-width="1.6"/>
+<text x="400.0" y="405.0" text-anchor="middle" fill="#000000">网络按 24.229 §5.2.8 终止该手机所有进行中的 SIP 会话</text>
+<line x1="400" y1="116" x2="400" y2="146" stroke="#000000" stroke-width="1.6" marker-end="url(#arr)"/>
+<line x1="400" y1="194" x2="400" y2="224" stroke="#000000" stroke-width="1.6" marker-end="url(#arr)"/>
+<line x1="400" y1="272" x2="400" y2="302" stroke="#000000" stroke-width="1.6" marker-end="url(#arr)"/>
+<line x1="400" y1="350" x2="400" y2="380" stroke="#000000" stroke-width="1.6" marker-end="url(#arr)"/>
+</svg>

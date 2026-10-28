@@ -70,6 +70,9 @@ nav:
         - TS 24.482 身份管理: mcx/deep-dive/24482.md
         - TS 24.581 MCVideo 媒体面控制: mcx/deep-dive/24581.md
         - TS 24.582 MCData 媒体面控制: mcx/deep-dive/24582.md
+        - TR 22.819 海事通信研究: mcx/deep-dive/22819.md
+        - TR 23.790 FRMCS 应用架构: mcx/deep-dive/23790.md
+        - TR 24.980 Gm 参考点最低要求: mcx/deep-dive/24980.md
       - 问答:
         - MCPTT vs 普通对讲机: mcx/faq-mcptt-vs-intercom.md
         - MCX 与 5G 切片: mcx/faq-mcx-vs-5g-slicing.md

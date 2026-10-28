@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="568" viewBox="0 0 800 568" font-family="Noto Sans CJK SC, sans-serif" font-size="15">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<defs><marker id="arr" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><polygon points="0 0, 10 4, 0 8" fill="#000000"/></marker></defs>
+<text x="20" y="34" font-size="19" font-weight="bold">图 4 · 语音管道开通——承载与 P-CSCF 发现</text>
+<rect x="180" y="70" width="440" height="46" rx="6" fill="#ffffff" stroke="#000000" stroke-width="1.6"/>
+<text x="400.0" y="93.0" text-anchor="middle" fill="#000000">手机建立到 MCPTT 业务 APN 的 PDN 连接</text>
+<rect x="180" y="148" width="440" height="46" rx="6" fill="#ffffff" stroke="#000000" stroke-width="1.6"/>
+<text x="400.0" y="171.0" text-anchor="middle" fill="#000000">同时声明 P-CSCF 地址请求（IPv4/IPv6）</text>
+<rect x="180" y="226" width="440" height="46" rx="6" fill="#ffffff" stroke="#000000" stroke-width="1.6"/>
+<text x="400.0" y="249.0" text-anchor="middle" fill="#000000">option II：网络在承载激活流程里塞地址列表</text>
+<rect x="180" y="304" width="440" height="46" rx="6" fill="#ffffff" stroke="#000000" stroke-width="1.6"/>
+<text x="400.0" y="327.0" text-anchor="middle" fill="#000000">option I：网络不给，手机用 DHCPv4/DHCPv6 自捞</text>
+<rect x="180" y="382" width="440" height="46" rx="6" fill="#ffffff" stroke="#000000" stroke-width="1.6"/>
+<text x="400.0" y="405.0" text-anchor="middle" fill="#000000">网络为语音发起专用承载 QCI 65，信令承载 QCI 69</text>
+<rect x="180" y="460" width="440" height="46" rx="6" fill="#ffffff" stroke="#000000" stroke-width="1.6"/>
+<text x="400.0" y="483.0" text-anchor="middle" fill="#000000">手机拿到地址后发起 SIP 注册</text>
+<line x1="400" y1="116" x2="400" y2="146" stroke="#000000" stroke-width="1.6" marker-end="url(#arr)"/>
+<line x1="400" y1="194" x2="400" y2="224" stroke="#000000" stroke-width="1.6" marker-end="url(#arr)"/>
+<line x1="400" y1="272" x2="400" y2="302" stroke="#000000" stroke-width="1.6" marker-end="url(#arr)"/>
+<line x1="400" y1="350" x2="400" y2="380" stroke="#000000" stroke-width="1.6" marker-end="url(#arr)"/>
+<line x1="400" y1="428" x2="400" y2="458" stroke="#000000" stroke-width="1.6" marker-end="url(#arr)"/>
+</svg>

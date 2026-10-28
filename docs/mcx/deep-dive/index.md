@@ -34,6 +34,9 @@
 | **TS 24.482** | [Mission Critical Services (MCS) identity management，MC 身份管理](24482.md) | Rel-19 v19.1.0 | ✅ 已发布（2026-10-28） |
 | **TS 24.581** | [Mission Critical Video (MCVideo) media plane control，MCVideo 媒体面控制](24581.md) | Rel-19 v19.2.0 | ✅ 已发布（2026-10-28） |
 | **TS 24.582** | [Mission Critical Data (MCData) media plane control，MCData 媒体面控制](24582.md) | Rel-19 v19.0.0 | ✅ 已发布（2026-10-28） |
+| **TR 22.819** | [Study on Maritime Communication Services over 3GPP system，海事通信服务可行性研究](22819.md) | Rel-16 v16.2.0 | ✅ 已发布（2026-10-28） |
+| **TR 23.790** | [Study on application architecture for the Future Railway Mobile Communication System (FRMCS); Stage 2，FRMCS 应用架构研究](23790.md) | Rel-15 v15.0.0 | ✅ 已发布（2026-10-28） |
+| **TR 24.980** | [Minimum requirements for support of MCPTT Service over the Gm reference point，Gm 参考点 MCPTT 最低要求](24980.md) | Rel-16 v16.0.0 | ✅ 已发布（2026-10-28） |
 
 ## 后续计划
-- 规范类（TS）22 条已全部覆盖；剩余 TR 22.819、TR 23.790、TR 24.980 三篇研究报告（已冻结/最终版）待定是否做 ELI5。
+- MCX 基线清单 25 条（规范类 TS 22 条 + 研究报告类 TR 3 条）已全部覆盖；下一步候选：ISAC for UAV 系列 ELI5 深读。

@@ -11,14 +11,14 @@
 | **TS 22.281** | Mission Critical Video over LTE（关键视频业务需求） | Stage 1 | Rel-19 | v19.0.0 | 关键视频业务需求 |
 | **TS 22.282** | Mission Critical Data over LTE（关键数据业务需求） | Stage 1 | Rel-19 | v19.0.0 | 关键数据业务需求 |
 | **TS 22.289** | Mobile Communication System for Railways（铁路移动通信系统） | Stage 1 | Rel-19 | v19.0.1 | 铁路通信 Stage 1 需求（FRMCS），干线与城市轨道交通在 5G 系统上的业务能力；MBS 承载内容归 TS 23.289 |
-| **TR 22.819** | Study on Mission Critical Services Interworking with non-3GPP Systems（与非3GPP系统互通研究） | Stage 1 | Rel-16 | v16.2.0 | 与非3GPP系统互通研究（2018-12-21发布，已结项，无后续更新；基线记录已于2026-10-23纠正） |
+| **TR 22.819** | Study on Maritime Communication Services over 3GPP system（海事通信服务研究） | Stage 1 | Rel-16 | v16.2.0 | 海事通信服务可行性研究 FS MARCOM（2018-12-21发布，已结项，无后续更新；标题于2026-10-28订正，旧标题“与非3GPP系统互通研究”为误） |
 | **TS 23.280** | Common functional architecture to support mission critical services（MCX通用功能架构） | Stage 2 | Rel-20 | v20.5.1 | MCX通用功能架构 |
 | **TS 23.379** | Functional architecture and information flows to support mission critical push to talk (MCPTT)（MCPTT功能架构与信息流） | Stage 2 | Rel-20 | v20.4.0 | MCPTT功能架构与信息流 |
 | **TS 23.281** | Functional architecture and information flows to support mission critical video（关键视频功能架构与信息流） | Stage 2 | Rel-20 | v20.5.1 | 关键视频功能架构与信息流 |
 | **TS 23.282** | Functional architecture and information flows to support mission critical data（关键数据功能架构与信息流） | Stage 2 | Rel-20 | v20.3.1 | 关键数据功能架构与信息流；2026-10-28 同步（10-23 检查漏了 Rel-20 版） |
 | **TS 23.283** | Mission Critical Communication Interworking with Land Mobile Radio Systems（与LMR互通的架构） | Stage 2 | Rel-20 | v20.1.0 | 与LMR互通的架构；2026-10-28 同步（10-23 检查漏了 Rel-20 版） |
 | **TS 23.289** | Mission Critical Services over the 5G System (5GS)（MCX over 5GS架构） | Stage 2 | Rel-20 | v20.3.0 | MCX over 5GS，5G-R/FRMCS场景的关键架构；2026-10-28 同步（10-23 检查漏了 Rel-20 版） |
-| **TR 23.790** | Study on Future Railway Mobile Communication System（未来铁路移动通信系统研究） | Stage 2 | Rel-15 | v15.0.0 | 未来铁路移动通信系统研究（2018-01-06发布，无后续更新，为最终版；2026-10-23待核关闭） |
+| **TR 23.790** | Study on application architecture for the Future Railway Mobile Communication System (FRMCS); Stage 2（未来铁路移动通信系统应用架构研究） | Stage 2 | Rel-15 | v15.0.0 | 未来铁路移动通信系统应用架构研究（2018-01-06发布，无后续更新，为最终版；2026-10-23待核关闭；标题于2026-10-28补全 application architecture） |
 | **TS 24.379** | Mission Critical Push To Talk (MCPTT) call control; Protocol specification（MCPTT呼叫控制协议） | Stage 3 | Rel-20 | v20.1.0 | MCPTT呼叫控制协议 |
 | **TS 24.380** | Mission Critical Push To Talk (MCPTT) media plane control; Protocol specification（MCPTT媒体面控制协议） | Stage 3 | Rel-19 | v19.1.0 | MCPTT媒体面控制协议 |
 | **TS 24.481** | Mission Critical Services (MCS) group management; Protocol specification（组管理协议） | Stage 3 | Rel-19 | v19.1.0 | 组管理协议 |
@@ -29,7 +29,7 @@
 | **TS 24.581** | Mission Critical Video (MCVideo) media plane control; Protocol specification（MCVideo媒体面控制协议） | Stage 3 | Rel-19 | v19.2.0 | MCVideo媒体面控制协议 |
 | **TS 24.282** | Mission Critical Data (MCData) signalling control; Protocol specification（MCData信令控制协议） | Stage 3 | Rel-20 | v20.1.0 | MCData信令控制协议 |
 | **TS 24.582** | Mission Critical Data (MCData) media plane control; Protocol specification（MCData媒体面控制协议） | Stage 3 | Rel-19 | v19.0.0 | MCData媒体面控制协议 |
-| **TR 24.980** | Study on Mission Critical Services enablers and enhancements（MCX使能器与增强研究） | Stage 3 | Rel-16 | v16.0.0 | MCX使能器与增强研究（唯一版本，2026-10-23确认为最终版） |
+| **TR 24.980** | Minimum requirements for support of Mission Critical Push To Talk (MCPTT) over the Gm reference point（Gm参考点上支持MCPTT的最低要求） | Stage 3 | Rel-16 | v16.0.0 | Gm 参考点 MCPTT 最低要求 profile（唯一版本，2026-10-23确认为最终版；标题于2026-10-28订正，旧标题“MCX使能器与增强研究”为误） |
 | **TS 33.180** | Security of the Mission Critical (MC) service（关键业务安全） | 安全 | Rel-20 | v20.1.0 | 关键业务安全 |
 
 ## 二、中国 CCSA/行标 MCX与5G-R 规范清单
