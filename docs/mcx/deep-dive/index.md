@@ -13,12 +13,14 @@
 | 标准 | 标题 | 基线版本 | 状态 |
 | :--- | :--- | :--- | :--- |
 | **TS 22.280** | [Mission Critical Services Common Requirements (MCCoRe)，任务关键型服务通用业务需求](22280.md) | Rel-20 v20.2.0 | ✅ 已发布（2026-10-28） |
-| **TS 22.179** | [Mission Critical Push To Talk (MCPTT)，关键型按讲对讲](22179.md) | Rel-19 v19.3.0 | ✅ 已发布（2026-10-28） |
+| **TS 22.179** | [Mission Critical Push To Talk (MCPTT)，关键型按讲对讲](22179.md) | Rel-20 v20.0.0 | ✅ 已发布（2026-10-28） |
 | **TS 22.281** | [Mission Critical Video (MCVideo)，关键型视频](22281.md) | Rel-19 v19.0.0 | ✅ 已发布（2026-10-28） |
 | **TS 22.282** | [Mission Critical Data (MCData)，关键型数据](22282.md) | Rel-19 v19.0.0 | ✅ 已发布（2026-10-28） |
+| **TS 23.280** | [Mission Critical Services Common Functional Architecture，MCX 通用功能架构](23280.md) | Rel-20 v20.5.1 | ✅ 已发布（2026-10-28） |
+| **TS 23.379** | [Mission Critical Push To Talk (MCPTT) functional architecture and information flows，MCPTT 功能架构](23379.md) | Rel-20 v20.4.0 | ✅ 已发布（2026-10-28） |
+| **TS 23.281** | [Functional architecture and information flows to support Mission Critical Video，MCVideo 功能架构](23281.md) | Rel-20 v20.5.1 | ✅ 已发布（2026-10-28） |
+| **TS 23.282** | [Functional architecture and information flows to support mission critical data，MCData 功能架构](23282.md) | Rel-20 v20.3.1 | ✅ 已发布（2026-10-28） |
 
 ## 后续计划
-
-- 第二批：Stage 2 架构篇——TS 23.280（通用功能架构）、TS 23.379（MCPTT 架构与信息流）、TS 23.281（MCVideo 架构）、TS 23.282（MCData 架构）。
 - 第三批：Stage 3 协议与安全篇——TS 24.379 / 24.281 / 24.282、TS 24.483 / 24.484、TS 33.180（安全）。
 - 另：TS 22.289（5G MBS 承载）、TS 22.283 / 23.283（LMR 互通）待补入清单。
