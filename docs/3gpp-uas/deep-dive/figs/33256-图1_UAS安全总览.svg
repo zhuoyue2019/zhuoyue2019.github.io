@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="346" viewBox="0 0 800 346" font-family="Noto Sans CJK SC, sans-serif" font-size="15">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<defs><marker id="arr" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><polygon points="0 0, 10 4, 0 8" fill="#000000"/></marker></defs>
+<text x="20" y="34" font-size="19" font-weight="bold">图 1 · TS 33.256 UAS 安全总览</text>
+<rect x="90" y="70" width="620" height="52" rx="6" fill="#ffffff" stroke="#000000" stroke-width="1.6"/>
+<text x="400.0" y="96.0" text-anchor="middle" fill="#000000">认证：这架无人机是谁</text>
+<rect x="90" y="152" width="620" height="52" rx="6" fill="#ffffff" stroke="#000000" stroke-width="1.6"/>
+<text x="400.0" y="169.0" text-anchor="middle" fill="#000000">授权：它能不能飞、能接什么业务</text>
+<text x="400.0" y="189.0" text-anchor="middle" fill="#000000">配对授权：它跟哪个控制器是一对</text>
+<rect x="90" y="234" width="620" height="52" rx="6" fill="#ffffff" stroke="#000000" stroke-width="1.6"/>
+<text x="400.0" y="260.0" text-anchor="middle" fill="#000000">位置授权：它报的位置可不可信</text>
+<line x1="400" y1="122" x2="400" y2="148" stroke="#000000" stroke-width="1.6" marker-end="url(#arr)"/>
+<line x1="400" y1="204" x2="400" y2="230" stroke="#000000" stroke-width="1.6" marker-end="url(#arr)"/>
+</svg>

@@ -28,6 +28,12 @@ nav:
       - 关键规范清单: 3gpp-uas/specs.md
       - Rel-20 ISAC for UAV 深度报告: 3gpp-uas/isac-for-uav.md
       - 跟踪动态: 3gpp-uas/tracking.md
+      - 标准深入理解:
+        - 总览: 3gpp-uas/deep-dive/index.md
+        - TS 22.125 UAS 业务需求: 3gpp-uas/deep-dive/22125.md
+        - TS 23.256 UAS 架构: 3gpp-uas/deep-dive/23256.md
+        - TS 33.256 UAS 安全: 3gpp-uas/deep-dive/33256.md
+        - TR 36.777 无人机增强支持研究: 3gpp-uas/deep-dive/36777.md
   - 跟踪平台:
       - 总览: tracking/index.md
       - 3GPP UAS 规范跟踪: 3gpp-uas/tracking.md
