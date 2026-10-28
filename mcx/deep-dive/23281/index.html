@@ -1,0 +1,2622 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="3GPP UAS、无人机通信、应急政策等知识沉淀">
+      
+      
+        <meta name="author" content="Alex">
+      
+      
+      
+        <link rel="prev" href="../23379/">
+      
+      
+        <link rel="next" href="../23282/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>TS 23.281 MCVideo 架构 - Alex 的知识库</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#3gpp-ts-23281-mcvideo" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="Alex 的知识库" class="md-header__button md-logo" aria-label="Alex 的知识库" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Alex 的知识库
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              TS 23.281 MCVideo 架构
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../3gpp-uas/" class="md-tabs__link">
+          
+  
+  
+  3GPP UAS
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../tracking/" class="md-tabs__link">
+          
+  
+  
+  跟踪平台
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  
+  MCX
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../emergency/" class="md-tabs__link">
+          
+  
+  
+  应急政策
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../free-api/config/" class="md-tabs__link">
+          
+  
+  
+  免费 API
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../about/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  关于
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Alex 的知识库" class="md-nav__button md-logo" aria-label="Alex 的知识库" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Alex 的知识库
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3GPP UAS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    3GPP UAS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../3gpp-uas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    总览
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../3gpp-uas/specs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    关键规范清单
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../3gpp-uas/isac-for-uav/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rel-20 ISAC for UAV 深度报告
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../3gpp-uas/tracking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    跟踪动态
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    跟踪平台
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    跟踪平台
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tracking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    总览
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../3gpp-uas/tracking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    跟踪动态
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tracking/policy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    低空政策跟踪
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tracking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MCX 规范跟踪
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MCX
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    MCX
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    总览
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../specs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    关键规范清单
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    逻辑架构
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../comparison/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3GPP vs 中国对照
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../emergency/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    应急通信视角
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tracking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MCX 规范跟踪
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    标准深入理解
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    标准深入理解
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    总览
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22280/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TS 22.280 MCCoRe 通用需求
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22179/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TS 22.179 MCPTT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22281/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TS 22.281 MCVideo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22282/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TS 22.282 MCData
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../23280/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TS 23.280 MCX 通用功能架构
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../23379/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TS 23.379 MCPTT 架构
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TS 23.281 MCVideo 架构
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TS 23.281 MCVideo 架构
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 它要解决什么问题
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-mcx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 它在 MCX 家族中的位置
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 核心概念大白话
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 核心概念大白话">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-mcvideo-mcvideo-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 MCVideo 客户端 (MCVideo Client)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-mcvideo-mcvideo-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 MCVideo 服务器 (MCVideo Server)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-media-distribution-function-mdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 媒体分发功能 (Media Distribution Function, MDF)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-video-pull-vs-video-push" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 视频拉取 (Video Pull) vs 视频推送 (Video Push)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 一次视频组呼在架构里怎么走
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 一次视频组呼在架构里怎么走">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 发起阶段：我要开视频会
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 服务器处理与分发
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 传输控制：谁先说话？
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4 媒体面流转：画面怎么到别人手机里？
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 关键时刻的能力
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 关键时刻的能力">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 紧急视频与优先级
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-video-pull" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 视频拉取 (Video Pull)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-video-push" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 视频推送 (Video Push)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-off-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4 离网模式 (Off-Network)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#55" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.5 视频适配与带宽管理
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-mcvideo-vs-mcptt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. MCVideo 架构 vs MCPTT 架构的区别
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. 它不管什么（边界）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. 怎么往下读
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. 怎么往下读">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        版本说明与来源
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../23282/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TS 23.282 MCData 架构
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_8" id="__nav_4_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    问答
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    问答
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq-mcptt-vs-intercom/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MCPTT vs 普通对讲机
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq-mcx-vs-5g-slicing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MCX 与 5G 切片
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq-mcx-qos-priority/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    QoS 优先级保障
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq-mcvideo-vs-video-call/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MCVideo vs 视频通话
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq-mcx-china-emergency/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    国内应急行业现状
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    应急政策
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    应急政策
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../emergency/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    总览
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../emergency/laws/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    法律法规
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    免费 API
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    免费 API
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../free-api/config/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    配置手册
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    关于
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 它要解决什么问题
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-mcx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 它在 MCX 家族中的位置
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 核心概念大白话
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 核心概念大白话">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-mcvideo-mcvideo-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 MCVideo 客户端 (MCVideo Client)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-mcvideo-mcvideo-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 MCVideo 服务器 (MCVideo Server)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-media-distribution-function-mdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 媒体分发功能 (Media Distribution Function, MDF)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-video-pull-vs-video-push" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 视频拉取 (Video Pull) vs 视频推送 (Video Push)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 一次视频组呼在架构里怎么走
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 一次视频组呼在架构里怎么走">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 发起阶段：我要开视频会
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 服务器处理与分发
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 传输控制：谁先说话？
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4 媒体面流转：画面怎么到别人手机里？
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 关键时刻的能力
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 关键时刻的能力">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 紧急视频与优先级
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-video-pull" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 视频拉取 (Video Pull)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-video-push" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 视频推送 (Video Push)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-off-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4 离网模式 (Off-Network)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#55" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.5 视频适配与带宽管理
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-mcvideo-vs-mcptt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. MCVideo 架构 vs MCPTT 架构的区别
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. 它不管什么（边界）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. 怎么往下读
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. 怎么往下读">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        版本说明与来源
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="3gpp-ts-23281-mcvideo">3GPP TS 23.281 解读：MCVideo 功能架构——视频画面在网里是怎么流转的<a class="headerlink" href="#3gpp-ts-23281-mcvideo" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>版本：v1.0 ｜ 更新：2026-10-28 ｜ 基线：TS 23.281 v20.5.1（Rel-20）｜ 原文：whatthespec.net 抓取的关键条款</p>
+</blockquote>
+<p><strong>TS 23.281 定义了</strong>关键任务视频（MCVideo）服务的功能模型、流程和信息流<strong>，讲述了视频画面如何在用户终端、服务器和网络之间高效、可靠地传输 [§1]。</strong></p>
+<h2 id="1">1. 它要解决什么问题<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<p>想象一下，如果警察叔叔在抓捕行动中只能靠对讲机说话，那是远远不够的。他们需要看到现场的画面：嫌疑人的位置、周围的环境、是否有爆炸物风险。这就是<strong>关键任务视频（MCVideo）</strong>存在的意义 [§1]。</p>
+<p>但是，视频比语音“重”得多，给网络架构带来了巨大的挑战：</p>
+<ol>
+<li><strong>带宽消耗大</strong>：语音只需要十几 kbps，而视频动辄数百 kbps 甚至几 Mbps。如果几十个人同时发视频，网络瞬间就会瘫痪。</li>
+<li><strong>传输控制复杂</strong>：谁先说话？谁先看画面？在多人群组中，不能所有人都同时发高清视频，必须有一套“交通管制”机制 [§1]。</li>
+<li><strong>多样化的场景</strong>：有时候是“我推给你看”（主动推送），有时候是“你发给我看”（被动拉取），有时候是“大家一起看”（群组广播） [§1]。</li>
+</ol>
+<p>TS 23.281 就是为了解决这些问题，规定了一套统一的架构，确保视频在公共安全（如警察、消防）和商业应用（如铁路、电力公司）中都能稳定运行 [§1]。</p>
+<h2 id="2-mcx">2. 它在 MCX 家族中的位置<a class="headerlink" href="#2-mcx" title="Permanent link">&para;</a></h2>
+<p>在 3GPP 的关键任务通信（Mission Critical, MCX）家族中，标准通常分为三层：</p>
+<ul>
+<li><strong>Stage 1（需求层）</strong>：由 <strong>TS 22.280</strong> 和 <strong>TS 22.281</strong> 定义。它们规定了“用户需要什么”，比如：紧急视频 2 秒内要起传、端到端时延不超过 1 秒（TS 22.281 R-5.4.2-001~005，已核实）[§1]。</li>
+<li><strong>Stage 2（架构层）</strong>：即本文 <strong>TS 23.281</strong>。它规定了“网络怎么搭、数据怎么流”，定义了功能实体（如服务器、客户端）和它们之间的逻辑接口 [§1]。</li>
+<li><strong>Stage 3（协议层）</strong>：由 <strong>TS 24.281</strong> 等定义。它规定了“具体的数据包长什么样”，比如 SIP 消息的具体字段、HTTP 请求的头信息等。</li>
+</ul>
+<p>TS 23.281 建立在 <strong>TS 23.280</strong>（关键任务服务的通用功能架构）之上，并主要适用于基于 LTE（E-UTRAN）接入的场景 [§1]。你可以把它看作是从“需求蓝图”到“施工图纸”之间的关键过渡。</p>
+<h2 id="3">3. 核心概念大白话<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
+<p>为了理解视频怎么流转，我们先认识几个关键角色。在 TS 23.281 中，这些是<strong>功能实体</strong>，不一定对应物理设备，但逻辑上必须存在 [§6.2]。</p>
+<h3 id="31-mcvideo-mcvideo-client">3.1 MCVideo 客户端 (MCVideo Client)<a class="headerlink" href="#31-mcvideo-mcvideo-client" title="Permanent link">&para;</a></h3>
+<p>这就是你手里的手机或执法记录仪上的 App。
+*   <strong>角色</strong>：用户的代理人。
+*   <strong>职责</strong>：负责发起呼叫、接收视频、发送视频，以及远程控制设备（比如调整摄像头角度） [§6.2.2.3.1]。
+*   <strong>位置</strong>：位于用户设备（UE）中，无论是在网（On-network）还是离网（Off-network）模式下都存在 [§6.2.2.3.1]。</p>
+<h3 id="32-mcvideo-mcvideo-server">3.2 MCVideo 服务器 (MCVideo Server)<a class="headerlink" href="#32-mcvideo-mcvideo-server" title="Permanent link">&para;</a></h3>
+<p>这是网络的“大脑”和“调度中心”。
+*   <strong>角色</strong>：集中式支持实体。
+*   <strong>职责</strong>：
+    *   <strong>群组管理</strong>：同一群组的所有用户必须使用同一个 MCVideo 服务器 [§6.2.2.3.2]。
+    *   <strong>传输控制</strong>：决定谁可以发视频，谁只能看 [§6.2.2.3.2]。
+    *   <strong>设备信息管理</strong>：管理参与视频通信的设备信息，用于授权远程控制 [§6.2.2.3.2]。
+    *   <strong>功能别名控制</strong>：管理用户的“功能别名”（Functional Alias），允许用户以特定角色（如“队长”、“观察员”）出现 [§6.2.2.3.2]。
+*   <strong>本质</strong>：它是 <strong>GCS AS</strong>（组通信服务应用服务器）的一个具体实例，用于控制组通信中的多播和单播操作 [§6.2.2.3.2]。</p>
+<h3 id="33-media-distribution-function-mdf">3.3 媒体分发功能 (Media Distribution Function, MDF)<a class="headerlink" href="#33-media-distribution-function-mdf" title="Permanent link">&para;</a></h3>
+<p>这是视频的“物流仓库”和“快递站”。
+*   <strong>角色</strong>：媒体分发者。
+*   <strong>职责</strong>：
+    *   <strong>接收上行视频</strong>：从发送者那里接收视频流 [§6.2.2.3.3]。
+    *   <strong>存储</strong>：将视频保存为文件（MCVideo Content Files） [§6.2.2.3.3]。
+    *   <strong>分发下行视频</strong>：
+        *   对使用<strong>单播</strong>（Unicast，点对点）的用户，通过 IP 单播发送 [§6.2.2.3.3]。
+        *   对使用<strong>多播</strong>（Multicast，点对多）的用户，通过 IP 多播发送 [§6.2.2.3.3]。
+*   <strong>独立性</strong>：MDF 可以使用与 MCVideo 服务器不同的 IP 地址，这意味着视频流和控制信令可以走不同的路径，优化网络负载 [§6.2.2.3.3]。</p>
+<h3 id="34-video-pull-vs-video-push">3.4 视频拉取 (Video Pull) vs 视频推送 (Video Push)<a class="headerlink" href="#34-video-pull-vs-video-push" title="Permanent link">&para;</a></h3>
+<p>这是两种不同的交互模式：
+*   <strong>拉取 (Pull)</strong>：接收方主动发起请求，“我要看你的视频”。例如，调度台想看某一线下警员摄像头的画面 [§7.3]。
+*   <strong>推送 (Push)</strong>：发送方主动发起请求，“我要把视频发给你/这个组”。例如，一线警员发现情况，主动把画面推给指挥中心 [§7.4]。
+*   <strong>远程推送 (Remote Video Push)</strong>：A 命令 B 把视频推给 C。这是一种三方交互，A 是发起者，B 是源，C 是目的 [§7.4.2.1]。</p>
+<h2 id="4">4. 一次视频组呼在架构里怎么走<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
+<p>让我们通过一个典型的<strong>在网视频组呼（On-network Group Call）</strong>场景，看看数据是怎么流动的。</p>
+<p><img alt="图 1" src="../figs/23281-%E5%9B%BE1_MCVideo%E5%8A%9F%E8%83%BD%E6%A8%A1%E5%9E%8B.svg" /></p>
+<p><em>图 1 · MCVideo 功能模型：MCVideo 客户端、MCVideo 服务器、传输控制、媒体面。</em></p>
+<h3 id="41">4.1 发起阶段：我要开视频会<a class="headerlink" href="#41" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>用户动作</strong>：用户 A 在手机上点击“发起群组视频呼叫”。</li>
+<li><strong>信令流程</strong>：MCVideo 客户端向 MCVideo 服务器发送<strong>组呼请求（Group Call Request）</strong> [§7.1.2.2.1]。<ul>
+<li>这个请求包含：<ul>
+<li><strong>MCVideo ID</strong>：发起者的身份标识 [§7.1.2.2.1]。</li>
+<li><strong>MCVideo Group ID</strong>：要呼叫哪个组 [§7.1.2.2.1]。</li>
+<li><strong>SDP Offer</strong>：发起者能支持的视频参数（如分辨率、编码格式） [§7.1.2.2.1]。</li>
+<li><strong>Implicit Transmit Media Request</strong>：如果发起者想同时发送视频，这里会隐含一个请求 [§7.1.2.2.1]。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="42">4.2 服务器处理与分发<a class="headerlink" href="#42" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>服务器决策</strong>：MCVideo 服务器收到请求后，检查权限、群组状态，并决定媒体参数 [§7.1.2.2.2]。</li>
+<li><strong>邀请其他用户</strong>：服务器向组内其他成员（用户 B、C、D...）发送<strong>组呼请求（Group Call Request）</strong> [§7.1.2.2.2]。<ul>
+<li>注意：这里的 SDP Offer 是服务器选定的参数，而不是发起者的原始参数，因为服务器可能会根据网络情况调整 [§7.1.2.2.2]。</li>
+</ul>
+</li>
+<li><strong>用户响应</strong>：<ul>
+<li>用户 B 接受呼叫，发送<strong>组呼响应（Group Call Response）</strong>给服务器 [§7.1.2.2.3/4]。</li>
+<li>响应中包含 <strong>SDP Answer</strong>，确认自己支持的参数 [§7.1.2.2.3]。</li>
+</ul>
+</li>
+</ol>
+<h3 id="43">4.3 传输控制：谁先说话？<a class="headerlink" href="#43" title="Permanent link">&para;</a></h3>
+<p>这是视频与语音最大的不同。语音组呼（MCPTT）中，争夺的是“发言权”（Floor）。视频中，争夺的是<strong>“上行媒体传输权”</strong> [§7.7]。</p>
+<ol>
+<li><strong>请求传输权</strong>：如果用户 A 想发送视频，他不能直接发，必须先向<strong>传输控制服务器</strong>（通常由 MCVideo 服务器实现）发送<strong>发送媒体请求（Transmit Media Request）</strong> [§7.7.1.2.2]。</li>
+<li><strong>授权或拒绝</strong>：<ul>
+<li><strong>授权 (Granted)</strong>：服务器回复<strong>发送媒体已授权（Transmit Media Granted）</strong>。此时，用户 A 才能开始向上行链路发送视频包 [§7.7.1.2.3]。</li>
+<li><strong>拒绝 (Rejected)</strong>：如果带宽不够或优先级低，服务器回复<strong>发送媒体被拒绝（Transmit Media Rejected）</strong>，并给出原因 [§7.7.1.2.4]。</li>
+<li><strong>排队状态</strong>：用户还可以查询自己在队列中的位置（Media Transmission Queue Status） [§7.7.1.2.1]。</li>
+</ul>
+</li>
+</ol>
+<p><img alt="图 2" src="../figs/23281-%E5%9B%BE2_%E4%BC%A0%E8%BE%93%E6%8E%A7%E5%88%B6.svg" /></p>
+<p><em>图 2 · 传输控制：多路视频抢带宽时按优先级分配，不够就降质或排队。</em></p>
+<h3 id="44">4.4 媒体面流转：画面怎么到别人手机里？<a class="headerlink" href="#44" title="Permanent link">&para;</a></h3>
+<p><img alt="图 3" src="../figs/23281-%E5%9B%BE3_%E8%A7%86%E9%A2%91%E7%BB%84%E5%91%BC%E6%B5%81%E7%A8%8B.svg" /></p>
+<p><em>图 3 · 视频组呼流程：发起 → 传输控制授权 → 画面上行 → 多方收看。</em></p>
+<ol>
+<li>
+<p><strong>上行传输</strong>：</p>
+<ul>
+<li>用户 A 获得授权后，通过 <strong>MCVideo-7</strong> 参考点，将视频流发送到 <strong>媒体分发功能（MDF）</strong> [§6.2.2.3.3]。</li>
+<li>这个参考点承载上行视频媒体，具体协议栈在 Stage 3 定义。</li>
+</ul>
+</li>
+<li>
+<p><strong>下行分发</strong>：</p>
+<ul>
+<li><strong>单播用户</strong>：如果用户 B 使用单播接收，MDF 会通过 <strong>MCVideo-7</strong> 参考点，单独将视频流复制并发送给 B [§6.2.2.3.3]。</li>
+<li><strong>多播用户</strong>：如果用户 C、D、E 都在同一个多播组中，MDF 通过 <strong>MCVideo-8</strong> 参考点，使用 IP 多播一次性发送视频流，网络只传一份数据，节省带宽 [§6.2.2.3.3]。</li>
+</ul>
+</li>
+<li>
+<p><strong>结束呼叫</strong>：</p>
+<ul>
+<li>当用户 A 结束视频，或服务器发起释放时，<strong>组呼释放请求（Group Call Release Request）</strong>会被发送给所有参与方 [§7.1.2.2.5]。</li>
+<li>传输控制相关的资源也会被释放 [§7.7]。</li>
+</ul>
+</li>
+</ol>
+<h2 id="5">5. 关键时刻的能力<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
+<p>除了基本的组呼，TS 23.281 还定义了一些在紧急和商业场景中至关重要的功能。</p>
+<h3 id="51">5.1 紧急视频与优先级<a class="headerlink" href="#51" title="Permanent link">&para;</a></h3>
+<p>在紧急情况下（如火灾、袭击），视频呼叫可以携带<strong>请求优先级（Requested Priority）</strong> [§7.1.2.2.1]。
+*   传输控制服务器会根据优先级决定谁先获得上行带宽。低优先级的视频流可能会被阻止发送，或者被降质处理 [§7.7]。
+*   支持<strong>广播组呼（Broadcast Group Call）</strong>，允许单向大规模分发，例如指挥中心向所有警员推送现场航拍画面 [§7.1.2.2.1]。</p>
+<h3 id="52-video-pull">5.2 视频拉取 (Video Pull)<a class="headerlink" href="#52-video-pull" title="Permanent link">&para;</a></h3>
+<p><img alt="图 4" src="../figs/23281-%E5%9B%BE4_%E8%A7%86%E9%A2%91%E6%8B%89%E5%8F%96%E4%B8%8E%E6%8E%A8%E9%80%81.svg" /></p>
+<p><em>图 4 · 视频拉取 vs 视频推送：调度台主动要画面 vs 前端主动传画面。</em></p>
+<ul>
+<li><strong>场景</strong>：调度台想实时查看某个固定监控点或特定警员的画面，而不是等警员主动发。</li>
+<li><strong>流程</strong>：<ol>
+<li>接收方（调度台）发送<strong>私有呼叫请求</strong>，类型为 Video Pull [§7.3.2.2]。</li>
+<li>如果是从<strong>服务器</strong>拉取（如回放存储视频），请求中会包含<strong>文件 URL（File URL）</strong> [§7.3.2.2.1]。</li>
+<li>如果是从<strong>另一个客户端</strong>拉取（一对一监控），则是一个受限的私有呼叫，只有被叫方（视频源）可以发送视频，主叫方只能看 [§7.3.2.3.1]。</li>
+<li>视频传输完成后，发送<strong>拉取完成请求（Pull Complete Request）</strong>结束会话 [§7.3.2.2.3]。</li>
+</ol>
+</li>
+</ul>
+<h3 id="53-video-push">5.3 视频推送 (Video Push)<a class="headerlink" href="#53-video-push" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>场景</strong>：一线警员发现嫌疑人，主动将摄像头画面推给指挥中心。</li>
+<li><strong>远程推送 (Remote Video Push)</strong>：这是一个高级功能。调度员可以命令警员 A 将画面推送给警员 B，或者推送给整个小组 [§7.4.2.1]。<ul>
+<li>请求中包含<strong>源 MCVideo ID</strong>（谁发）和<strong>目的 MCVideo ID/Group ID</strong>（发给谁） [§7.4.2.2.1]。</li>
+<li>这实现了“三方控制”：A 发起，B 发送，C 接收。</li>
+</ul>
+</li>
+</ul>
+<h3 id="54-off-network">5.4 离网模式 (Off-Network)<a class="headerlink" href="#54-off-network" title="Permanent link">&para;</a></h3>
+<ul>
+<li>TS 23.281 也规定了<strong>离网模式</strong>下的行为 [§1]。</li>
+<li>在离网模式下，没有核心网服务器。MCVideo 客户端之间通过 ProSe（基于邻近的服务）直接通信，群组通信走 ProSe 组播地址 [§7.18]。</li>
+<li>功能受限：没有集中式的服务器与传输控制，拉取/推送等流程由终端侧按 ProSe 规则完成 [§7.18]。</li>
+</ul>
+<h3 id="55">5.5 视频适配与带宽管理<a class="headerlink" href="#55" title="Permanent link">&para;</a></h3>
+<ul>
+<li>当带宽不足时，传输控制机制会介入。</li>
+<li>服务器可以拒绝低优先级请求，或者（在实现层面）指示客户端降低视频码率/分辨率 [§7.7]。</li>
+<li>MDF 负责确保媒体流的正确分发，它可以根据接收端的网络状况，通过不同的 IP 地址和端口策略来优化传输 [§6.2.2.3.3]。</li>
+</ul>
+<h2 id="6-mcvideo-vs-mcptt">6. MCVideo 架构 vs MCPTT 架构的区别<a class="headerlink" href="#6-mcvideo-vs-mcptt" title="Permanent link">&para;</a></h2>
+<p>很多读者熟悉 MCPTT（关键任务对讲），可能会问：视频架构和语音架构有什么区别？</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">特性</th>
+<th style="text-align: left;">MCPTT (语音)</th>
+<th style="text-align: left;">MCVideo (视频)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>核心资源</strong></td>
+<td style="text-align: left;"><strong>地板 (Floor)</strong>：谁拿话筒谁说话（MCPTT 术语，见 TS 23.379 §10.9）</td>
+<td style="text-align: left;"><strong>上行媒体传输权</strong>：谁有带宽权谁发画面 [§7.7]</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>媒体特性</strong></td>
+<td style="text-align: left;">单一媒体流（音频）</td>
+<td style="text-align: left;">多路可选，高带宽消耗 [§1]</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>分发方式</strong></td>
+<td style="text-align: left;">主要是多播（组呼）</td>
+<td style="text-align: left;">多播 + 单播混合，支持拉/推/流 [§6.2.2.3.3]</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>交互模式</strong></td>
+<td style="text-align: left;">主要是一人发多收（对讲）</td>
+<td style="text-align: left;">支持一对一、一对多、多对一、多对多，支持拉取和推送 [§7.3, §7.4]</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>控制复杂度</strong></td>
+<td style="text-align: left;">相对较低，主要管理发言权</td>
+<td style="text-align: left;">高，需管理带宽、优先级、设备控制、文件存储 [§6.2.2.3.2, §7.7]</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>媒体面实体</strong></td>
+<td style="text-align: left;">通常由 GCS AS 或专用媒体服务器处理</td>
+<td style="text-align: left;">明确定义了 <strong>MDF (媒体分发功能)</strong>，可与信令服务器分离 [§6.2.2.3.3]</td>
+</tr>
+</tbody>
+</table>
+<p><strong>关键区别点</strong>：
+*   <strong>MCVideo 服务器</strong>不仅是信令中心，还紧密关联<strong>设备信息管理</strong>和<strong>功能别名控制</strong>，因为视频往往涉及摄像头、云台等硬件控制 [§6.2.2.3.2]。
+*   <strong>MDF 的独立性</strong>：在 MCVideo 中，明确将媒体分发功能（MDF）作为一个独立实体描述，强调其可以使用不同的 IP 地址，这与语音中媒体服务器往往与信令服务器绑定或紧密耦合的传统架构有所不同 [§6.2.2.3.3]。</p>
+<h2 id="7">7. 它不管什么（边界）<a class="headerlink" href="#7" title="Permanent link">&para;</a></h2>
+<p>为了避免误解，明确 TS 23.281 的<strong>非职责</strong>范围：</p>
+<ol>
+<li><strong>不管 Stage 1 需求细节</strong>：它不规定“视频清晰度必须达到 1080P”这类具体指标。这些在 TS 22.280/281 中定义 [§1]。</li>
+<li><strong>不管 Stage 3 协议细节</strong>：它不定义 SIP 消息的具体 URI 格式、HTTP 头字段的具体名称、RTP 负载格式。这些在 TS 24.281 等协议规范中定义。</li>
+<li><strong>不管编解码实现</strong>：它不规定使用 H.264 还是 H.265，也不规定具体的编码参数算法。它只定义信令中如何协商这些参数（通过 SDP） [§7.1.2.2.1]。</li>
+<li><strong>不管物理层接入</strong>：它不定义 LTE 空口如何传输视频包，也不定义 Wi-Fi 直连的具体物理机制。它假设底层 IP 传输是可用的 [§1]。</li>
+<li><strong>不管纯音频功能</strong>：虽然视频呼叫可能伴随音频，但 TS 23.281 专注于视频媒体。纯音频组呼由 MCPTT 规范（TS 23.379/24.379）处理。</li>
+</ol>
+<h2 id="8">8. 怎么往下读<a class="headerlink" href="#8" title="Permanent link">&para;</a></h2>
+<p>如果你想深入理解 MCVideo，建议按照以下路径阅读：</p>
+<ol>
+<li><strong>本篇 (TS 23.281)</strong>：理解架构、功能实体、信息流。这是“骨架”。</li>
+<li><strong>TS 23.280 (关键任务服务通用架构)</strong>：理解 MCVideo 如何嵌入到更大的 MCX 体系中，特别是与 GCS AS 的关系 [§6.2.2.3.2]。</li>
+<li><strong>TS 24.281 (MCVideo 协议)</strong>：查看具体的信令消息格式，如 SIP INVITE、HTTP POST 的具体字段。这是“血肉”。</li>
+<li><strong>TS 22.281 (MCVideo 需求)</strong>：查看业务需求，理解为什么架构要这样设计。这是“灵魂”。</li>
+</ol>
+<h3 id="_1">版本说明与来源<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>文档版本</strong>：3GPP TS 23.281 v20.5.1</li>
+<li><strong>发布版本</strong>：Release 20</li>
+<li><strong>主要参考</strong>：<ul>
+<li>TS 22.280: Mission Critical Services Common Requirements (MCCoRe)（通用需求）</li>
+<li>TS 22.281: Service requirements for mission critical video (MCVideo) service (视频特定需求)</li>
+<li>TS 23.280: Functional architecture for mission critical services (通用架构)</li>
+<li>TS 23.468: Group Communication System Enablers for LTE (GCSE_LTE)（MCVideo Server 是 GCS AS 的实例）</li>
+<li>TS 23.401: General Packet Radio Service (GPRS) enhancements for Evolved Universal Terrestrial Radio Access Network (E-UTRAN) access (EPC 架构)</li>
+</ul>
+</li>
+<li><strong>来源</strong>：本文基于 3GPP TS 23.281 v20.5.1 官方文本摘要及 whatthespec.net 抓取的关键条款解读。</li>
+</ul>
+<p><em>(注：文中提到的条款号如 [§7.1] 均指向 TS 23.281 v20.5.1 的对应章节。具体协议实现细节请以 Stage 3 规范为准。)</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.suggest", "search.highlight"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,2501 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="3GPP UAS、无人机通信、应急政策等知识沉淀">
+      
+      
+        <meta name="author" content="Alex">
+      
+      
+      
+        <link rel="prev" href="../22282/">
+      
+      
+        <link rel="next" href="../23379/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>TS 23.280 MCX 通用功能架构 - Alex 的知识库</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#3gpp-ts-23280-mcx" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="Alex 的知识库" class="md-header__button md-logo" aria-label="Alex 的知识库" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Alex 的知识库
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              TS 23.280 MCX 通用功能架构
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../3gpp-uas/" class="md-tabs__link">
+          
+  
+  
+  3GPP UAS
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../tracking/" class="md-tabs__link">
+          
+  
+  
+  跟踪平台
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  
+  MCX
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../emergency/" class="md-tabs__link">
+          
+  
+  
+  应急政策
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../free-api/config/" class="md-tabs__link">
+          
+  
+  
+  免费 API
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../about/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  关于
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Alex 的知识库" class="md-nav__button md-logo" aria-label="Alex 的知识库" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Alex 的知识库
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3GPP UAS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    3GPP UAS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../3gpp-uas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    总览
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../3gpp-uas/specs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    关键规范清单
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../3gpp-uas/isac-for-uav/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rel-20 ISAC for UAV 深度报告
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../3gpp-uas/tracking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    跟踪动态
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    跟踪平台
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    跟踪平台
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tracking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    总览
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../3gpp-uas/tracking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    跟踪动态
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tracking/policy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    低空政策跟踪
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tracking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MCX 规范跟踪
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MCX
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    MCX
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    总览
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../specs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    关键规范清单
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    逻辑架构
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../comparison/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3GPP vs 中国对照
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../emergency/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    应急通信视角
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tracking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MCX 规范跟踪
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    标准深入理解
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    标准深入理解
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    总览
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22280/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TS 22.280 MCCoRe 通用需求
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22179/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TS 22.179 MCPTT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22281/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TS 22.281 MCVideo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22282/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TS 22.282 MCData
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TS 23.280 MCX 通用功能架构
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TS 23.280 MCX 通用功能架构
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 它要解决什么问题
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-mcx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 它在 MCX 家族中的位置
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 核心概念大白话
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 核心概念大白话">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-functional-entities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 功能实体（Functional Entities）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-reference-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 参考点（Reference Points）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 身份标识
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 一次组呼在架构里怎么走
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 关键时刻的能力
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 关键时刻的能力">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-emergency-alert" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 紧急告警（Emergency Alert）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-affiliationde-affiliation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 群组归属与取消归属（Affiliation/De-affiliation）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-recording-replay" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 录音与回放（Recording &amp; Replay）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-off-network-roaming" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4 离网与漫游（Off-network &amp; Roaming）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-vs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 通用架构 vs 各业务架构的区别
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. 它不管什么（边界）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. 怎么往下读
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        来源与版本
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../23379/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TS 23.379 MCPTT 架构
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../23281/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TS 23.281 MCVideo 架构
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../23282/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TS 23.282 MCData 架构
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_8" id="__nav_4_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    问答
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    问答
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq-mcptt-vs-intercom/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MCPTT vs 普通对讲机
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq-mcx-vs-5g-slicing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MCX 与 5G 切片
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq-mcx-qos-priority/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    QoS 优先级保障
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq-mcvideo-vs-video-call/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MCVideo vs 视频通话
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq-mcx-china-emergency/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    国内应急行业现状
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    应急政策
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    应急政策
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../emergency/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    总览
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../emergency/laws/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    法律法规
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    免费 API
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    免费 API
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../free-api/config/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    配置手册
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    关于
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 它要解决什么问题
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-mcx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 它在 MCX 家族中的位置
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 核心概念大白话
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 核心概念大白话">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-functional-entities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 功能实体（Functional Entities）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-reference-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 参考点（Reference Points）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 身份标识
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 一次组呼在架构里怎么走
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 关键时刻的能力
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 关键时刻的能力">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-emergency-alert" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 紧急告警（Emergency Alert）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-affiliationde-affiliation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 群组归属与取消归属（Affiliation/De-affiliation）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-recording-replay" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 录音与回放（Recording &amp; Replay）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-off-network-roaming" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4 离网与漫游（Off-network &amp; Roaming）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-vs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 通用架构 vs 各业务架构的区别
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. 它不管什么（边界）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. 怎么往下读
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        来源与版本
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="3gpp-ts-23280-mcx">3GPP TS 23.280 解读：MCX 通用功能架构——三套业务共用的一套“骨架”<a class="headerlink" href="#3gpp-ts-23280-mcx" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>版本：v1.0 ｜ 更新：2026-10-28 ｜ 基线：TS 23.280 v20.5.1（Rel-20）｜ 原文：whatthespec.net 抓取的关键条款</p>
+</blockquote>
+<p><strong>一句话总结：TS 23.280 是 MCX（关键任务通信）家族的“总装说明书”，它定义了 MCPTT（语音）、MCVideo（视频）和 MCData（数据）这三项业务如何共享同一套核心服务器、接口和管理逻辑，避免重复造轮子。</strong> [§1]</p>
+<hr />
+<h3 id="1">1. 它要解决什么问题<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<p>想象一下，你是一家大型应急通信系统的架构师。你需要为警察、消防员和铁路调度员提供三种不同的通信服务：
+1.  <strong>MCPTT</strong>（Mission Critical Push-To-Talk）：类似对讲机的语音通信，要求一键发起，毫秒级响应。
+2.  <strong>MCVideo</strong>：实时视频传输，用于现场监控。
+3.  <strong>MCData</strong>：结构化数据传输，如发送GPS位置、车辆状态或简单消息。</p>
+<p>如果让每个业务团队各自设计一套服务器架构、一套用户认证方式、一套群组管理机制，会发生什么？
+*   <strong>重复造轮子</strong>：三个团队都要写一遍“用户登录”、“群组管理”、“配置下发”的代码。
+*   <strong>运维噩梦</strong>：运维人员需要维护三套独立的服务器集群，接口不统一，调试困难。
+*   <strong>体验割裂</strong>：用户在一个设备上切换语音和视频时，可能会发现账号体系不通，群组列表不一致。</p>
+<p>TS 23.280 的出现就是为了终结这种混乱。它规定了一套<strong>通用功能架构（Common Functional Architecture）</strong>。这意味着，虽然语音、视频、数据在“怎么传媒体”上不同，但在“谁有资格传”、“传给谁”、“怎么管理群组”这些底层逻辑上，必须共用同一套“骨架”。 [§1] [§4]</p>
+<p>这套架构不仅服务于公共安全（如警察、消防），也适用于商业领域（如公用事业公司、铁路系统）。 [§1]</p>
+<h3 id="2-mcx">2. 它在 MCX 家族中的位置<a class="headerlink" href="#2-mcx" title="Permanent link">&para;</a></h3>
+<p>要理解 TS 23.280，先看它在 3GPP 标准体系中的层级：</p>
+<ul>
+<li><strong>Stage 1 (需求层)</strong>：TS 22.280 等文档定义了“我们要什么功能”（比如：要支持紧急呼叫、要区分优先级）。这是“做什么”。</li>
+<li><strong>Stage 2 (架构层 - 本文档)</strong>：<strong>TS 23.280</strong> 定义了“由哪些盒子组成，盒子之间怎么连”。这是“怎么做”的高层设计。它不关心具体的比特流怎么编码，只关心逻辑实体之间的交互。</li>
+<li><strong>Stage 3 (协议层)</strong>：TS 24 系列文档（如 TS 24.379 for MCPTT）定义了具体的信令消息格式（SIP/HTTP 报文的字段）。这是“怎么说”。</li>
+</ul>
+<p><strong>TS 23.280 与具体业务标准的分工：</strong>
+*   <strong>TS 23.280</strong>：定义<strong>通用服务核心（Common Services Core, CSC）</strong>。包括身份管理、群组管理、配置管理、录音管理等所有业务共用的功能。 [§7.3.1.1]
+*   <strong>TS 23.379 (MCPTT)</strong>：定义语音业务特有的功能，如语音媒体路由、组呼仲裁逻辑。
+*   <strong>TS 23.281 (MCVideo)</strong>：定义视频业务特有的功能，如视频编码策略、视频服务器逻辑。
+*   <strong>TS 23.282 (MCData)</strong>：定义数据业务特有的功能，如数据包优先级、数据转发逻辑。</p>
+<p>简单来说，TS 23.280 是“地基”和“水电煤”，而 23.379/23.281/23.282 是建在地基上的“具体房间”。 [§4]</p>
+<h3 id="3">3. 核心概念大白话<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<p>为了读懂后面的架构图，我们需要先搞懂几个关键术语。TS 23.280 将系统分为两个平面：<strong>应用平面（Application Plane）</strong> 和 <strong>信令控制平面（Signalling Control Plane）</strong>。 [§7.3.1.2]</p>
+<h4 id="31-functional-entities">3.1 功能实体（Functional Entities）<a class="headerlink" href="#31-functional-entities" title="Permanent link">&para;</a></h4>
+<p>别被这个词吓到，它们其实就是逻辑上的“角色”或“盒子”。</p>
+<p><strong>A. 通用服务核心（CSC）中的实体：</strong>
+这些是“公共部门”，所有业务共用。
+*   <strong>Identity Management Server (IdMS，身份管理服务器)</strong>：
+    *   <strong>大白话</strong>：这是“门卫”兼“身份证管理局”。它负责验证你是谁（认证），并确认你有权访问哪些服务。它不直接参与通话，但它决定你能不能进门。 [§7.4.2.2.6]
+*   <strong>Group Management Server (GMS，群组管理服务器)</strong>：
+    *   <strong>大白话</strong>：这是“社区居委会”。它管理群组（Group）。比如，“第1消防中队”是一个群组。GMS 知道谁在这个群里，群组的策略是什么（比如谁有优先级）。所有 MC 业务（语音、视频、数据）都依赖 GMS 来识别“组”。 [§7.4.2.2.4]
+*   <strong>Configuration Management Server (CMS，配置管理服务器)</strong>：
+    *   <strong>大白话</strong>：这是“总部行政办”。它负责下发配置信息。比如，告诉终端：“你的录音功能是开还是关？”、“你的显示别名是什么？”。它还管理录音回放的相关配置。 [§7.4.2.2.2]</p>
+<p><strong>B. MC 服务特定实体：</strong>
+这些是“专业部门”，每个业务有自己的。
+*   <strong>MC Service Server (MC 服务服务器)</strong>：
+    *   <strong>大白话</strong>：这是“业务前台”。对于 MCPTT，它是语音服务器；对于 MCVideo，它是视频服务器。它负责处理具体的业务请求，比如“发起组呼”、“建立视频流”。它是 GCS AS（Group Communication System Application Server）的一种实例化。 [§7.3.1.2]
+*   <strong>MC Service Client (MC 服务客户端)</strong>：
+    *   <strong>大白话</strong>：这就是你手里的手机或手持终端里的 App。它包含处理语音、视频或数据的逻辑。 [§7.3.1.2]</p>
+<p><strong>C. 辅助实体（可选）：</strong>
+*   <strong>Recording Server (录音/录像服务器)</strong>：负责存储通话或视频记录。 [§7.3.1.2 NOTE 2]
+*   <strong>ACM (Administrative Configuration Management，行政配置管理)</strong>：用于运营商或管理员远程配置用户终端，不是必须的，只有部署了该功能才需要。 [§7.3.1.2 NOTE 1]</p>
+<h4 id="32-reference-points">3.2 参考点（Reference Points）<a class="headerlink" href="#32-reference-points" title="Permanent link">&para;</a></h4>
+<p>参考点就是“接口”。在 TS 23.280 中，接口被命名为 <strong>CSC-x</strong>（Common Services Core - x）。</p>
+<ul>
+<li><strong>CSC-1</strong>：连接 <strong>身份管理客户端</strong> 和 <strong>身份管理服务器 (IdMS)</strong>。用于认证。 [§7.5.2.2]</li>
+<li><strong>CSC-2</strong>：连接 <strong>群组管理客户端</strong> 和 <strong>群组管理服务器 (GMS)</strong>。用于同步群组列表和策略。 [§7.5.2.3]</li>
+<li><strong>CSC-3</strong>：连接 <strong>MC 服务服务器</strong> 和 <strong>群组管理服务器 (GMS)</strong>。服务器需要知道群组信息来处理呼叫，所以通过 CSC-3 去 GMS 查资料。 [§7.5.2.4]</li>
+<li><strong>CSC-4</strong>：连接 <strong>配置管理客户端</strong> 和 <strong>配置管理服务器 (CMS)</strong>。用于下发配置。 [§7.5.2.5]</li>
+</ul>
+<p><strong>关键点</strong>：这些接口底层通常跑的是 SIP（信令）和 HTTP（配置/数据）协议。 [§7.5.2.3]</p>
+<h4 id="33">3.3 身份标识<a class="headerlink" href="#33" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>MC Service ID</strong>：标识具体的 MC 服务实例（比如“北京消防MCPTT系统”）。</li>
+<li><strong>MC Service Group ID</strong>：标识具体的群组（比如“第1中队”）。</li>
+<li><strong>Functional Alias</strong>：功能别名。比如，一个消防员可能叫“张三”，但在紧急呼叫中，他的身份是“队长”或“指挥员”。Functional Alias 允许在通信中显示角色而非真名。 [§10.10.1.1A.1]</li>
+</ul>
+<h3 id="4">4. 一次组呼在架构里怎么走<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
+<p>让我们用一个具体的场景来串联这些概念：<strong>消防员“张三”在隧道里发起一个针对“第1中队”的紧急语音组呼。</strong></p>
+<p><img alt="图 1" src="../figs/23280-%E5%9B%BE1_%E9%80%9A%E7%94%A8%E5%8A%9F%E8%83%BD%E6%A8%A1%E5%9E%8B.svg" /></p>
+<p><em>图 1 · 通用功能模型：应用平面、信令控制平面、媒体平面三层结构。</em></p>
+<p><strong>步骤分解：</strong></p>
+<ol>
+<li><strong>归属与预建立（Affiliation &amp; Pre-establishment）</strong><ul>
+<li>张三开机后，他的手机（MC Service Client）首先通过 <strong>CSC-1</strong> 与 <strong>IdMS</strong> 交互，完成身份认证。 [§7.5.2.2]</li>
+<li>接着，手机通过 <strong>CSC-2</strong> 与 <strong>GMS</strong> 交互，下载“第1中队”的群组配置和策略。手机现在“知道”自己属于哪个群，群里有哪些人。 [§7.5.2.3]</li>
+<li><em>注：在推按通话（PTT）之前，MC 系统通常会进行“预建立”，即在服务器端预留资源，确保按下按钮时能瞬间接通。</em></li>
+</ul>
+</li>
+</ol>
+<p><img alt="图 2" src="../figs/23280-%E5%9B%BE2_%E5%BD%92%E5%B1%9E%E6%B5%81%E7%A8%8B.svg" /></p>
+<p><em>图 2 · 归属流程：登录鉴权 → 归属到组 → 下发组配置与权限 → 预建立会话就绪。</em></p>
+<ol>
+<li>
+<p><strong>发起组呼（Initiation）</strong></p>
+<ul>
+<li>张三按下按钮。手机（MC Service Client）向 <strong>MC Service Server</strong>（语音服务器）发送组呼请求。</li>
+<li>这个请求包含：目标群组 ID（“第1中队”）、发起者 ID（张三）、以及可能的优先级标记。 [§10.8.2.1]</li>
+</ul>
+</li>
+<li>
+<p><strong>服务器仲裁与群组查询（Server Logic）</strong></p>
+<ul>
+<li><strong>MC Service Server</strong> 收到请求后，它需要确认：“第1中队”现在有多少人在线？谁有更高优先级？</li>
+<li>服务器通过 <strong>CSC-3</strong> 接口查询 <strong>GMS</strong>，获取群组的最新状态和媒体策略。 [§7.5.2.4]</li>
+<li>如果张三的优先级最高，或者当前没有更高优先级的通话，服务器批准呼叫。</li>
+</ul>
+</li>
+<li>
+<p><strong>媒体面建立（Media Setup）</strong></p>
+<ul>
+<li>服务器向群组内其他成员的手机发送呼叫邀请（通过信令控制平面）。</li>
+<li>其他手机响应，媒体面建立，语音开始在终端之间传输。TS 23.280 主要关注信令和控制逻辑，媒体面具体怎么传由各业务标准规定。 [§4]</li>
+</ul>
+</li>
+</ol>
+<p><img alt="图 3" src="../figs/23280-%E5%9B%BE3_%E5%9C%A8%E7%BD%91%E9%83%A8%E7%BD%B2.svg" /></p>
+<p><em>图 3 · 在网部署：终端 → 无线接入 → 核心网 → MC 服务服务器 → 对端 MC 系统。</em></p>
+<p><img alt="图 4" src="../figs/23280-%E5%9B%BE4_%E7%BB%84%E5%91%BC%E5%BB%BA%E7%AB%8B%E6%B5%81%E7%A8%8B.svg" /></p>
+<p><em>图 4 · 组呼建立流程：发起 → 服务器核对权限与优先级 → 媒体面建立 → 组内成员接通。</em></p>
+<p><strong>为什么这套架构重要？</strong>
+因为如果张三想切换到视频模式，他不需要重新认证，也不需要重新下载群组列表。他的手机已经通过 CSC-1 和 CSC-2 完成了通用部分的初始化。他只需要向 <strong>MCVideo Server</strong> 发起视频请求，而 MCVideo Server 同样可以通过 CSC-3 查询同一个 <strong>GMS</strong> 来获取“第1中队”的信息。这就是“共用骨架”的好处。 [§1] [§4]</p>
+<h3 id="5">5. 关键时刻的能力<a class="headerlink" href="#5" title="Permanent link">&para;</a></h3>
+<p>TS 23.280 定义了一些在紧急情况下至关重要的通用流程。</p>
+<h4 id="51-emergency-alert">5.1 紧急告警（Emergency Alert）<a class="headerlink" href="#51-emergency-alert" title="Permanent link">&para;</a></h4>
+<p>当发生火灾或袭击时，需要向整个区域或特定群组发出警报。
+*   <strong>流程</strong>：MC Service Client 发送 <strong>Emergency Alert Request</strong> 给 MC Service Server。 [§10.10.1.1A.1]
+*   <strong>信息要素</strong>：
+    *   <code>MC service ID</code>：谁发的告警。
+    *   <code>Functional alias</code>：告警者的角色（如“指挥官”）。
+    *   <code>MC service group ID</code>：目标群组。
+    *   <code>Location</code>：告警源的位置（如果可用）。 [§10.10.1.1A.1]
+*   <strong>取消告警</strong>：如果误报或危险解除，可以发送 <strong>Emergency Alert Cancel Request</strong>，包含要取消的告警 ID 和范围。 [§10.10.1.1A.3]
+*   <strong>关键点</strong>：这个流程是三套业务共用的。无论是语音警铃、视频闪烁还是数据弹窗，底层都走这套 CSC 逻辑。 [§10.10.1.1]</p>
+<h4 id="52-affiliationde-affiliation">5.2 群组归属与取消归属（Affiliation/De-affiliation）<a class="headerlink" href="#52-affiliationde-affiliation" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>情景</strong>：一名警察从“巡逻组”转到“追捕组”。</li>
+<li><strong>流程</strong>：<ol>
+<li>客户端发送 <strong>Affiliation Request</strong>，包含新群组 ID 列表。 [§10.8.2.1]</li>
+<li>如果涉及跨系统（比如从 A 运营商系统转到 B 系统），MC Service Server 之间会通过 <strong>CSC</strong> 接口交互，确认对方系统中该群组的合法性。 [§10.8.2.2]</li>
+<li>服务器返回 <strong>Affiliation Response</strong>，指示每个群组 ID 的加入状态。 [§10.8.2.3]</li>
+<li>如果是离开群组，发送 <strong>De-affiliation Request</strong>，可以指定是仅针对当前客户端，还是针对所有关联设备。 [§10.8.2.6]</li>
+</ol>
+</li>
+</ul>
+<h4 id="53-recording-replay">5.3 录音与回放（Recording &amp; Replay）<a class="headerlink" href="#53-recording-replay" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>配置</strong>：CMS（配置管理服务器）存储哪些通话需要被录音的策略。 [§7.4.2.2.2]</li>
+<li><strong>实体</strong>：<ul>
+<li><strong>Recording Server</strong>：存储媒体数据。</li>
+<li><strong>Replay Client</strong>：用于管理员或授权用户回放录音/录像的客户端。 [§7.3.1.2 NOTE 2]</li>
+</ul>
+</li>
+<li><strong>流程</strong>：虽然具体的媒体存储协议不在 TS 23.280 详细定义，但它规定了管理录音配置的接口（如 CSC-4 用于更新录音配置）。 [§7.5.2.5]</li>
+</ul>
+<h4 id="54-off-network-roaming">5.4 离网与漫游（Off-network &amp; Roaming）<a class="headerlink" href="#54-off-network-roaming" title="Permanent link">&para;</a></h4>
+<ul>
+<li>TS 23.280 主要关注 <strong>On-network</strong>（在网）场景，即通过 3GPP 网络（E-UTRAN/EPC）接入。 [§1]</li>
+<li>但也提到了 <strong>MC Gateway UE</strong>，允许非 3GPP 设备（如 Wi-Fi 终端或特定专网设备）通过网关接入 MC 系统。 [§4]</li>
+<li>对于非 3GPP 接入，标准不额外指定新功能，意味着核心逻辑保持一致，只是接入方式不同。 [§1]</li>
+</ul>
+<h3 id="6-vs">6. 通用架构 vs 各业务架构的区别<a class="headerlink" href="#6-vs" title="Permanent link">&para;</a></h3>
+<p>这是理解 TS 23.280 最关键的部分。很多读者会混淆“谁管什么”。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">功能领域</th>
+<th style="text-align: left;">TS 23.280 (通用)</th>
+<th style="text-align: left;">TS 23.379 (MCPTT)</th>
+<th style="text-align: left;">TS 23.281 (MCVideo)</th>
+<th style="text-align: left;">TS 23.282 (MCData)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>身份认证</strong></td>
+<td style="text-align: left;"><strong>定义 IdMS 和 CSC-1 接口</strong></td>
+<td style="text-align: left;">使用 IdMS 进行语音用户认证</td>
+<td style="text-align: left;">使用 IdMS 进行视频用户认证</td>
+<td style="text-align: left;">使用 IdMS 进行数据用户认证</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>群组管理</strong></td>
+<td style="text-align: left;"><strong>定义 GMS 和 CSC-2/3 接口</strong>，存储群组列表和基础策略</td>
+<td style="text-align: left;">使用 GMS 获取群组媒体策略（如音量、编解码）</td>
+<td style="text-align: left;">使用 GMS 获取群组视频策略（如分辨率、帧率）</td>
+<td style="text-align: left;">使用 GMS 获取群组数据策略（如 QoS 等级）</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>配置管理</strong></td>
+<td style="text-align: left;"><strong>定义 CMS 和 CSC-4 接口</strong>，下发通用配置（如别名、录音开关）</td>
+<td style="text-align: left;">下发语音特定配置（如 PTT 按键行为）</td>
+<td style="text-align: left;">下发视频特定配置（如摄像头参数）</td>
+<td style="text-align: left;">下发数据特定配置（如数据包大小）</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>呼叫控制</strong></td>
+<td style="text-align: left;">定义通用的紧急告警、归属流程</td>
+<td style="text-align: left;"><strong>定义语音组呼/私呼的详细信令流、仲裁算法、媒体路由</strong></td>
+<td style="text-align: left;"><strong>定义视频会话建立、切换、媒体流控制</strong></td>
+<td style="text-align: left;"><strong>定义数据会话建立、数据包转发逻辑</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>媒体处理</strong></td>
+<td style="text-align: left;">不涉及具体媒体编解码</td>
+<td style="text-align: left;">定义语音编解码器选择、回声消除等</td>
+<td style="text-align: left;">定义视频编解码器选择、H.264/HEVC 等</td>
+<td style="text-align: left;">定义数据格式（XML/JSON 等）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>核心区别总结：</strong>
+*   <strong>TS 23.280</strong> 是“公共基础设施”。它确保所有 MC 业务在“人”和“组”的管理上是统一的。例如，你在 MCPTT 里看到的“第1中队”成员列表，和在 MCVideo 里看到的，应该来自同一个 GMS，保持一致。 [§7.3.1.1]
+*   <strong>TS 23.379/281/282</strong> 是“专业应用”。它们解决的是“怎么把声音/画面/数据高效、可靠地传过去”的问题。 [§4]</p>
+<p>如果 TS 23.280 没做好，你的语音和视频系统就会变成两个孤立的岛，用户需要分别登录、分别管理群组，这在紧急情况下是致命的。</p>
+<h3 id="7">7. 它不管什么（边界）<a class="headerlink" href="#7" title="Permanent link">&para;</a></h3>
+<p>明确 TS 23.280 <strong>不</strong> 负责的事项，有助于避免混淆：</p>
+<ol>
+<li><strong>不管 Stage 1 需求细节</strong>：<ul>
+<li>它不规定“延迟必须小于 100ms”或“必须支持 AES-256 加密”。这些在 TS 22.280 等需求文档中定义。TS 23.280 只是提供实现这些需求的架构框架。 [§1]</li>
+</ul>
+</li>
+<li><strong>不管 Stage 3 具体协议消息</strong>：<ul>
+<li>它不定义 SIP INVITE 报文里具体哪个字段填什么值。它只说“CSC-2 接口使用 SIP-1 和 SIP-2 参考点”。具体的 SIP URI 格式、HTTP Header 定义在 TS 24 系列文档中。 [§7.5.2.3]</li>
+</ul>
+</li>
+<li><strong>不管物理实现选型</strong>：<ul>
+<li>它不规定服务器必须用 Linux 还是 Windows，数据库必须用 Oracle 还是 MySQL。它只定义逻辑实体和功能。 [§7.4.1]</li>
+</ul>
+</li>
+<li><strong>不管非 3GPP 接入的细节</strong>：<ul>
+<li>虽然提到了 MC Gateway UE，但没有为非 3GPP 接入定义额外的功能特性。非 3GPP 接入的具体实现由厂商或特定行业标准决定，只要符合 TS 23.280 定义的接口逻辑即可。 [§1]</li>
+</ul>
+</li>
+<li><strong>不管具体的媒体编解码算法</strong>：<ul>
+<li>它不关心是用 EVS 还是 AMR 编码语音，是用 H.264 还是 H.265 编码视频。这些是业务特定标准（23.379/23.281）关注的。 [§4]</li>
+</ul>
+</li>
+</ol>
+<h3 id="8">8. 怎么往下读<a class="headerlink" href="#8" title="Permanent link">&para;</a></h3>
+<p>如果你是一个新入行的通信工程师或架构师，建议按以下路径阅读 TS 23.280 及其相关文档：</p>
+<ol>
+<li>
+<p><strong>精读本文档（TS 23.280）</strong>：</p>
+<ul>
+<li>重点看 <strong>Chapter 7 (Architecture)</strong> 和 <strong>Chapter 10 (Procedures)</strong>。</li>
+<li>画出 <strong>Figure 7.3.1.2-1</strong>，并尝试标注出 CSC-1 到 CSC-4 的流向。</li>
+<li>理解 <strong>IdMS, GMS, CMS</strong> 这三个核心服务器的职责边界。</li>
+<li>仔细阅读 <strong>10.8 (Affiliation)</strong> 和 <strong>10.10 (Emergency Alert)</strong> 的信息流表，理解关键字段（如 MC service ID, Group ID, Location）的含义。</li>
+</ul>
+</li>
+<li>
+<p><strong>结合业务标准阅读</strong>：</p>
+<ul>
+<li>如果你主要关注语音，读完 23.280 后，立即去读 <strong>TS 23.379</strong>。注意看它如何引用 23.280 中的 GMS 和 CMS。</li>
+<li>如果你关注视频，去读 <strong>TS 23.281</strong>。</li>
+<li>你会发现，业务标准中关于“群组”和“身份”的部分，都会指向 23.280 的定义。</li>
+</ul>
+</li>
+<li>
+<p><strong>深入协议层（可选，高阶）</strong>：</p>
+<ul>
+<li>当需要开发或调试时，再去看 <strong>TS 24.379</strong> (MCPTT Signalling) 等文档，查看具体的 SIP/HTTP 消息示例。</li>
+</ul>
+</li>
+<li>
+<p><strong>版本说明</strong>：</p>
+<ul>
+<li>本文解读基于 <strong>3GPP TS 23.280 v20.5.1, Release 20</strong>。</li>
+<li>注意：MCX 标准仍在演进中，阅读旧版本（如 Rel-15/16）时，需留意部分接口和行为可能有所不同，具体差异见各标准附录的变更历史。</li>
+</ul>
+</li>
+</ol>
+<h3 id="_1">来源与版本<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>标准文档</strong>：3GPP TS 23.280 V20.5.1（2026-10）</li>
+<li><strong>标题</strong>：Mission critical communication services (MCX); Common functional architecture</li>
+<li><strong>相关文档</strong>：<ul>
+<li>TS 22.280: Mission Critical Services Common Requirements (MCCoRe)</li>
+<li>TS 23.379: Mission critical push-to-talk (MCPTT); Architecture</li>
+<li>TS 23.281: Mission critical video (MCVideo); Architecture</li>
+<li>TS 23.282: Mission critical data (MCData); Architecture</li>
+<li>TS 33.180: Security of the Mission Critical (MC) service（CSC-1 接口在此定义）</li>
+</ul>
+</li>
+</ul>
+<p><em>(注：文中引用的条款号 [§x.x] 对应 TS 23.280 v20.5.1 的章节结构。)</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.suggest", "search.highlight"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
