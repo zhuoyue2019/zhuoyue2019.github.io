@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="210" viewBox="0 0 800 210" font-family="Noto Sans CJK SC, sans-serif" font-size="15">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<defs><marker id="arr" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><polygon points="0 0, 10 4, 0 8" fill="#000000"/></marker></defs>
+<text x="20" y="34" font-size="19" font-weight="bold">图 2 · A2X 服务：飞机到一切</text>
+<rect x="20" y="110" width="170" height="56" rx="6" fill="#ffffff" stroke="#000000" stroke-width="1.6"/>
+<text x="105.0" y="129.0" text-anchor="middle" fill="#000000">飞机到飞机</text>
+<text x="105.0" y="149.0" text-anchor="middle" fill="#000000">A2A</text>
+<rect x="230" y="110" width="170" height="56" rx="6" fill="#ffffff" stroke="#000000" stroke-width="1.6"/>
+<text x="315.0" y="129.0" text-anchor="middle" fill="#000000">飞机到地面</text>
+<text x="315.0" y="149.0" text-anchor="middle" fill="#000000">A2G</text>
+<rect x="440" y="110" width="170" height="56" rx="6" fill="#ffffff" stroke="#000000" stroke-width="1.6"/>
+<text x="525.0" y="129.0" text-anchor="middle" fill="#000000">飞机到网络</text>
+<text x="525.0" y="149.0" text-anchor="middle" fill="#000000">A2N</text>
+<line x1="190" y1="138" x2="230" y2="138" stroke="#000000" stroke-width="1.6" marker-end="url(#arr)"/>
+<line x1="400" y1="138" x2="440" y2="138" stroke="#000000" stroke-width="1.6" marker-end="url(#arr)"/>
+</svg>

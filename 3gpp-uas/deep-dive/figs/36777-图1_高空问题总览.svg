@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="210" viewBox="0 0 800 210" font-family="Noto Sans CJK SC, sans-serif" font-size="15">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<defs><marker id="arr" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><polygon points="0 0, 10 4, 0 8" fill="#000000"/></marker></defs>
+<text x="20" y="34" font-size="19" font-weight="bold">图 1 · 高空问题总览：地面手机 vs 空中无人机</text>
+<rect x="20" y="110" width="170" height="56" rx="6" fill="#ffffff" stroke="#000000" stroke-width="1.6"/>
+<text x="105.0" y="129.0" text-anchor="middle" fill="#000000">地面手机</text>
+<text x="105.0" y="149.0" text-anchor="middle" fill="#000000">只看到 1-2 个基站</text>
+<rect x="230" y="110" width="170" height="56" rx="6" fill="#ffffff" stroke="#000000" stroke-width="1.6"/>
+<text x="315.0" y="129.0" text-anchor="middle" fill="#000000">空中无人机</text>
+<text x="315.0" y="149.0" text-anchor="middle" fill="#000000">同时看到几十个基站</text>
+<line x1="190" y1="138" x2="230" y2="138" stroke="#000000" stroke-width="1.6" marker-end="url(#arr)"/>
+</svg>

@@ -1,0 +1,2873 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="3GPP UAS、无人机通信、应急政策等知识沉淀">
+      
+      
+        <meta name="author" content="Alex">
+      
+      
+      
+        <link rel="prev" href="../33256/">
+      
+      
+        <link rel="next" href="../../../tracking/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>TR 36.777 无人机增强支持研究 - Alex 的知识库</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#3gpp-tr-36777" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="Alex 的知识库" class="md-header__button md-logo" aria-label="Alex 的知识库" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Alex 的知识库
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              TR 36.777 无人机增强支持研究
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  
+  3GPP UAS
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../tracking/" class="md-tabs__link">
+          
+  
+  
+  跟踪平台
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../mcx/" class="md-tabs__link">
+          
+  
+  
+  MCX
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../emergency/" class="md-tabs__link">
+          
+  
+  
+  应急政策
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../free-api/config/" class="md-tabs__link">
+          
+  
+  
+  免费 API
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../about/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  关于
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Alex 的知识库" class="md-nav__button md-logo" aria-label="Alex 的知识库" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Alex 的知识库
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3GPP UAS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    3GPP UAS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    总览
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../specs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    关键规范清单
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../isac-for-uav/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rel-20 ISAC for UAV 深度报告
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tracking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    跟踪动态
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    标准深入理解
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    标准深入理解
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    总览
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22125/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TS 22.125 UAS 业务需求
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../23256/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TS 23.256 UAS 架构
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../33256/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TS 33.256 UAS 安全
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TR 36.777 无人机增强支持研究
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TR 36.777 无人机增强支持研究
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 它要解决什么问题
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-uas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 它在 UAS 家族中的位置
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 核心概念大白话
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 干扰问题是怎么来的
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 干扰问题是怎么来的">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-los" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 视距传播（LoS）是罪魁祸首
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 下行干扰：无人机“听不清”
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 上行干扰：无人机“吵翻天”
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4 移动性噩梦：频繁切换与乒乓
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 研究给出的缓解办法
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 研究给出的缓解办法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 干扰检测：先知道谁在捣乱
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 下行干扰缓解：让无人机听得清
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 上行干扰缓解：让无人机别太吵
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4 移动性优化：减少无效切换
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 这份研究带来了什么
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. 它不管什么（边界）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. 怎么往下读
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        版本与来源
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    跟踪平台
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    跟踪平台
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tracking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    总览
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tracking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    跟踪动态
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tracking/policy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    低空政策跟踪
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mcx/tracking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MCX 规范跟踪
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MCX
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    MCX
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mcx/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    总览
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mcx/specs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    关键规范清单
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mcx/architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    逻辑架构
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mcx/comparison/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3GPP vs 中国对照
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mcx/emergency/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    应急通信视角
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mcx/tracking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MCX 规范跟踪
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    标准深入理解
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    标准深入理解
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mcx/deep-dive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    总览
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mcx/deep-dive/22280/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TS 22.280 MCCoRe 通用需求
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mcx/deep-dive/22179/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TS 22.179 MCPTT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mcx/deep-dive/22281/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TS 22.281 MCVideo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mcx/deep-dive/22282/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TS 22.282 MCData
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mcx/deep-dive/23280/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TS 23.280 MCX 通用功能架构
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mcx/deep-dive/23379/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TS 23.379 MCPTT 架构
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mcx/deep-dive/23281/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TS 23.281 MCVideo 架构
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mcx/deep-dive/23282/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TS 23.282 MCData 架构
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mcx/deep-dive/24379/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TS 24.379 MCPTT 协议
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mcx/deep-dive/24281/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TS 24.281 MCVideo 协议
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mcx/deep-dive/24282/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TS 24.282 MCData 协议
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mcx/deep-dive/24483/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TS 24.483 配置管理对象
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mcx/deep-dive/24484/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TS 24.484 配置管理
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mcx/deep-dive/33180/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TS 33.180 安全
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_8" id="__nav_4_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    问答
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    问答
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mcx/faq-mcptt-vs-intercom/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MCPTT vs 普通对讲机
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mcx/faq-mcx-vs-5g-slicing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MCX 与 5G 切片
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mcx/faq-mcx-qos-priority/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    QoS 优先级保障
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mcx/faq-mcvideo-vs-video-call/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MCVideo vs 视频通话
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mcx/faq-mcx-china-emergency/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    国内应急行业现状
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    应急政策
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    应急政策
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../emergency/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    总览
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../emergency/laws/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    法律法规
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    免费 API
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    免费 API
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../free-api/config/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    配置手册
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    关于
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 它要解决什么问题
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-uas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 它在 UAS 家族中的位置
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 核心概念大白话
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 干扰问题是怎么来的
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 干扰问题是怎么来的">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-los" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 视距传播（LoS）是罪魁祸首
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 下行干扰：无人机“听不清”
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 上行干扰：无人机“吵翻天”
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4 移动性噩梦：频繁切换与乒乓
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 研究给出的缓解办法
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 研究给出的缓解办法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 干扰检测：先知道谁在捣乱
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 下行干扰缓解：让无人机听得清
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 上行干扰缓解：让无人机别太吵
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4 移动性优化：减少无效切换
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 这份研究带来了什么
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. 它不管什么（边界）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. 怎么往下读
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        版本与来源
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="3gpp-tr-36777">3GPP TR 36.777 解读：无人机上天后，地面基站为什么会“看花眼”<a class="headerlink" href="#3gpp-tr-36777" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>版本：v1.0 ｜ 更新：2026-10-28 ｜ 基线：TR 36.777 v15.0.0（Rel-15，2017-12，已冻结；研究报告，非强制性规范）｜ 原文：whatthespec.net 抓取的关键条款（TR 36.777 为 3GPP 官方存档原文转换）</p>
+</blockquote>
+<p><strong>TR 36.777 是一份“体检报告”：它研究了无人机（UAV）飞上天后，现有的 LTE 网络会遇到哪些麻烦（主要是干扰和频繁切换），并列出了一些缓解办法；这些结论供后续版本参考，不是强制要求 [§1]。</strong></p>
+<hr />
+<h2 id="1">1. 它要解决什么问题<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<p>想象一下，你拿着手机走在街上。周围虽然有基站，但建筑物挡住了视线。你通常只能清晰看到最近的一两个基站，其他基站的信号被墙壁、树木削弱了。这就是 LTE 网络设计时的基本假设：<strong>大部分用户在地面，信号传播是非视距（Non-LoS）的，干扰相对可控。</strong></p>
+<p>现在，架无人机飞到了 300 米的高空 [§4.1]。
+这时候，情况完全变了：
+1.  <strong>视野大开</strong>：无人机没有遮挡，能直接“看见”周围几十个基站的信号。
+2.  <strong>下行干扰（别人吵你）</strong>：因为能看到太多基站，无人机同时收到很多基站的信号。虽然你想听服务基站的话，但周围那些基站的信号就像周围的噪音一样，让你的接收机很难分清哪个是主信号，哪个是干扰。
+3.  <strong>上行干扰（你吵别人）</strong>：无人机为了把信号传回地面，往往需要较大的发射功率。因为飞得高，它的信号能覆盖很广的区域，可能会同时干扰到周围好几个基站的其他用户。
+4.  <strong>切换频繁</strong>：因为信号变化快（飞得快、天线方向性影响），无人机可能一会儿觉得 A 基站信号好，一会儿觉得 B 基站信号好，导致频繁切换，甚至切换失败。</p>
+<p>TR 36.777 的核心任务，就是量化这些“看花眼”的现象，并找办法让网络适应这种新情况 [§1]。</p>
+<hr />
+<p><img alt="图 1" src="../figs/36777-%E5%9B%BE1_%E9%AB%98%E7%A9%BA%E9%97%AE%E9%A2%98%E6%80%BB%E8%A7%88.svg" /></p>
+<p><em>图 1 · 高空问题总览：地面手机 vs 空中无人机，看到的基站数量天差地别。</em></p>
+<h2 id="2-uas">2. 它在 UAS 家族中的位置<a class="headerlink" href="#2-uas" title="Permanent link">&para;</a></h2>
+<p>在 3GPP 的无人机（UAS, Unmanned Aerial Systems）标准家族中，TR 36.777 属于<strong>研究类报告（Study Report）</strong>。</p>
+<ul>
+<li><strong>不是强制规范</strong>：它不规定设备必须怎么做，而是记录“我们研究了什么，发现了什么，建议怎么做”。它是后续制定强制性规范（TS）的基础 [§1]。</li>
+<li><strong>聚焦无线接入网（RAN）</strong>：这份报告由 RAN1（物理层）和 RAN2（协议层）工作组主导，主要关注空口（Air Interface）的性能问题，比如信号怎么传、干扰怎么算 [§1]。</li>
+<li><strong>与核心网/业务需求的关系</strong>：<ul>
+<li>它<strong>不管</strong>业务需求（比如无人机要传多少兆的视频流），那是 TS 22.125 的事。</li>
+<li>它<strong>不管</strong>核心网架构（比如怎么鉴权、怎么计费），那是 TS 23.256 的事。</li>
+<li>它只关心：<strong>在现有的 LTE 架构下，无线信号层面怎么优化才能支撑这些业务。</strong></li>
+</ul>
+</li>
+</ul>
+<p>简单来说，TS 22.125 说“我要飞”，TS 23.256 说“怎么管飞行的车”，而 TR 36.777 说“车在上空跑，路面（无线电波）该怎么修才不堵车” [§1]。</p>
+<h2 id="3">3. 核心概念大白话<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
+<p>为了看懂后面的分析，先搞懂几个关键词：</p>
+<ul>
+<li><strong>空中 UE（Aerial UE）</strong>：就是无人机。在 LTE 术语里，它就是一个“飞在天上的用户终端”。</li>
+<li><strong>下行（DL）干扰</strong>：基站发信号给无人机。如果周围太多基站也在发信号，无人机就听不清自己的基站说什么。就像你在嘈杂的广场上听朋友说话，旁边太多人在聊天，干扰很大。</li>
+<li><strong>上行（UL）干扰</strong>：无人机发信号给基站。如果无人机功率太大，或者位置太高，它的信号可能会“溢出”，干扰到旁边基站正在接收的其他地面用户。就像你在 KTV 唱歌太大声，隔壁包间的人都听见了。</li>
+<li><strong>FD-MIMO（全维度 MIMO）</strong>：一种高级天线技术。基站有很多根天线，可以像手电筒聚光灯一样，把信号精准地“打”给特定的用户，同时把干扰“避开”。</li>
+<li><strong>定向天线</strong>：无人机自己用的天线。如果无人机也装上“聚光灯”天线，只对准服务基站，就能减少接收到的无关干扰，也能减少发射时的能量浪费。</li>
+<li><strong>CoMP（协同多点传输）</strong>：几个相邻基站“商量好”，一起发信号给用户，或者一起沉默（Muting），以减少干扰。</li>
+<li><strong>切换（Handover）</strong>：从一个基站的服务范围转到另一个基站的服务范围。就像你走路时，从 A 咖啡馆的 WiFi 切换到 B 咖啡馆的 WiFi。</li>
+</ul>
+<h2 id="4">4. 干扰问题是怎么来的<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
+<p>TR 36.777 花了大量篇幅分析干扰的来源。这里用大白话拆解一下物理原因：</p>
+<h3 id="41-los">4.1 视距传播（LoS）是罪魁祸首<a class="headerlink" href="#41-los" title="Permanent link">&para;</a></h3>
+<p>在地面，信号传播主要是“绕射”和“散射”，衰减很快。但在高空，信号传播主要是<strong>视距（Line-of-Sight）</strong>，也就是直线传播。
+*   <strong>后果</strong>：无人机能直接收到远处基站的信号，这些信号衰减得很小，强度很高。
+*   <strong>数据</strong>：研究显示，在 50 米以上的高度，无人机可能同时检测到多达 16 个基站的高强度干扰信号 [§6.1]。相比之下，地面用户通常只受 1-2 个邻区干扰。</p>
+<p><img alt="图 2" src="../figs/36777-%E5%9B%BE2_%E4%B8%8B%E8%A1%8C%E5%B9%B2%E6%89%B0.svg" /></p>
+<p><em>图 2 · 下行干扰：无人机同时收到多个基站的信号。</em></p>
+<h3 id="42">4.2 下行干扰：无人机“听不清”<a class="headerlink" href="#42" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>现象</strong>：由于接收到来自多个小区的强干扰，无人机的下行几何条件（Geometry）比地面用户差得多。统计学上，5% 分位数的下行几何条件显著劣于地面用户 [§6.2]。</li>
+<li><strong>影响</strong>：为了维持相同的吞吐量，网络需要分配更多的无线资源（如更多的子帧、更多的 MCS 级别）。如果无人机占比高，地面用户的资源就会被挤占，导致地面用户的吞吐量也下降 [§6.2]。</li>
+<li><strong>简单说</strong>：无人机不仅自己听不清，还“占着茅坑不拉屎”（占用资源但效率低），导致大家网速都变慢。</li>
+</ul>
+<h3 id="43">4.3 上行干扰：无人机“吵翻天”<a class="headerlink" href="#43" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>现象</strong>：上行链路中，无人机因为距离远，往往需要更高的发射功率。由于高空视距，这个强信号会辐射到周围多个基站。</li>
+<li><strong>对比</strong>：地面用户通常只干扰服务基站和相邻的一两个基站。但高空无人机可能同时干扰好多个基站的上行接收 [§6.3]。</li>
+<li><strong>后果</strong>：周围基站的地面用户上行信号会被无人机的信号淹没，导致上行吞吐量大幅下降。</li>
+</ul>
+<p><img alt="图 3" src="../figs/36777-%E5%9B%BE3_%E4%B8%8A%E8%A1%8C%E5%B9%B2%E6%89%B0.svg" /></p>
+<p><em>图 3 · 上行干扰：无人机的信号同时干扰多个基站。</em></p>
+<h3 id="44">4.4 移动性噩梦：频繁切换与乒乓<a class="headerlink" href="#44" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>现象</strong>：<ol>
+<li><strong>信号波动大</strong>：由于高空视距，信号强度变化非常剧烈（快衰落）。</li>
+<li><strong>测量报告受限</strong>：现有 LTE 规范中，UE 上报的测量结果数量有限（比如只报最强的几个）。无人机看到的可能都是强信号，但其中很多是干扰源，而不是潜在的服务基站。</li>
+<li><strong>乒乓效应</strong>：无人机可能在 A 基站和 B 基站之间反复横跳，导致切换失败（HOF）或无线链路失败（RLF）率上升 [§5.2]。</li>
+</ol>
+</li>
+<li><strong>原因</strong>：地面用户的信号变化相对平缓，有建筑物遮挡。无人机飞得快（最高 160 km/h [§4.1]），加上信号变化快，现有的切换算法（基于 RSRP 的门限）容易“误判”。</li>
+</ul>
+<h2 id="5">5. 研究给出的缓解办法<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
+<p>TR 36.777 不是一个“银弹”解决方案，而是一个“工具箱”。它评估了多种潜在的技术手段，看看哪些有效，哪些需要进一步标准化。</p>
+<p><img alt="图 4" src="../figs/36777-%E5%9B%BE4_%E7%BC%93%E8%A7%A3%E5%8A%9E%E6%B3%95%E5%B7%A5%E5%85%B7%E7%AE%B1.svg" /></p>
+<p><em>图 4 · 缓解办法工具箱：干扰检测、定向天线、功率控制、CoMP。</em></p>
+<h3 id="51">5.1 干扰检测：先知道谁在捣乱<a class="headerlink" href="#51" title="Permanent link">&para;</a></h3>
+<p>要解决问题，先得发现问题。研究提出了一些方法来识别“空中 UE”以及它们造成的干扰 [§7.1]。</p>
+<ul>
+<li><strong>基于 UE 的检测</strong>：<ul>
+<li>利用 UE 上报的测量信息（如 RSRP, RSRQ, CSI）。</li>
+<li>利用 UE 的其他信息：速度估计、位置信息、移动性历史。如果一个 UE 速度很快且高度很高，网络可以推断它是空中 UE [§7.1.2]。</li>
+</ul>
+</li>
+<li><strong>基于网络的检测</strong>：<ul>
+<li>基站之间通过 X2 接口交换信息。比如，基站 A 告诉基站 B：“我这边有个 UE 功率很大，可能是无人机，你那边注意一下上行干扰。”</li>
+<li>基站可以观察上行参考信号（SRS）的特征来判断 UE 是否在空中 [§7.1.3]。</li>
+</ul>
+</li>
+</ul>
+<p><strong>大白话</strong>：就像小区保安，看到一个人跑得快、个子高（速度、高度信息），或者听到他嗓门特别大（上行功率），就标记为“可疑人员”（空中 UE），并通知其他保安注意。</p>
+<h3 id="52">5.2 下行干扰缓解：让无人机听得清<a class="headerlink" href="#52" title="Permanent link">&para;</a></h3>
+<p>这是研究的重点。几种方案被评估过：</p>
+<ol>
+<li>
+<p><strong>FD-MIMO（全维度 MIMO）</strong> [§7.2.2]</p>
+<ul>
+<li><strong>原理</strong>：基站用很多天线，做波束赋形。把信号能量集中对准无人机，同时把干扰信号“零陷”（Null）对准。</li>
+<li><strong>效果</strong>：研究显示，使用 FD-MIMO 后，即使空中 UE 比例达到 50%，地面用户的平均吞吐量损失可以限制在 6% 以内（如果不使用，损失可能高达 23%）[§7.2.2]。</li>
+<li><strong>结论</strong>：这是一个非常有效的方案，且 LTE Rel-13 已经支持，不需要新的规范增强。</li>
+</ul>
+</li>
+<li>
+<p><strong>无人机端定向天线</strong> [§7.2.3]</p>
+<ul>
+<li><strong>原理</strong>：无人机不用全向天线（360 度接收），而用定向天线，只对准服务基站接收。</li>
+<li><strong>效果</strong>：能显著减少来自其他基站的干扰，提高无人机的吞吐量，同时减少对地面用户的干扰。</li>
+<li><strong>结论</strong>：这是终端实现层面的优化，规范层面可能不需要特别增强，但需要终端厂商支持 [§8]。</li>
+</ul>
+</li>
+<li>
+<p><strong>接收波束赋形（Receive Beamforming）</strong> [§7.2.4]</p>
+<ul>
+<li><strong>原理</strong>：无人机端如果有多个天线，也可以做波束赋形，选择性接收服务基站信号，抑制干扰。</li>
+<li><strong>结论</strong>：同样属于终端实现优化，有益但非强制 [§8]。</li>
+</ul>
+</li>
+<li>
+<p><strong>CoMP（协同多点传输）</strong> [§7.2.5]</p>
+<ul>
+<li><strong>原理</strong>：相邻基站协同工作。比如，干扰基站暂时沉默（Muting）或降低功率，让无人机能清晰收到服务基站信号。</li>
+<li><strong>效果</strong>：能同时提升空中和地面用户的吞吐量。</li>
+<li><strong>结论</strong>：LTE 已支持，但需要更精细的协调机制。</li>
+</ul>
+</li>
+<li>
+<p><strong>覆盖增强技术</strong> [§7.2.6]</p>
+<ul>
+<li><strong>原理</strong>：使用 LTE Rel-13 的覆盖增强技术，帮助信号弱的边缘用户（包括高空用户）完成同步与初始接入。</li>
+<li><strong>效果</strong>：仿真显示，用上覆盖增强后，空中 UE 的同步与初始接入可达到 100% 覆盖概率。</li>
+</ul>
+</li>
+</ol>
+<h3 id="53">5.3 上行干扰缓解：让无人机别太吵<a class="headerlink" href="#53" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>增强功率控制</strong> [§7.3.2]<ul>
+<li><strong>原理</strong>：现有的 LTE 功率控制是基于路径损耗的。对于高空 UE，路径损耗模型不同。研究评估了更精细的功率控制算法，限制无人机的发射功率，避免其信号辐射过远。</li>
+<li><strong>效果</strong>：能显著降低对周围基站上行链路的干扰。</li>
+<li><strong>结论</strong>：这是一个关键的标准化方向，需要在规范中明确针对空中 UE 的功率控制参数。</li>
+</ul>
+</li>
+</ul>
+<h3 id="54">5.4 移动性优化：减少无效切换<a class="headerlink" href="#54" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>识别机制</strong>：网络需要知道 UE 是空中的，才能应用不同的移动性算法。</li>
+<li><strong>参数调整</strong>：针对空中 UE，可能需要调整切换门限、迟滞时间（Hysteresis）等参数，以适应信号快速变化的特点 [§7.4]。</li>
+<li><strong>测量报告增强</strong>：允许 UE 上报更多的测量结果，或者上报包含高度、速度信息的测量报告，帮助网络做出更准确的切换决策 [§7.1.2]。</li>
+</ul>
+<h2 id="6">6. 这份研究带来了什么<a class="headerlink" href="#6" title="Permanent link">&para;</a></h2>
+<p>TR 36.777 作为 Rel-15 的一部分，其结论直接影响了后续 LTE 和 5G 的设计。</p>
+<ol>
+<li>
+<p><strong>确认了“空中 UE”是一个独立的性能类别</strong>：</p>
+<ul>
+<li>以前的 LTE 规范主要考虑地面用户。Rel-15 开始，明确引入了 Airborne UEs 的需求和评估指标 [§5]。</li>
+<li>定义了具体的性能要求：例如，控制信令（C&amp;C）的时延要求 50ms，可靠性要求 10^-3 的误包率 [§5.1]。</li>
+</ul>
+</li>
+<li>
+<p><strong>给出了 FD-MIMO 和 CoMP 的仿真依据</strong>：</p>
+<ul>
+<li>研究用仿真数据证明，现有的 Rel-13/14 技术（如 FD-MIMO）在应对空中干扰时非常有效，为后续部署与标准化提供了依据。</li>
+</ul>
+</li>
+<li>
+<p><strong>为后续标准铺路</strong>：</p>
+<ul>
+<li>TR 36.777 识别的问题（干扰、移动性）与工具箱，成为后续 LTE 增强与 5G NR 设计时的参考输入；具体哪些建议被采纳，要到后续 TS 里查。</li>
+</ul>
+</li>
+<li><strong>明确了“识别”的重要性</strong>：<ul>
+<li>研究强调，网络必须能识别出哪些 UE 是空中的，并专门留了一节讨论空中 UE 识别的潜在增强 [§7.5]。</li>
+</ul>
+</li>
+</ol>
+<h2 id="7">7. 它不管什么（边界）<a class="headerlink" href="#7" title="Permanent link">&para;</a></h2>
+<p>为了防止误解，必须明确 TR 36.777 <strong>不</strong>包含以下内容：</p>
+<ol>
+<li>
+<p><strong>不是强制规范</strong>：</p>
+<ul>
+<li>这是一份研究文档（TR），不是技术规范（TS）。它不规定 UE 或 eNB 必须实现什么功能。它只是说“我们发现这样做有效，建议后续规范考虑” [§1]。</li>
+<li>具体的强制性要求会在后续的 TS 36.211（物理层）、TS 36.331（RRC）等文档中体现，如果 3GPP 决定采纳这些建议。</li>
+</ul>
+</li>
+<li>
+<p><strong>不管业务需求</strong>：</p>
+<ul>
+<li>它不规定无人机要传 4K 视频还是 8K 视频，不规定上传频率是多少。这些业务需求由 <strong>TS 22.125</strong>（UAS 服务需求）定义 [§1]。</li>
+<li>TR 36.777 只是假设了一些典型的数据速率（如 50 Mbps 上行 [§5.1]），用于评估网络性能，而不是业务承诺。</li>
+</ul>
+</li>
+<li>
+<p><strong>不管核心网架构</strong>：</p>
+<ul>
+<li>它不涉及核心网（EPC/5GC）的修改。比如，怎么给无人机鉴权、怎么计费、怎么与运营商的 UTM（无人机交通管理）系统对接，这些是 <strong>TS 23.256</strong>（UAS 核心网架构）和 <strong>TS 22.125</strong> 的范围 [§1]。</li>
+<li>TR 36.777 只关心空口（Radio Access Network, RAN）层面的信号传输问题。</li>
+</ul>
+</li>
+<li>
+<p><strong>不管非 3GPP 技术</strong>：</p>
+<ul>
+<li>它只研究 LTE（Rel-14 基线）和潜在的 LTE 增强。它不涉及 Wi-Fi、LoRa 或其他非 3GPP 技术。</li>
+</ul>
+</li>
+</ol>
+<h2 id="8">8. 怎么往下读<a class="headerlink" href="#8" title="Permanent link">&para;</a></h2>
+<p>如果你想深入了解无人机通信，建议按以下顺序阅读：</p>
+<ol>
+<li>
+<p><strong>本篇：TR 36.777</strong></p>
+<ul>
+<li><strong>目的</strong>：理解空中场景下的无线信道特性和干扰问题。</li>
+<li><strong>重点章节</strong>：第 4 章（部署场景）、第 6 章（问题识别）、第 7 章（潜在增强）。</li>
+<li><strong>适合人群</strong>：无线通信工程师、标准研究者、对空口技术感兴趣的人。</li>
+</ul>
+</li>
+<li>
+<p><strong>TS 22.125：UAS 服务需求</strong></p>
+<ul>
+<li><strong>目的</strong>：了解无人机通信到底要解决什么业务问题（控制、视频、导航）。</li>
+<li><strong>重点</strong>：理解“控制面”和“用户面”的业务分离，以及不同场景下的性能指标。</li>
+<li><strong>适合人群</strong>：产品经理、系统架构师、业务规划者。</li>
+</ul>
+</li>
+<li>
+<p><strong>TS 23.256：UAS 核心网架构</strong></p>
+<ul>
+<li><strong>目的</strong>：了解核心网如何支持无人机，包括鉴权、计费、与 UTM 系统的接口。</li>
+<li><strong>重点</strong>：理解 UE 如何被识别为 UAS，以及核心网如何处理 UAS 特有的会话。</li>
+<li><strong>适合人群</strong>：核心网工程师、网络安全专家。</li>
+</ul>
+</li>
+<li>
+<p><strong>后续 LTE/5G 规范（如 TS 36.300, TS 38.300）</strong></p>
+<ul>
+<li><strong>目的</strong>：查看 TR 36.777 中的建议是否被采纳，以及具体如何落地。</li>
+<li><strong>重点</strong>：查找关于“Aerial UE”、“UAS”的条款，看功率控制、测量报告、切换算法是否有针对空中场景的特殊处理。</li>
+</ul>
+</li>
+</ol>
+<hr />
+<h2 id="_1">版本与来源<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>文档标题</strong>：Study on Enhanced Support for Aerial Vehicles</li>
+<li><strong>文档编号</strong>：3GPP TR 36.777</li>
+<li><strong>版本</strong>：v15.0.0</li>
+<li><strong>发布版本</strong>：Rel-15</li>
+<li><strong>冻结时间</strong>：2017-12</li>
+<li><strong>文档性质</strong>：研究报告（Study Report），非强制性规范。</li>
+<li><strong>主要贡献方</strong>：TSG RAN WG1 (RAN1) 和 WG2 (RAN2)。</li>
+<li><strong>关键参考文档</strong>：<ul>
+<li>RP-170779: New SID on Enhanced Support for Aerial Vehicles [§2]</li>
+<li>TR 38.901: Study on channel model for frequencies from 0.5 to 100 GHz [§2]</li>
+<li>TR 36.873: Study on 3D channel model for LTE [§2]</li>
+</ul>
+</li>
+</ul>
+<p><strong>注</strong>：本文依据 TR 36.777 v15.0.0 官方原文逐条核实整理，具体实施请以 3GPP 官方最新规范为准。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.suggest", "search.highlight"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
