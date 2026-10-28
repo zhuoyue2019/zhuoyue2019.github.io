@@ -50,6 +50,12 @@ nav:
         - TS 23.379 MCPTT 架构: mcx/deep-dive/23379.md
         - TS 23.281 MCVideo 架构: mcx/deep-dive/23281.md
         - TS 23.282 MCData 架构: mcx/deep-dive/23282.md
+        - TS 24.379 MCPTT 协议: mcx/deep-dive/24379.md
+        - TS 24.281 MCVideo 协议: mcx/deep-dive/24281.md
+        - TS 24.282 MCData 协议: mcx/deep-dive/24282.md
+        - TS 24.483 配置管理对象: mcx/deep-dive/24483.md
+        - TS 24.484 配置管理: mcx/deep-dive/24484.md
+        - TS 33.180 安全: mcx/deep-dive/33180.md
       - 问答:
         - MCPTT vs 普通对讲机: mcx/faq-mcptt-vs-intercom.md
         - MCX 与 5G 切片: mcx/faq-mcx-vs-5g-slicing.md

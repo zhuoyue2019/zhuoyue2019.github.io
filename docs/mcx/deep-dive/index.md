@@ -20,7 +20,12 @@
 | **TS 23.379** | [Mission Critical Push To Talk (MCPTT) functional architecture and information flows，MCPTT 功能架构](23379.md) | Rel-20 v20.4.0 | ✅ 已发布（2026-10-28） |
 | **TS 23.281** | [Functional architecture and information flows to support Mission Critical Video，MCVideo 功能架构](23281.md) | Rel-20 v20.5.1 | ✅ 已发布（2026-10-28） |
 | **TS 23.282** | [Functional architecture and information flows to support mission critical data，MCData 功能架构](23282.md) | Rel-20 v20.3.1 | ✅ 已发布（2026-10-28） |
+| **TS 24.379** | [Mission Critical Push To Talk (MCPTT) call control protocol，MCPTT 呼叫控制协议](24379.md) | Rel-20 v20.1.0 | ✅ 已发布（2026-10-28） |
+| **TS 24.281** | [Mission Critical Video (MCVideo) call control protocol，MCVideo 呼叫控制协议](24281.md) | Rel-20 v20.1.0 | ✅ 已发布（2026-10-28） |
+| **TS 24.282** | [Mission Critical Data (MCData) signalling control protocol，MCData 信令控制协议](24282.md) | Rel-20 v20.1.0 | ✅ 已发布（2026-10-28） |
+| **TS 24.483** | [Mission Critical Services (MCS) configuration management，MC 配置管理对象](24483.md) | Rel-20 v20.1.0 | ✅ 已发布（2026-10-28） |
+| **TS 24.484** | [Mission Critical Services (MCS) configuration management procedures，MC 配置管理流程](24484.md) | Rel-20 v20.1.0 | ✅ 已发布（2026-10-28） |
+| **TS 33.180** | [Security of the Mission Critical (MC) service，关键任务通信安全](33180.md) | Rel-20 v20.1.0 | ✅ 已发布（2026-10-28） |
 
 ## 后续计划
-- 第三批：Stage 3 协议与安全篇——TS 24.379 / 24.281 / 24.282、TS 24.483 / 24.484、TS 33.180（安全）。
 - 另：TS 22.289（5G MBS 承载）、TS 22.283 / 23.283（LMR 互通）待补入清单。
