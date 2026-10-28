@@ -1,0 +1,2967 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="3GPP UAS、无人机通信、应急政策等知识沉淀">
+      
+      
+        <meta name="author" content="Alex">
+      
+      
+      
+        <link rel="prev" href="../24481/">
+      
+      
+        <link rel="next" href="../24581/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>TS 24.482 身份管理 - Alex 的知识库</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#3gpp-ts-24482-mc" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="Alex 的知识库" class="md-header__button md-logo" aria-label="Alex 的知识库" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Alex 的知识库
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              TS 24.482 身份管理
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../3gpp-uas/" class="md-tabs__link">
+          
+  
+  
+  3GPP UAS
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../tracking/" class="md-tabs__link">
+          
+  
+  
+  跟踪平台
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  
+  MCX
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../emergency/" class="md-tabs__link">
+          
+  
+  
+  应急政策
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../free-api/config/" class="md-tabs__link">
+          
+  
+  
+  免费 API
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../about/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  关于
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Alex 的知识库" class="md-nav__button md-logo" aria-label="Alex 的知识库" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Alex 的知识库
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3GPP UAS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    3GPP UAS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../3gpp-uas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    总览
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../3gpp-uas/specs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    关键规范清单
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../3gpp-uas/isac-for-uav/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rel-20 ISAC for UAV 深度报告
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../3gpp-uas/tracking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    跟踪动态
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    标准深入理解
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    标准深入理解
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../3gpp-uas/deep-dive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    总览
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../3gpp-uas/deep-dive/22125/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TS 22.125 UAS 业务需求
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../3gpp-uas/deep-dive/23256/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TS 23.256 UAS 架构
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../3gpp-uas/deep-dive/33256/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TS 33.256 UAS 安全
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../3gpp-uas/deep-dive/36777/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TR 36.777 无人机增强支持研究
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    跟踪平台
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    跟踪平台
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tracking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    总览
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../3gpp-uas/tracking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    跟踪动态
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tracking/policy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    低空政策跟踪
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tracking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MCX 规范跟踪
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MCX
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    MCX
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    总览
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../specs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    关键规范清单
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    逻辑架构
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../comparison/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3GPP vs 中国对照
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../emergency/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    应急通信视角
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tracking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MCX 规范跟踪
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    标准深入理解
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    标准深入理解
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    总览
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22280/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TS 22.280 MCCoRe 通用需求
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22179/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TS 22.179 MCPTT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22281/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TS 22.281 MCVideo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22282/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TS 22.282 MCData
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../23280/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TS 23.280 MCX 通用功能架构
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../23379/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TS 23.379 MCPTT 架构
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../23281/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TS 23.281 MCVideo 架构
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../23282/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TS 23.282 MCData 架构
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../24379/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TS 24.379 MCPTT 协议
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../24281/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TS 24.281 MCVideo 协议
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../24282/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TS 24.282 MCData 协议
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../24483/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TS 24.483 配置管理对象
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../24484/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TS 24.484 配置管理
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../33180/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TS 33.180 安全
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22289/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TS 22.289 铁路通信
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../23283/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TS 23.283 LMR 互通
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../23289/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TS 23.289 MCX over 5GS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../24380/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TS 24.380 MCPTT 媒体面控制
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../24481/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TS 24.481 组管理
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TS 24.482 身份管理
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TS 24.482 身份管理
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 它要解决什么问题
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-mcx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 它在 MCX 家族中的位置
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 核心概念大白话
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 核心概念大白话">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-openid-connect-oidc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 OpenID Connect (OIDC)：标准化的“登录接口”
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-tokens" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 令牌（Tokens）：你的电子工牌
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-vs-mc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 身份管理客户端 vs. MC 服务客户端
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-idm-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 身份管理服务器 (IdM Server)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 一次登录认证怎么走
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 关键时刻的能力：令牌刷新与合作伙伴交换
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 关键时刻的能力：令牌刷新与合作伙伴交换">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-token-refresh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 令牌刷新（Token Refresh）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-partner-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 跨合作伙伴系统的令牌交换（Partner System）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 认证失败怎么办？
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-vs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 身份管理 vs. 业务协议的区别
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. 它不管什么（边界）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. 怎么往下读
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../24581/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TS 24.581 MCVideo 媒体面控制
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../24582/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TS 24.582 MCData 媒体面控制
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_8" id="__nav_4_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    问答
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    问答
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq-mcptt-vs-intercom/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MCPTT vs 普通对讲机
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq-mcx-vs-5g-slicing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MCX 与 5G 切片
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq-mcx-qos-priority/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    QoS 优先级保障
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq-mcvideo-vs-video-call/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MCVideo vs 视频通话
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq-mcx-china-emergency/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    国内应急行业现状
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    应急政策
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    应急政策
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../emergency/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    总览
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../emergency/laws/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    法律法规
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    免费 API
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    免费 API
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../free-api/config/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    配置手册
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    关于
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 它要解决什么问题
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-mcx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 它在 MCX 家族中的位置
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 核心概念大白话
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 核心概念大白话">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-openid-connect-oidc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 OpenID Connect (OIDC)：标准化的“登录接口”
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-tokens" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 令牌（Tokens）：你的电子工牌
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-vs-mc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 身份管理客户端 vs. MC 服务客户端
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-idm-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 身份管理服务器 (IdM Server)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 一次登录认证怎么走
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 关键时刻的能力：令牌刷新与合作伙伴交换
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 关键时刻的能力：令牌刷新与合作伙伴交换">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-token-refresh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 令牌刷新（Token Refresh）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-partner-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 跨合作伙伴系统的令牌交换（Partner System）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 认证失败怎么办？
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-vs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 身份管理 vs. 业务协议的区别
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. 它不管什么（边界）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. 怎么往下读
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="3gpp-ts-24482-mc">3GPP TS 24.482 解读：MC 身份管理——你是谁，凭什么用关键业务<a class="headerlink" href="#3gpp-ts-24482-mc" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>版本：v1.0 ｜ 更新：2026-10-28 ｜ 基线：TS 24.482 v19.1.0（Rel-19，2026-06）｜ 原文：whatthespec.net 抓取的关键条款</p>
+</blockquote>
+<p><strong>TS 24.482 是 MCX（关键通信业务）的身份管理协议，它规定了用户如何向网络证明“我是谁”，以及如何获取和交换用于访问关键业务的“电子通行证”（令牌）。</strong></p>
+<h2 id="1">1. 它要解决什么问题<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<p>想象一下，你走进一家只有持特定工牌员工才能进入的机密数据中心。保安（网络）不会问你的名字，而是看你的工牌。如果工牌过期了，或者你是新来的，你得去前台（身份管理服务器）重新办理或更新工牌。</p>
+<p>在关键通信业务（Mission Critical Services, MCS）中，场景比数据中心更紧张。警察、消防员、电力公司或铁路调度员使用的通信系统，不能像普通微信或电话那样“谁都能连上”。[§1] 这些业务需要比普通电信服务更高的优先处理权限。因此，系统必须解决两个核心问题：
+1. <strong>你是谁？</strong>（身份认证）：系统必须确认操作终端的人确实是授权用户，而不是黑客或误入的普通用户。
+2. <strong>你能做什么？</strong>（授权与令牌）：确认身份后，系统必须发放一张“通行证”（令牌），这张通行证规定了你能访问哪些服务（比如只能打电话，不能管理密钥；或者只能加入特定的消防组）。</p>
+<p>如果令牌过期了，或者用户想访问另一个合作伙伴网络（比如市政消防网接入市级应急网），还需要一套机制来“换票”或“刷新”通行证。TS 24.482 就是专门定义这套“验身”和“发牌”流程的技术规范。[§1] 它只适用于网络内操作（On-network operation），也就是说，设备必须连在网络上，这套流程才能跑起来。[§1]</p>
+<h2 id="2-mcx">2. 它在 MCX 家族中的位置<a class="headerlink" href="#2-mcx" title="Permanent link">&para;</a></h2>
+<p>要理解 TS 24.482，得先知道它在 MCX 标准大家族里站在哪里。MCX 标准通常分为几个阶段（Stage）：
+*   <strong>Stage 1/2</strong>：谈需求和服务定义（比如“我们需要一个紧急群组通话”）。
+*   <strong>Stage 3</strong>：谈具体怎么实现，也就是协议细节。</p>
+<p>TS 24.482 属于 <strong>Stage 3</strong> 规范（24 系列即协议层规范）。它不关心“群组通话的声音质量有多好”（那是媒体层的事），也不关心“群组怎么建立”（那是呼叫控制协议的事）。它只关心<strong>入口处的安检和发牌</strong>。</p>
+<p>在架构上，它主要涉及三个角色：
+1.  <strong>身份管理客户端（IdM Client）</strong>：住在你的终端（UE，User Equipment）里。[§5.1]
+2.  <strong>身份管理服务器（IdM Server）</strong>：住在核心网的公共服务核心（Common Services Core）里。[§4.1]
+3.  <strong>MC 服务客户端</strong>：也是在你终端里，但它负责具体的业务逻辑（比如发起通话）。它需要向 IdM 客户端要令牌，然后才能去跟业务服务器打交道。[§5.3]</p>
+<p>此外，为了安全传输，它依赖 <strong>HTTP 代理（HTTP Proxy）</strong> 和 <strong>TLS（传输层安全）</strong> 隧道。[§5.4] 它不是孤立存在的，它的安全机制严格引用了 <strong>3GPP TS 33.180</strong>（MC 安全架构）。你可以把 TS 24.482 看作是“流程说明书”，而 TS 33.180 是“锁和钥匙的设计图纸”。[§4.1]</p>
+<h2 id="3">3. 核心概念大白话<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
+<p>这一节我们把几个听起来很拗口的术语，翻译成大白话。</p>
+<h3 id="31-openid-connect-oidc">3.1 OpenID Connect (OIDC)：标准化的“登录接口”<a class="headerlink" href="#31-openid-connect-oidc" title="Permanent link">&para;</a></h3>
+<p>TS 24.482 的核心技术底座是 <strong>OpenID Connect Core 1.0</strong> 和 <strong>IETF RFC 6749</strong>。[§4.1]
+*   <strong>类比</strong>：以前每个 App 登录都要自己造一套账号密码系统，现在大家统一用 OAuth 2.0 / OpenID Connect。
+*   <strong>作用</strong>：它定义了一套标准的 HTTP 消息格式，让终端和服务器能互相听懂“我要登录”、“这是你的令牌”、“令牌过期了”这些话。MC 业务对 OIDC 有特定的配置要求（Profile），这些要求写在 TS 33.180 里。[§4.1]</p>
+<h3 id="32-tokens">3.2 令牌（Tokens）：你的电子工牌<a class="headerlink" href="#32-tokens" title="Permanent link">&para;</a></h3>
+<p>认证成功后，服务器会发三种令牌：
+1.  <strong>ID Token（身份令牌）</strong>：证明“你是张三”。[§4.1]
+2.  <strong>Access Token（访问令牌）</strong>：这是最关键的。它像一张限时门票，上面写着权限范围（Scope），比如“允许访问群组管理服务”、“允许访问 MCData 服务”。[§4.1] 当你要用 MCPTT（语音）、MCData（数据）或 MCVideo（视频）时，业务服务器会检查这张票。[§4.1]
+3.  <strong>Refresh Token（刷新令牌）</strong>：这是一张“续期券”。当 Access Token 过期时，你不用重新输密码，用这张券就能换一张新的 Access Token。[§4.1]</p>
+<h3 id="33-vs-mc">3.3 身份管理客户端 vs. MC 服务客户端<a class="headerlink" href="#33-vs-mc" title="Permanent link">&para;</a></h3>
+<p>这两个都在你的手机/对讲机里，但分工不同：
+*   <strong>IdM Client</strong>：专门负责跟 IdM Server 说话，处理登录、换令牌。它不懂怎么打电话，它只懂“我要登录”和“给我令牌”。[§5.1]
+*   <strong>MC Service Client</strong>：专门负责跟业务服务器（比如通话服务器）说话。它懂得呼叫控制协议。但它自己没有令牌，所以它必须先找 IdM Client 要令牌，拿到令牌后，才能去敲门业务服务器。[§5.3]</p>
+<h3 id="34-idm-server">3.4 身份管理服务器 (IdM Server)<a class="headerlink" href="#34-idm-server" title="Permanent link">&para;</a></h3>
+<p>这是核心网里的“户籍科”。它存储着用户的身份信息和权限配置。它负责验证用户名密码，并决定发什么权限的令牌。[§5.2]</p>
+<h2 id="4">4. 一次登录认证怎么走<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
+<p>让我们跟着一个消防员的小对讲机，走一遍完整的登录流程。</p>
+<p><img alt="图 1" src="../figs/24482-%E5%9B%BE1_%E8%BA%AB%E4%BB%BD%E7%AE%A1%E7%90%86%E6%80%BB%E8%A7%88.svg" /></p>
+<p><em>图 1 · 身份管理总览：客户端 — 身份管理服务器 — 业务服务器。</em></p>
+<p><strong>第一步：触发登录</strong>
+消防员开启对讲机，想加入“现场救援组”。MC Service Client 发现没有有效的 Access Token，于是向 IdM Client 发出信号：“嘿，我们需要登录。” [§6.2.1]</p>
+<p><strong>第二步：建立安全通道（TLS Tunnel）</strong>
+IdM Client 不能直接在裸网上传密码。它必须先建立一条加密的隧道。
+*   它查找配置文件中指定的 IdM Server 地址（URL）。
+*   它建立 <strong>TLS 隧道</strong> 连接到 IdM Server 的授权端点（Authorization Endpoint）。[§6.2.1]
+*   <strong>安全细节</strong>：这个 TLS 隧道可以是单向认证（只验证服务器），也可以是双向认证（互相验证证书或预共享密钥）。这取决于配置。[Annex A.2.1.2]</p>
+<p><strong>第三步：发送认证请求（OIDC Request）</strong>
+隧道通了，IdM Client 生成一个 <strong>OIDC 认证请求</strong>（Authentication Request）。
+*   这是一个 <strong>HTTP GET</strong> 请求。[§6.2.1]
+*   请求里包含几个关键参数，格式是 <code>application/x-www-form-urlencoded</code>（就像网页表单提交那样）。[§6.2.1]
+*   关键参数包括：
+    *   <code>client_id</code>：我是谁（终端或应用的标识）。[§6.2.1]
+    *   其他必需参数（如 redirect_uri, scope 等，具体见 TS 33.180）。[§6.2.1]</p>
+<p><strong>第四步：用户验证（Username &amp; Password）</strong>
+IdM Server 收到请求后，需要验证用户。
+*   规范强制要求支持 <strong>用户名和密码</strong> 认证。[§4.1, §5.1, §5.2]
+*   这意味着，在网络内操作模式下，用户最终还是要提供用户名和密码（或者通过其他已支持的机制，但用户名密码是必须的底线）。
+*   如果验证通过，IdM Server 认为“你是合法的消防员”。</p>
+<p><strong>第五步：获取令牌</strong>
+验证通过后，IdM Server 返回响应，里面包含：
+1.  <strong>ID Token</strong>
+2.  <strong>Access Token</strong>
+3.  <strong>Refresh Token</strong>
+[§4.1]</p>
+<p>IdM Client 收到这些令牌后，把它们存起来，并告诉 MC Service Client：“搞定了，这是你的令牌，拿去用吧。” [§5.3]</p>
+<p><strong>第六步：访问业务</strong>
+MC Service Client 拿着 <strong>Access Token</strong>，去访问 MCPTT、MCData 或 MCVideo 服务器。
+*   业务服务器检查令牌：令牌有效吗？Scope（权限范围）包含“群组通话”吗？
+*   如果没问题，业务就开始运行。[§4.1]</p>
+<p><img alt="图 2" src="../figs/24482-%E5%9B%BE2_%E7%94%A8%E6%88%B7%E8%AE%A4%E8%AF%81%E6%B5%81%E7%A8%8B.svg" /></p>
+<p><em>图 2 · 用户认证流程：提交身份 → 验证 → 通过。</em></p>
+<h2 id="5">5. 关键时刻的能力：令牌刷新与合作伙伴交换<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
+<p>登录成功只是开始。在长时间的任务中，令牌会过期，或者你需要跨网协作。TS 24.482 定义了两类特殊的“令牌交换”流程。</p>
+<h3 id="51-token-refresh">5.1 令牌刷新（Token Refresh）<a class="headerlink" href="#51-token-refresh" title="Permanent link">&para;</a></h3>
+<p>Access Token 是有寿命的（比如 15 分钟）。如果任务还在进行，不能让用户重新输密码。
+*   <strong>流程</strong>：IdM Client 使用之前拿到的 <strong>Refresh Token</strong>，向 IdM Server 发起新的请求（Token Exchange Procedure）。
+*   <strong>结果</strong>：Server 验证 Refresh Token 有效后，发回一个新的 Access Token（和新的 Refresh Token）。
+*   <strong>规范依据</strong>：参见 Clause 6.2.2 和 6.3.2。[§4.1] 这个过程对用户是透明的，就像信用卡自动续期，不需要你重新去银行柜台。</p>
+<h3 id="52-partner-system">5.2 跨合作伙伴系统的令牌交换（Partner System）<a class="headerlink" href="#52-partner-system" title="Permanent link">&para;</a></h3>
+<p>这是 MC 业务非常强大的地方。比如，市级消防局（Home Network）和省级应急中心（Partner System）需要互通。
+*   <strong>场景</strong>：你已经在市级网络登录了，拿到了市级的 Access Token。现在你要访问省级网络的一个资源。
+*   <strong>流程</strong>：
+    1.  你向家里的 IdM Server 请求一个 <strong>Security Token</strong>（安全令牌）。[§4.1]
+    2.  拿这个 Security Token，去请求合作伙伴系统（Partner System）的 IdM Server。[§4.1]
+    3.  合作伙伴的 IdM Server 验证后，发给你一个针对他们域名的 <strong>Access Token</strong>。[§4.1]
+    4.  现在你可以用这个新令牌访问合作伙伴的资源了。
+*   <strong>规范依据</strong>：参见 Clause 6.2.3 和 6.3.3。[§4.1]</p>
+<p><img alt="图 3" src="../figs/24482-%E5%9B%BE3_%E4%BB%A4%E7%89%8C%E4%BA%A4%E6%8D%A2%E6%B5%81%E7%A8%8B.svg" /></p>
+<p><em>图 3 · 令牌交换流程：认证成功 → 换令牌 → 业务可用。</em></p>
+<h3 id="53">5.3 认证失败怎么办？<a class="headerlink" href="#53" title="Permanent link">&para;</a></h3>
+<p>如果用户名密码错了，或者 TLS 握手失败，流程会中断，IdM Client 会收到错误响应，MC Service Client 会收到“认证失败”的通知，用户可能需要重新输入凭据，或者检查网络连接。令牌过期或失效后，先走刷新流程（§6.2.2）；刷新拿不到新令牌，就只能重新走用户认证（§6.2.1）。</p>
+<p><img alt="图 4" src="../figs/24482-%E5%9B%BE4_%E4%BB%A4%E7%89%8C%E8%BF%87%E6%9C%9F%E4%B8%8E%E9%87%8D%E8%AE%A4%E8%AF%81.svg" /></p>
+<p><em>图 4 · 令牌过期与重新认证：过期怎么办、失败怎么办。</em></p>
+<h2 id="6-vs">6. 身份管理 vs. 业务协议的区别<a class="headerlink" href="#6-vs" title="Permanent link">&para;</a></h2>
+<p>很多初学者容易混淆 TS 24.482 和其他 MC 协议。这里做一个清晰的切割：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">特征</th>
+<th style="text-align: left;">TS 24.482 (身份管理)</th>
+<th style="text-align: left;">TS 24.379 (MCPTT 呼叫控制) / TS 24.281 (MCVideo) / TS 24.282 (MCData)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>核心问题</strong></td>
+<td style="text-align: left;"><strong>你是谁？你有权限吗？</strong></td>
+<td style="text-align: left;"><strong>怎么打电话？怎么传数据？</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>主要交互方</strong></td>
+<td style="text-align: left;">UE (IdM Client) &lt;-&gt; IdM Server</td>
+<td style="text-align: left;">UE (MC Client) &lt;-&gt; MC Service Server</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>使用的协议</strong></td>
+<td style="text-align: left;">HTTP, OIDC, TLS</td>
+<td style="text-align: left;">SIP, HTTP, 特定 MC 协议信令</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>关键产物</strong></td>
+<td style="text-align: left;">ID Token, Access Token, Refresh Token</td>
+<td style="text-align: left;">呼叫建立消息, 媒体流, 群组状态</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>类比</strong></td>
+<td style="text-align: left;">进大楼刷门禁卡</td>
+<td style="text-align: left;">进会议室后开始开会发言</td>
+</tr>
+</tbody>
+</table>
+<p><strong>关键点</strong>：
+TS 24.482 <strong>不规定</strong> 怎么用 Access Token 去建立 SIP 呼叫。它只规定 <strong>Access Token 长什么样、怎么拿、怎么换</strong>。
+一旦你拿到了 Access Token，TS 24.379（针对语音）或 TS 24.281（针对视频）就会接手，规定你如何把这个令牌放在 HTTP 头或 SIP 头里，发给业务服务器来证明你的身份。[§4.1]</p>
+<p>也就是说，TS 24.482 是“地基”，其他业务协议是“上面的房子”。没有地基（令牌），房子（业务）盖不起来。</p>
+<h2 id="7">7. 它不管什么（边界）<a class="headerlink" href="#7" title="Permanent link">&para;</a></h2>
+<p>为了不让读者跑偏，明确列出 TS 24.482 <strong>不</strong> 负责的事情：</p>
+<ol>
+<li><strong>不管 Stage 1 需求</strong>：它不讨论“为什么我们需要关键通信”或“消防员的具体工作流”。那是 TS 22.179 等需求文档的事。</li>
+<li><strong>不管具体身份源实现</strong>：它规定接口用 OIDC，但 IdM Server 背后是用 LDAP、RADIUS 还是本地数据库来存用户密码，这由运营商自己实现，TS 24.482 不干涉。[§5.2]</li>
+<li><strong>不管媒体传输</strong>：它不关心声音怎么编码、视频怎么压缩。那是 RTP/RTCP 和媒体编解码器的事。</li>
+<li><strong>不管离线操作</strong>：Scope 明确指出，身份管理仅适用于 <strong>On-network operation</strong>（网络内操作）。[§1] 如果设备断网了，TS 24.482 定义的那套 OIDC 流程就跑不通了（因为需要连到 IdM Server）。离线下的紧急通信可能有其他机制，但那不是本规范的重点。</li>
+<li><strong>不管 HTTP 代理的具体路由逻辑</strong>：虽然它定义了 HTTP 代理的角色，但具体的网络路由、防火墙规则、负载均衡策略不在范围内。[§5.4]</li>
+</ol>
+<h2 id="8">8. 怎么往下读<a class="headerlink" href="#8" title="Permanent link">&para;</a></h2>
+<p>如果你刚接触 MCX 标准，建议按以下顺序阅读，避免被细节淹没：</p>
+<ol>
+<li><strong>先读本篇（TS 24.482）</strong>：理解“登录”和“令牌”的基本概念。重点看 Clause 4（通用）和 Clause 6（认证流程）。</li>
+<li><strong>再读 TS 33.180（MC 安全架构）</strong>：这是 TS 24.482 的“幕后黑手”。TS 24.482 里的很多“shall”（必须）都指向 TS 33.180。你需要在这里理解 TLS 配置、证书管理、密钥交换的具体安全要求。[§4.1, §5.1]</li>
+<li><strong>最后读业务协议（TS 24.379 等）</strong>：当你理解了令牌怎么拿，就可以去看 TS 24.379（MCPTT），看看令牌是怎么被塞进呼叫信令里的，以及群组通话的具体信令流程。[§4.1]</li>
+</ol>
+<p><strong>版本与来源说明</strong>：
+*   <strong>规范名称</strong>：3GPP TS 24.482
+*   <strong>版本</strong>：v19.1.0
+*   <strong>发布系列</strong>：Rel-19
+*   <strong>发布时间</strong>：2026-06
+*   <strong>主要参考</strong>：
+    *   OpenID Connect Core 1.0
+    *   IETF RFC 6749 (OAuth 2.0)
+    *   IETF RFC 9110 (HTTP Semantics)
+    *   3GPP TS 33.180 (MC Security Architecture)
+    *   3GPP TS 24.379 (MCPTT Call Control)
+    *   3GPP TS 24.281 (MCVideo)
+    *   3GPP TS 24.282 (MCData)
+    *   3GPP TS 24.483 (MC Service Configuration)</p>
+<p><strong>最后的小贴士</strong>：
+在实际部署中，你会发现 TS 24.482 的很多细节（比如具体的 URL 路径、参数名称）非常严格。这是因为 MC 业务涉及公共安全，容错率极低。任何偏离标准的实现都可能导致跨厂商设备无法互通。所以，把它当作一份“合同”来对待，每一个字段、每一个 HTTP 方法，都必须严格遵守。[§6.2.1]</p>
+<hr />
+<p><em>注：本文基于 3GPP TS 24.482 v19.1.0 (Rel-19) 的公开摘要内容解读。技术细节请以正式发布的规范原文为准。</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.suggest", "search.highlight"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,3075 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="3GPP UAS、无人机通信、应急政策等知识沉淀">
+      
+      
+        <meta name="author" content="Alex">
+      
+      
+      
+        <link rel="prev" href="../23289/">
+      
+      
+        <link rel="next" href="../24481/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>TS 24.380 MCPTT 媒体面控制 - Alex 的知识库</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#3gpp-ts-24380-mcptt" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="Alex 的知识库" class="md-header__button md-logo" aria-label="Alex 的知识库" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Alex 的知识库
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              TS 24.380 MCPTT 媒体面控制
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../3gpp-uas/" class="md-tabs__link">
+          
+  
+  
+  3GPP UAS
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../tracking/" class="md-tabs__link">
+          
+  
+  
+  跟踪平台
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  
+  MCX
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../emergency/" class="md-tabs__link">
+          
+  
+  
+  应急政策
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../free-api/config/" class="md-tabs__link">
+          
+  
+  
+  免费 API
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../about/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  关于
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Alex 的知识库" class="md-nav__button md-logo" aria-label="Alex 的知识库" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Alex 的知识库
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3GPP UAS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    3GPP UAS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../3gpp-uas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    总览
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../3gpp-uas/specs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    关键规范清单
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../3gpp-uas/isac-for-uav/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rel-20 ISAC for UAV 深度报告
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../3gpp-uas/tracking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    跟踪动态
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    标准深入理解
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    标准深入理解
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../3gpp-uas/deep-dive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    总览
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../3gpp-uas/deep-dive/22125/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TS 22.125 UAS 业务需求
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../3gpp-uas/deep-dive/23256/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TS 23.256 UAS 架构
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../3gpp-uas/deep-dive/33256/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TS 33.256 UAS 安全
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../3gpp-uas/deep-dive/36777/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TR 36.777 无人机增强支持研究
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    跟踪平台
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    跟踪平台
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tracking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    总览
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../3gpp-uas/tracking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    跟踪动态
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tracking/policy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    低空政策跟踪
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tracking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MCX 规范跟踪
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MCX
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    MCX
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    总览
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../specs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    关键规范清单
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    逻辑架构
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../comparison/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3GPP vs 中国对照
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../emergency/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    应急通信视角
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tracking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MCX 规范跟踪
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    标准深入理解
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    标准深入理解
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    总览
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22280/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TS 22.280 MCCoRe 通用需求
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22179/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TS 22.179 MCPTT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22281/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TS 22.281 MCVideo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22282/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TS 22.282 MCData
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../23280/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TS 23.280 MCX 通用功能架构
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../23379/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TS 23.379 MCPTT 架构
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../23281/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TS 23.281 MCVideo 架构
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../23282/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TS 23.282 MCData 架构
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../24379/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TS 24.379 MCPTT 协议
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../24281/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TS 24.281 MCVideo 协议
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../24282/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TS 24.282 MCData 协议
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../24483/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TS 24.483 配置管理对象
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../24484/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TS 24.484 配置管理
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../33180/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TS 33.180 安全
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22289/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TS 22.289 铁路通信
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../23283/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TS 23.283 LMR 互通
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../23289/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TS 23.289 MCX over 5GS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TS 24.380 MCPTT 媒体面控制
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TS 24.380 MCPTT 媒体面控制
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 它要解决什么问题
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-mcx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 它在 MCX 家族中的位置
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 核心概念大白话
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 核心概念大白话">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-floor-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 地板控制 (Floor Control)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-media-plane-control-channel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 媒体面控制通道 (Media Plane Control Channel)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 发言权状态
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-pre-emption" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 抢占 (Pre-emption)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-queueing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5 排队 (Queueing)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 一次组呼的媒体面流程
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 关键时刻的能力
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 关键时刻的能力">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-pre-emptive-priority" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 紧急抢占 (Pre-emptive Priority)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-multi-talker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 多说话者控制 (Multi-talker)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-off-network-floor-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 离网媒体面控制 (Off-network Floor Control)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-vs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 媒体面控制 vs 信令控制的区别
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. 它不管什么（边界）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. 怎么往下读
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. 怎么往下读">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        附录：关键消息速查表
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../24481/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TS 24.481 组管理
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../24482/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TS 24.482 身份管理
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../24581/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TS 24.581 MCVideo 媒体面控制
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../24582/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TS 24.582 MCData 媒体面控制
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_8" id="__nav_4_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    问答
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    问答
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq-mcptt-vs-intercom/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MCPTT vs 普通对讲机
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq-mcx-vs-5g-slicing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MCX 与 5G 切片
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq-mcx-qos-priority/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    QoS 优先级保障
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq-mcvideo-vs-video-call/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MCVideo vs 视频通话
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq-mcx-china-emergency/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    国内应急行业现状
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    应急政策
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    应急政策
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../emergency/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    总览
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../emergency/laws/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    法律法规
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    免费 API
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    免费 API
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../free-api/config/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    配置手册
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    关于
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 它要解决什么问题
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-mcx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 它在 MCX 家族中的位置
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 核心概念大白话
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 核心概念大白话">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-floor-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 地板控制 (Floor Control)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-media-plane-control-channel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 媒体面控制通道 (Media Plane Control Channel)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 发言权状态
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-pre-emption" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 抢占 (Pre-emption)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-queueing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5 排队 (Queueing)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 一次组呼的媒体面流程
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 关键时刻的能力
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 关键时刻的能力">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-pre-emptive-priority" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 紧急抢占 (Pre-emptive Priority)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-multi-talker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 多说话者控制 (Multi-talker)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-off-network-floor-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 离网媒体面控制 (Off-network Floor Control)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-vs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 媒体面控制 vs 信令控制的区别
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. 它不管什么（边界）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. 怎么往下读
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. 怎么往下读">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        附录：关键消息速查表
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="3gpp-ts-24380-mcptt">3GPP TS 24.380 解读：MCPTT 媒体面控制——对讲机的话筒权，网里是怎么抢的<a class="headerlink" href="#3gpp-ts-24380-mcptt" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>版本：v1.0 ｜ 更新：2026-10-28 ｜ 基线：TS 24.380 v19.1.0（Rel-19，2025-09）｜ 原文：whatthespec.net 抓取的关键条款</p>
+</blockquote>
+<p><strong>TS 24.380 是 MCPTT（关键业务推送对讲）的媒体面控制协议，它规定了在群组通话中，说话权（Floor）如何被请求、授予、拒绝、排队以及释放的具体规则和消息格式 [§1]。</strong></p>
+<p><img alt="图 1" src="../figs/24380-%E5%9B%BE1_%E4%BF%A1%E4%BB%A4%E9%9D%A2%E4%B8%8E%E5%AA%92%E4%BD%93%E9%9D%A2.svg" /></p>
+<p><em>图 1 · 信令面 vs 媒体面：呼叫消息走 SIP，话筒权走媒体面控制通道。</em></p>
+<h2 id="1">1. 它要解决什么问题<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<p>想象一下，你正在使用一部普通的微信群语音通话。如果几个人同时说话，声音就会重叠，根本听不清谁在说什么。但在警察执法、消防救援或铁路运营等关键业务场景中，混乱的语音意味着灾难。我们需要一种机制，确保在任何给定时刻，<strong>只有一个人</strong>拥有“话筒权”，其他人只能听，不能插嘴 [§4.1.1.1]。</p>
+<p>这就是“地板控制”（Floor Control）要解决的核心问题。在 MCPTT 中，这不仅仅是“静音”或“取消静音”那么简单，它是一个严格的协议过程。TS 24.380 规定了当有人按下 PTT（Push-To-Talk，按住说话）按钮时，网络内部如何传递这个请求，服务器如何判断谁有权说话，以及如果优先级更高的人（比如指挥官）要插话，系统如何无缝地打断当前说话者并切换话筒权 [§4.1.1.2]。</p>
+<p>如果没有这套协议，群组通话就会变成“大杂烩”。TS 24.380 确保了对讲机最核心的体验：<strong>有序、可控、可抢占</strong>。它定义了“谁先说”、“谁必须等”、“紧急情况怎么插队”以及“说完怎么交接”的所有底层交互细节 [§1]。</p>
+<h2 id="2-mcx">2. 它在 MCX 家族中的位置<a class="headerlink" href="#2-mcx" title="Permanent link">&para;</a></h2>
+<p>为了理解 TS 24.380，你需要知道它在 3GPP 关键通信（MCX, Mission Critical Communications）标准家族中的位置。MCX 标准分为几个阶段：</p>
+<ul>
+<li><strong>Stage 1 (TS 22.179)</strong>：定义需求。比如组呼要能快速建立、紧急呼叫要有最高优先级。</li>
+<li><strong>Stage 2 (TS 23.379)</strong>：定义架构。比如“需要哪个网元（MCPTT Server）来处理这些请求”。</li>
+<li><strong>Stage 3 (TS 24.379 和 TS 24.380)</strong>：定义协议细节。这才是我们今天要讲的。</li>
+</ul>
+<p>在这个家族中，<strong>TS 24.379</strong> 和 <strong>TS 24.380</strong> 是一对搭档，都是 Stage 3 标准。
+*   <strong>TS 24.379 (Call Control)</strong>：管“呼叫信令”。它基于 SIP 协议，负责处理“建立呼叫”、“释放呼叫”、“修改呼叫参数”等消息。它决定的是“通话是否存在”。
+*   <strong>TS 24.380 (Media Plane Control)</strong>：管“媒体面控制”。它基于 RTCP 协议，负责处理“谁有资格发声”。它决定的是“声音是否被允许传输”。</p>
+<p>简单来说，TS 24.379 像是一个电话总机，负责接通线路；而 TS 24.380 像是会议室的麦克风管理器，负责决定哪支麦克风是开着的，哪支是关着的。两者必须配合：TS 24.379 建立了通话通道，TS 24.380 才在这个通道上运行，管理话筒权 [§1, §5.1]。</p>
+<p>此外，实际的语音数据（RTP 包）是媒体流本身，TS 24.380 不定义语音怎么编码（那是 RTP/UDP 和编码器的事），但它定义了控制这些语音流开关的“遥控器”协议 [§8.1.1]。</p>
+<h2 id="3">3. 核心概念大白话<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
+<p>在深入流程之前，我们需要拆解几个 TS 24.380 中的关键术语。这些术语听起来很专业，但本质都很直观。</p>
+<h3 id="31-floor-control">3.1 地板控制 (Floor Control)<a class="headerlink" href="#31-floor-control" title="Permanent link">&para;</a></h3>
+<p>这里的“地板”（Floor）不是指地面的地板，而是指“发言权”或“话语权”。在会议中，“standing on the floor”意味着你正在发言。在 MCPTT 中，Floor Control 就是管理谁有权发送语音包、谁只能接收语音包的机制 [§4.1.1.1]。</p>
+<ul>
+<li><strong>Floor Participant (地板参与者)</strong>：即用户终端（UE）。每个拿着对讲机的人都是一个 Floor Participant。它负责发送“我想说话”的请求，并接收“你可以说话”或“请闭嘴”的命令 [§5.2]。</li>
+<li><strong>Floor Control Server (地板控制服务器)</strong>：即决策者。在联网模式下（On-network），这个角色由 MCPTT Server 扮演。它像一个交警，看着所有车的请求，决定谁可以通行 [§4.1.1.2]。</li>
+</ul>
+<h3 id="32-media-plane-control-channel">3.2 媒体面控制通道 (Media Plane Control Channel)<a class="headerlink" href="#32-media-plane-control-channel" title="Permanent link">&para;</a></h3>
+<p>这是一个逻辑通道，专门用来传送 TS 24.380 定义的控制消息（如 Floor Request, Floor Granted）。它通常复用 RTP/RTCP 通道。你可以把它想象成对讲机里的一条“暗线”，平时不传语音，只传控制指令，告诉你的麦克风是开还是关 [§4.3]。</p>
+<h3 id="33">3.3 发言权状态<a class="headerlink" href="#33" title="Permanent link">&para;</a></h3>
+<p>一个 Floor Participant 在通话中通常处于以下几种状态之一：
+1.  <strong>Idle (空闲/无权限)</strong>：麦克风是关的，只能听。
+2.  <strong>Pending (等待中)</strong>：你按下了 PTT 按钮，但服务器还没回应，或者你在排队。
+3.  <strong>Granted (已授权/说话中)</strong>：服务器给了你权限，你的声音被发给所有人。
+4.  <strong>Revoked (被抢占)</strong>：你正在说话，但高优先级的人来了，服务器强制让你闭嘴 [§6.2.4]。</p>
+<h3 id="34-pre-emption">3.4 抢占 (Pre-emption)<a class="headerlink" href="#34-pre-emption" title="Permanent link">&para;</a></h3>
+<p>这是关键业务通信的灵魂。如果正在说话的警察优先级是 5，而正在说话的指挥官优先级是 10，当指挥官按下 PTT 时，系统应该立即打断警察，让指挥官说话。TS 24.380 详细规定了这种“打断”和“恢复”的过程 [§4.1.1.2]。</p>
+<h3 id="35-queueing">3.5 排队 (Queueing)<a class="headerlink" href="#35-queueing" title="Permanent link">&para;</a></h3>
+<p>如果两个人同时按下 PTT，且优先级相同，怎么办？TS 24.380 支持排队机制。第一个人获得权限，第二个人进入队列。当第一个人说完（释放 Floor），服务器自动把权限给队列中的第二个人，而不需要第二个人再次按下 PTT [§4.1.1.2]。</p>
+<h2 id="4">4. 一次组呼的媒体面流程<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
+<p>让我们通过一个典型的场景，看看 TS 24.380 是如何工作的。假设有一个 5 人的消防小队正在进行组呼。</p>
+<p><strong>场景：消防员 A 请求发言</strong></p>
+<ol>
+<li>
+<p><strong>请求 (Request)</strong>：
+    消防员 A 按下 PTT 按钮。此时，A 的终端（MCPTT Client）检测到按钮事件。它不会直接开始发语音，而是先通过媒体面控制通道，向 Floor Control Server（MCPTT Server）发送一个 <strong>Floor Request</strong> 消息。这个消息里包含了 A 的身份和优先级信息 [§4.1.1.2, §6.2.4.3.5]。</p>
+</li>
+<li>
+<p><strong>决策与授予 (Grant)</strong>：
+    Server 收到请求。如果当前没人说话，或者 A 的优先级足够高，Server 会做一个决定：批准 A。</p>
+<ul>
+<li>Server 向 A 发送 <strong>Floor Granted</strong> 消息（告诉 A：你可以说了）。</li>
+<li>Server 向组内其他所有人（B, C, D, E）发送 <strong>Floor Taken</strong> 消息（告诉其他人：A 开始说了，你们安静） [§4.1.1.2]。</li>
+</ul>
+</li>
+<li>
+<p><strong>说话 (Talk Burst)</strong>：
+    A 收到 <strong>Floor Granted</strong> 后，终端会播放一个提示音（Permission Tone），并打开麦克风。A 的语音被编码成 RTP 包，发送给 Server，Server 再分发给 B-E。这个过程称为“Talk Burst”或“Media Burst” [§4.1.1.2]。
+    在此期间，A 的状态机处于 "U: has permission" 状态 [§6.2.4.3]。</p>
+</li>
+<li>
+<p><strong>释放 (Release)</strong>：
+    A 说完话，松开 PTT 按钮。终端检测到松开事件，向 Server 发送 <strong>Floor Release</strong> 消息。Server 收到后，更新状态，表示当前 Floor 空闲 [§4.1.1.2]。</p>
+</li>
+</ol>
+<p><img alt="图 2" src="../figs/24380-%E5%9B%BE2_%E5%9C%B0%E6%9D%BF%E6%8E%A7%E5%88%B6%E6%B5%81%E7%A8%8B.svg" /></p>
+<p><em>图 2 · 地板控制消息流程：请求 → 授予/拒绝/排队 → 说话 → 释放。</em></p>
+<p><strong>场景：消防员 B 在 A 说话时请求发言（普通优先级）</strong></p>
+<ol>
+<li>B 按下 PTT，发送 <strong>Floor Request</strong>。</li>
+<li>Server 发现当前 A 正在说话，且 B 的优先级不高。Server 有两种处理方式（取决于配置）：<ul>
+<li><strong>拒绝</strong>：Server 向 B 发送 <strong>Floor Deny</strong>。B 听到拒绝提示音，松开按钮或保持等待，直到下次尝试 [§4.1.1.2]。</li>
+<li><strong>排队</strong>：如果启用了排队，Server 向 B 发送 <strong>Floor Queue Position Info</strong>（告诉 B：你在队列第 1 位）。B 进入 "U: pending Request" 状态，保持 PTT 按下或等待提示。当 A 释放 Floor 后，Server 自动向 B 发送 <strong>Floor Granted</strong>，B 无需再次操作即可开始说话 [§4.1.1.2, §6.2.4.4]。</li>
+</ul>
+</li>
+</ol>
+<h2 id="5">5. 关键时刻的能力<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
+<p>TS 24.380 的设计重点在于处理非正常的、紧急的情况。</p>
+<h3 id="51-pre-emptive-priority">5.1 紧急抢占 (Pre-emptive Priority)<a class="headerlink" href="#51-pre-emptive-priority" title="Permanent link">&para;</a></h3>
+<p>这是最关键的功能。假设 A 正在说话（优先级 5），指挥官 C（优先级 10）按下 PTT。</p>
+<ol>
+<li>C 发送 <strong>Floor Request</strong>。</li>
+<li>Server 检测到 C 的优先级高于 A。</li>
+<li>Server 向 A 发送 <strong>Floor Revoke</strong> 消息。</li>
+<li>A 的终端收到 <strong>Floor Revoke</strong> 后，<strong>必须立即停止发送语音</strong>，并可能播放一个“被抢占”的提示音。A 的状态从 "Granted" 变为 "Revoked" 或 "No Permission" [§4.1.1.2, §6.2.4.3.10]。</li>
+<li>Server 向 C 发送 <strong>Floor Granted</strong>，并向其他人发送 <strong>Floor Taken</strong>。</li>
+<li>C 开始说话。</li>
+</ol>
+<p>这个过程必须在毫秒级完成，以确保指挥指令的实时性。TS 24.380 规定了 <strong>Floor Revoke</strong> 消息的处理逻辑，确保被打断的一方不会继续发送噪音 [§4.1.1.2]。</p>
+<h3 id="52-multi-talker">5.2 多说话者控制 (Multi-talker)<a class="headerlink" href="#52-multi-talker" title="Permanent link">&para;</a></h3>
+<p>在某些场景下（如讨论组），允许两个人同时说话。TS 24.380 支持配置“最大同时说话者数量”（Maximum number of simultaneous talkers）。如果当前说话人数少于上限，新的 Floor Request 可以被直接授予，而不需要 Revocation（抢占） [§4.1.1.2]。但如果是“音频切断”（Audio Cut-in）模式，则严格遵循一对一原则。</p>
+<h3 id="53-off-network-floor-control">5.3 离网媒体面控制 (Off-network Floor Control)<a class="headerlink" href="#53-off-network-floor-control" title="Permanent link">&para;</a></h3>
+<p>如果没有网络信号（Off-network），MCPTT 可以通过 D2D（设备到设备）或 P2P 方式直接通信。此时，没有中央服务器（Floor Control Server）。</p>
+<ul>
+<li><strong>谁是决策者？</strong> 当前正在说话的终端充当“临时 Floor Arbitrator”（仲裁者）。</li>
+<li><strong>流程变化</strong>：<ol>
+<li>A 正在说话，B 想说话。B 发送 Floor Request 给所有人（包括 A）。</li>
+<li>A（作为临时仲裁者）收到请求，判断优先级。</li>
+<li>如果 B 优先级高，A 发送 Floor Revoke 给 B（实际上是确认抢占），或者 A 自己停止说话并发送 Floor Release。</li>
+<li>更准确地说，在离网模式下，Floor Control 消息直接在客户端之间交换。当前说话者（Floor Arbitrator）在授予权限后，角色会互换：新说话者变成新的 Arbitrator，原说话者变成 Participant [§7.1]。</li>
+<li>这种去中心化的控制增加了复杂性，因为每个终端都需要监听控制消息并动态改变角色。</li>
+</ol>
+</li>
+</ul>
+<p><img alt="图 3" src="../figs/24380-%E5%9B%BE3_%E6%8E%92%E9%98%9F%E4%B8%8E%E6%8A%A2%E5%8D%A0.svg" /></p>
+<p><em>图 3 · 发言权排队与抢占：排队怎么排、紧急怎么插队。</em></p>
+<p><img alt="图 4" src="../figs/24380-%E5%9B%BE4_%E7%A6%BB%E7%BD%91%E5%AA%92%E4%BD%93%E9%9D%A2%E6%8E%A7%E5%88%B6.svg" /></p>
+<p><em>图 4 · 离网媒体面控制：没网时话筒权怎么定。</em></p>
+<h2 id="6-vs">6. 媒体面控制 vs 信令控制的区别<a class="headerlink" href="#6-vs" title="Permanent link">&para;</a></h2>
+<p>很多初学者容易混淆 TS 24.379 和 TS 24.380。让我们用一个比喻来区分：</p>
+<ul>
+<li>
+<p><strong>TS 24.379 (SIP 信令)</strong>：就像<strong>餐厅服务员</strong>。</p>
+<ul>
+<li>你打电话（SIP INVITE），服务员走过来，确认桌号，把菜单给你（建立呼叫）。</li>
+<li>你打完电话（SIP BYE），服务员走过来，收拾桌子（释放呼叫）。</li>
+<li>它处理的是<strong>会话的生命周期</strong>。</li>
+</ul>
+</li>
+<li>
+<p><strong>TS 24.380 (媒体面控制)</strong>：就像<strong>麦克风管理员</strong>。</p>
+<ul>
+<li>在服务员把桌子摆好后（呼叫建立后），麦克风管理员开始工作。</li>
+<li>你按 PTT（Floor Request），管理员给你一个绿色指示灯（Floor Granted）。</li>
+<li>老板走过来说话（Pre-emption），管理员立刻关掉你的灯，给老板打灯。</li>
+<li>它处理的是<strong>媒体流的权限</strong>。</li>
+</ul>
+</li>
+</ul>
+<p><strong>关键区别点：</strong>
+1.  <strong>触发时机</strong>：SIP 呼叫建立后，媒体面控制才真正开始活跃。SIP INVITE 中可能包含隐式的 Floor Request，但后续的动态切换全靠 TS 24.380 [§6.2.1]。
+2.  <strong>消息类型</strong>：SIP 使用文本或 SDP 格式的控制消息；TS 24.380 使用基于 RTCP APP 的二进制控制消息，开销更小，实时性更强 [§8.1.1]。
+3.  <strong>独立性</strong>：即使呼叫已经建立（SIP 状态为 200 OK）， Floor Control 状态也在不断变化。你可以在呼叫期间不断切换说话者，而不需要重新建立 SIP 呼叫 [§4.1.1.2]。</p>
+<p>此外，TS 24.380 还定义了<strong>预建立会话 (Pre-established Session)</strong> 上的呼叫控制。为了加快关键业务呼叫的建立速度，系统可以预先建立 SIP 会话和媒体通道。TS 24.380 规定了如何在这些预建立的通道上启动实际的通话和 Floor Control [§9.1]。</p>
+<h2 id="7">7. 它不管什么（边界）<a class="headerlink" href="#7" title="Permanent link">&para;</a></h2>
+<p>明确 TS 24.380 的边界，有助于避免误解：</p>
+<ol>
+<li><strong>不管语音编码</strong>：TS 24.380 不规定语音是用 AMR、Opus 还是 EVS 编码。它只控制这些编码后的数据包是否被发送。编码参数由 SDP（在 TS 24.379 中）协商 [§1, §8.1]。</li>
+<li><strong>不管网络传输细节</strong>：它不规定 RTP 包如何在 IP 网络中路由，也不规定 MBMS（多媒体广播多播服务）的具体空中接口细节，只规定在 MBMS 承载上如何发送 Floor Control 消息 [§10.1]。</li>
+<li><strong>不管安全加密算法</strong>：虽然 TS 24.380 提到了媒体面安全（Media Plane Security）的接口和流程，但具体的加密算法（如 SRTP）和密钥管理是由 TS 33.180 和 TS 23.379 规定的。TS 24.380 只是说“如果启用了安全，你要按这个流程走” [§5.2, §13]。</li>
+<li><strong>不管用户界面</strong>：它不规定 PTT 按钮长什么样，也不规定提示音具体是什么声音（是滴滴声还是蜂鸣声），只规定“必须产生一个指示” [§4.1.1.1, §6.2]。</li>
+<li><strong>不管 Stage 1 需求</strong>：它不讨论“为什么需要 5 秒建立”，只讨论“如何建立” [§1]。</li>
+</ol>
+<h2 id="8">8. 怎么往下读<a class="headerlink" href="#8" title="Permanent link">&para;</a></h2>
+<p>如果你想深入理解 MCPTT 的实现或标准细节，建议按以下顺序阅读：</p>
+<ol>
+<li><strong>本篇 (TS 24.380)</strong>：理解 Floor Control 的状态机和消息。重点关注 <strong>Clause 6 (On-network floor control)</strong> 和 <strong>Clause 7 (Off-network floor control)</strong>，以及 <strong>Clause 8 (Coding)</strong> 中的消息格式。</li>
+<li><strong>TS 24.379 (MCPTT Call Control)</strong>：理解 SIP 信令流程。特别是 <strong>Clause 6 (Call Setup)</strong> 和 <strong>Clause 7 (Call Release)</strong>，看 SIP 消息中如何携带 Floor Control 相关的参数（如隐式请求）。</li>
+<li><strong>TS 23.379 (MCPTT Architecture)</strong>：理解网元关系。搞清楚 Controlling MCPTT Function、Participating MCPTT Function 和 MCPTT Client 之间的交互逻辑。</li>
+<li><strong>TS 22.179 (Requirements)</strong>：如果你想知道“为什么”要有抢占和排队，去这里找业务需求。</li>
+</ol>
+<p><strong>版本说明：</strong>
+本文基于 <strong>3GPP TS 24.380 v19.1.0 (Release 19, 2025-09)</strong> 编写。
+*   <strong>Release 19</strong> 是本解读采用的版本，包含 MBS 子信道控制（§4.1.4、§10）与预建立会话（§9）相关内容。
+*   注意：文中的条款号（如 §4.1.1.2）均对应 v19.1.0 版本。早期版本（如 Rel-15/16）在 MBMS 支持和 MBS 子信道方面可能有差异，阅读旧版标准时需留意版本差异。</p>
+<p><strong>来源：</strong>
+3GPP TS 24.380 V19.1.0 (2025-09), "IP Multimedia (IM) Mission Critical (MC) Push-To-Talk (PTT); Media plane control" [§1, §4, §5, §6, §7, §8, §9, §10, §11].</p>
+<hr />
+<h3 id="_1">附录：关键消息速查表<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">消息名</th>
+<th style="text-align: left;">方向</th>
+<th style="text-align: left;">含义</th>
+<th style="text-align: left;">典型场景</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Floor Request</strong></td>
+<td style="text-align: left;">UE -&gt; Server</td>
+<td style="text-align: left;">我想说话</td>
+<td style="text-align: left;">按下 PTT 按钮 [§4.1.1.2]</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Floor Granted</strong></td>
+<td style="text-align: left;">Server -&gt; UE</td>
+<td style="text-align: left;">你可以说了</td>
+<td style="text-align: left;">服务器批准请求 [§4.1.1.2]</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Floor Taken</strong></td>
+<td style="text-align: left;">Server -&gt; Others</td>
+<td style="text-align: left;">有人开始说了</td>
+<td style="text-align: left;">通知其他成员静音 [§4.1.1.2]</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Floor Release</strong></td>
+<td style="text-align: left;">UE -&gt; Server</td>
+<td style="text-align: left;">我说完了</td>
+<td style="text-align: left;">松开 PTT 按钮 [§4.1.1.2]</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Floor Deny</strong></td>
+<td style="text-align: left;">Server -&gt; UE</td>
+<td style="text-align: left;">拒绝你</td>
+<td style="text-align: left;">优先级低或队列满 [§4.1.1.2]</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Floor Revoke</strong></td>
+<td style="text-align: left;">Server -&gt; UE</td>
+<td style="text-align: left;">强制你闭嘴</td>
+<td style="text-align: left;">高优先级抢占 [§4.1.1.2]</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Floor Queue Position Info</strong></td>
+<td style="text-align: left;">Server -&gt; UE</td>
+<td style="text-align: left;">你在队列第 N 位</td>
+<td style="text-align: left;">排队机制 [§4.1.1.2]</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Floor Queue Position Request</strong></td>
+<td style="text-align: left;">UE -&gt; Server</td>
+<td style="text-align: left;">我排第几？</td>
+<td style="text-align: left;">查询队列状态 [§4.1.1.2]</td>
+</tr>
+</tbody>
+</table>
+<p>通过理解这些消息和它们的状态机，你就能掌握 MCPTT 媒体面控制的核心逻辑。这不仅仅是技术协议，更是保障生命安全通信顺畅运行的基石。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.suggest", "search.highlight"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
