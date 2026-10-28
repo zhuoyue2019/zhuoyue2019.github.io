@@ -62,6 +62,14 @@ nav:
         - TS 24.483 配置管理对象: mcx/deep-dive/24483.md
         - TS 24.484 配置管理: mcx/deep-dive/24484.md
         - TS 33.180 安全: mcx/deep-dive/33180.md
+        - TS 22.289 铁路通信: mcx/deep-dive/22289.md
+        - TS 23.283 LMR 互通: mcx/deep-dive/23283.md
+        - TS 23.289 MCX over 5GS: mcx/deep-dive/23289.md
+        - TS 24.380 MCPTT 媒体面控制: mcx/deep-dive/24380.md
+        - TS 24.481 组管理: mcx/deep-dive/24481.md
+        - TS 24.482 身份管理: mcx/deep-dive/24482.md
+        - TS 24.581 MCVideo 媒体面控制: mcx/deep-dive/24581.md
+        - TS 24.582 MCData 媒体面控制: mcx/deep-dive/24582.md
       - 问答:
         - MCPTT vs 普通对讲机: mcx/faq-mcptt-vs-intercom.md
         - MCX 与 5G 切片: mcx/faq-mcx-vs-5g-slicing.md

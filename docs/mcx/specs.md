@@ -10,7 +10,7 @@
 | **TS 22.179** | Mission Critical Push To Talk (MCPTT)（MCPTT业务需求） | Stage 1 | Rel-20 | v20.0.0 | MCPTT业务需求；Rel-21 v21.0.0 已出现，仅跟踪 |
 | **TS 22.281** | Mission Critical Video over LTE（关键视频业务需求） | Stage 1 | Rel-19 | v19.0.0 | 关键视频业务需求 |
 | **TS 22.282** | Mission Critical Data over LTE（关键数据业务需求） | Stage 1 | Rel-19 | v19.0.0 | 关键数据业务需求 |
-| **TS 22.289** | Mission Critical Services over 5G MBS（5G广播多播承载关键业务需求） | Stage 1 | Rel-19 | v19.0.1 | 5G广播多播（MBS）承载关键业务需求，与5G-R/FRMCS相关 |
+| **TS 22.289** | Mobile Communication System for Railways（铁路移动通信系统） | Stage 1 | Rel-19 | v19.0.1 | 铁路通信 Stage 1 需求（FRMCS），干线与城市轨道交通在 5G 系统上的业务能力；MBS 承载内容归 TS 23.289 |
 | **TR 22.819** | Study on Mission Critical Services Interworking with non-3GPP Systems（与非3GPP系统互通研究） | Stage 1 | Rel-16 | v16.2.0 | 与非3GPP系统互通研究（2018-12-21发布，已结项，无后续更新；基线记录已于2026-10-23纠正） |
 | **TS 23.280** | Common functional architecture to support mission critical services（MCX通用功能架构） | Stage 2 | Rel-20 | v20.5.1 | MCX通用功能架构 |
 | **TS 23.379** | Functional architecture and information flows to support mission critical push to talk (MCPTT)（MCPTT功能架构与信息流） | Stage 2 | Rel-20 | v20.4.0 | MCPTT功能架构与信息流 |

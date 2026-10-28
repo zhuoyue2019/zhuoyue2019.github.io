@@ -26,6 +26,14 @@
 | **TS 24.483** | [Mission Critical Services (MCS) configuration management，MC 配置管理对象](24483.md) | Rel-20 v20.1.0 | ✅ 已发布（2026-10-28） |
 | **TS 24.484** | [Mission Critical Services (MCS) configuration management procedures，MC 配置管理流程](24484.md) | Rel-20 v20.1.0 | ✅ 已发布（2026-10-28） |
 | **TS 33.180** | [Security of the Mission Critical (MC) service，关键任务通信安全](33180.md) | Rel-20 v20.1.0 | ✅ 已发布（2026-10-28） |
+| **TS 22.289** | [Mobile Communication System for Railways，铁路通信业务需求](22289.md) | Rel-19 v19.0.1 | ✅ 已发布（2026-10-28） |
+| **TS 23.283** | [Mission Critical Communication Interworking with Land Mobile Radio Systems，MCX 与 LMR 互通架构](23283.md) | Rel-20 v20.1.0 | ✅ 已发布（2026-10-28） |
+| **TS 23.289** | [Mission Critical services over 5G System，MCX over 5GS 架构](23289.md) | Rel-20 v20.3.0 | ✅ 已发布（2026-10-28） |
+| **TS 24.380** | [Mission Critical Push To Talk (MCPTT) media plane control，MCPTT 媒体面控制](24380.md) | Rel-19 v19.1.0 | ✅ 已发布（2026-10-28） |
+| **TS 24.481** | [Mission Critical Services (MCS) group management，MC 组管理](24481.md) | Rel-19 v19.1.0 | ✅ 已发布（2026-10-28） |
+| **TS 24.482** | [Mission Critical Services (MCS) identity management，MC 身份管理](24482.md) | Rel-19 v19.1.0 | ✅ 已发布（2026-10-28） |
+| **TS 24.581** | [Mission Critical Video (MCVideo) media plane control，MCVideo 媒体面控制](24581.md) | Rel-19 v19.2.0 | ✅ 已发布（2026-10-28） |
+| **TS 24.582** | [Mission Critical Data (MCData) media plane control，MCData 媒体面控制](24582.md) | Rel-19 v19.0.0 | ✅ 已发布（2026-10-28） |
 
 ## 后续计划
-- 另：TS 22.289（5G MBS 承载）、TS 22.283 / 23.283（LMR 互通）待补入清单。
+- 规范类（TS）22 条已全部覆盖；剩余 TR 22.819、TR 23.790、TR 24.980 三篇研究报告（已冻结/最终版）待定是否做 ELI5。
