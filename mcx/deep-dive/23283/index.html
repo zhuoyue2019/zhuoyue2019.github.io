@@ -260,6 +260,26 @@
     
     
       <li class="md-tabs__item">
+        <a href="../../../6g/" class="md-tabs__link">
+          
+  
+  
+  6G 追踪
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
         <a href="../../../emergency/" class="md-tabs__link">
           
   
@@ -280,7 +300,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../free-api/config/" class="md-tabs__link">
+        <a href="../../../free-api/config.md" class="md-tabs__link">
           
   
   
@@ -2445,7 +2465,7 @@
   <span class="md-ellipsis">
     
   
-    应急政策
+    6G 追踪
   
 
     
@@ -2458,6 +2478,149 @@
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    6G 追踪
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../6g/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    总览
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../6g/core-routes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    三条路线之争
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../6g/tracking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    跟踪动态
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    应急政策
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -2578,10 +2741,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
         
           
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
             
   
   
@@ -2599,8 +2762,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -2617,7 +2780,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../free-api/config/" class="md-nav__link">
+      <a href="../../../free-api/config.md" class="md-nav__link">
         
   
   
@@ -2974,7 +3137,7 @@
 </li>
 </ul>
 <p><strong>注意：</strong> TS 23.283 只定义 IWF 的“对外接口”和“行为”，不定义 IWF 内部怎么实现；IWF 连同其 LMR 系统，在 MC 系统看来就是一个对等的互通 MC 系统 [§4]。</p>
-<p><img alt="图 1" src="../figs/23283-%E5%9B%BE1_%E4%BA%92%E9%80%9A%E6%80%BB%E8%A7%88.svg" /></p>
+<p><img alt="图 1" src="figs/23283-图1_互通总览.svg" /></p>
 <p><em>图 1 · 互通总览：MCX 侧 — 互通网关 — LMR 侧。</em></p>
 <h3 id="32-reference-points">3.2 参考点（Reference Points）<a class="headerlink" href="#32-reference-points" title="Permanent link">&para;</a></h3>
 <p>参考点定义了 IWF 和各个服务器之间“插线”的地方。</p>
@@ -2991,7 +3154,7 @@
 <li><strong>群组 ID 映射：</strong> 同样，MC 群组 ID 需要映射到 LMR 的通话组（Talk Group）。如果一个 MC 群组包含 10 个 MC 用户和 5 个 LMR 用户，IWF 需要确保这 15 个人都在同一个逻辑群组里 [§8.1]。</li>
 <li><strong>别名（Functional Alias）：</strong> 在 LMR 系统中，用户往往用“队长”、“司机”这样的角色名（Role-based addressing）来呼叫。IWF 可以支持将 MC 系统的功能别名映射到 LMR 的角色地址 [§8.1]。</li>
 </ul>
-<p><img alt="图 3" src="../figs/23283-%E5%9B%BE3_%E7%BB%84%E4%B8%8E%E8%BA%AB%E4%BB%BD%E6%98%A0%E5%B0%84.svg" /></p>
+<p><img alt="图 3" src="figs/23283-图3_组与身份映射.svg" /></p>
 <p><em>图 3 · 组与身份映射：MCX 组 ↔ LMR 通话组，用户身份怎么对应。</em></p>
 <h3 id="34-business-relationships">3.4 业务关系（Business Relationships）<a class="headerlink" href="#34-business-relationships" title="Permanent link">&para;</a></h3>
 <p>文档明确指出：<strong>没有识别出特定的业务关系</strong> [§6]。这意味着，3GPP 不规定运营商和 LMR 用户之间怎么签合同、怎么收费。这纯粹是一个技术架构规范，不涉及商业条款。</p>
@@ -3012,7 +3175,7 @@
 </li>
 <li><strong>LMR 侧同步：</strong> 如果成功，IWF 会在 LMR 系统中将这两个巡逻警员加入对应的 LMR 通话组。此时，在逻辑上，这 5 个人（3 MC + 2 LMR）已经在一个“混合群组”里了 [§10.1.2.2]。</li>
 </ol>
-<p><img alt="图 2" src="../figs/23283-%E5%9B%BE2_%E8%B7%A8%E7%B3%BB%E7%BB%9F%E7%BB%84%E5%91%BC%E6%B5%81%E7%A8%8B.svg" /></p>
+<p><img alt="图 2" src="figs/23283-图2_跨系统组呼流程.svg" /></p>
 <p><em>图 2 · 跨系统组呼流程：归属 → 组映射 → 发起 → 两边接通。</em></p>
 <h3 id="42-group-call">4.2 阶段二：发起组呼（Group Call）<a class="headerlink" href="#42-group-call" title="Permanent link">&para;</a></h3>
 <p>现在，MCPTT 指挥车按下 PTT 键，发起组呼。</p>
@@ -3043,7 +3206,7 @@
 <h2 id="5">5. 关键时刻的能力<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
 <h3 id="51">5.1 紧急呼叫互通<a class="headerlink" href="#51" title="Permanent link">&para;</a></h3>
 <p>在关键任务系统中，紧急呼叫（Emergency Call）具有最高优先级。TS 23.283 为互通下的紧急情况单设了流程：第 10.6 节规定了 IWF 紧急组呼请求/响应和紧急告警请求/响应等专用流程 [§10.6.1]。有一点要注意：LMR 侧如果用户不能被抢占，IWF 会把那路音频标识为“丢失音频”，而不是强行插断。</p>
-<p><img alt="图 4" src="../figs/23283-%E5%9B%BE4_%E4%BA%92%E9%80%9A%E7%B4%A7%E6%80%A5%E5%91%BC%E5%8F%AB.svg" /></p>
+<p><img alt="图 4" src="figs/23283-图4_互通紧急呼叫.svg" /></p>
 <p><em>图 4 · 互通下的紧急呼叫：紧急怎么跨系统传、优先级怎么保。</em></p>
 <h3 id="52-key-management">5.2 密钥管理（Key Management）<a class="headerlink" href="#52-key-management" title="Permanent link">&para;</a></h3>
 <p>互通不仅仅是传声音，还要传“加密钥匙”。如果通话是加密的（E2EE，端到端加密），密钥管理变得非常复杂。</p>

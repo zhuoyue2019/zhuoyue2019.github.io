@@ -260,6 +260,26 @@
     
     
       <li class="md-tabs__item">
+        <a href="../../../6g/" class="md-tabs__link">
+          
+  
+  
+  6G 追踪
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
         <a href="../../../emergency/" class="md-tabs__link">
           
   
@@ -280,7 +300,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../free-api/config/" class="md-tabs__link">
+        <a href="../../../free-api/config.md" class="md-tabs__link">
           
   
   
@@ -2395,7 +2415,7 @@
   <span class="md-ellipsis">
     
   
-    应急政策
+    6G 追踪
   
 
     
@@ -2408,6 +2428,149 @@
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    6G 追踪
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../6g/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    总览
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../6g/core-routes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    三条路线之争
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../6g/tracking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    跟踪动态
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    应急政策
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -2528,10 +2691,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
         
           
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
             
   
   
@@ -2549,8 +2712,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -2567,7 +2730,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../free-api/config/" class="md-nav__link">
+      <a href="../../../free-api/config.md" class="md-nav__link">
         
   
   
@@ -2882,7 +3045,7 @@
 <p>这是核心网里的“户籍科”。它存储着用户的身份信息和权限配置。它负责验证用户名密码，并决定发什么权限的令牌。[§5.2]</p>
 <h2 id="4">4. 一次登录认证怎么走<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
 <p>让我们跟着一个消防员的小对讲机，走一遍完整的登录流程。</p>
-<p><img alt="图 1" src="../figs/24482-%E5%9B%BE1_%E8%BA%AB%E4%BB%BD%E7%AE%A1%E7%90%86%E6%80%BB%E8%A7%88.svg" /></p>
+<p><img alt="图 1" src="figs/24482-图1_身份管理总览.svg" /></p>
 <p><em>图 1 · 身份管理总览：客户端 — 身份管理服务器 — 业务服务器。</em></p>
 <p><strong>第一步：触发登录</strong>
 消防员开启对讲机，想加入“现场救援组”。MC Service Client 发现没有有效的 Access Token，于是向 IdM Client 发出信号：“嘿，我们需要登录。” [§6.2.1]</p>
@@ -2914,7 +3077,7 @@ IdM Server 收到请求后，需要验证用户。
 MC Service Client 拿着 <strong>Access Token</strong>，去访问 MCPTT、MCData 或 MCVideo 服务器。
 *   业务服务器检查令牌：令牌有效吗？Scope（权限范围）包含“群组通话”吗？
 *   如果没问题，业务就开始运行。[§4.1]</p>
-<p><img alt="图 2" src="../figs/24482-%E5%9B%BE2_%E7%94%A8%E6%88%B7%E8%AE%A4%E8%AF%81%E6%B5%81%E7%A8%8B.svg" /></p>
+<p><img alt="图 2" src="figs/24482-图2_用户认证流程.svg" /></p>
 <p><em>图 2 · 用户认证流程：提交身份 → 验证 → 通过。</em></p>
 <h2 id="5">5. 关键时刻的能力：令牌刷新与合作伙伴交换<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
 <p>登录成功只是开始。在长时间的任务中，令牌会过期，或者你需要跨网协作。TS 24.482 定义了两类特殊的“令牌交换”流程。</p>
@@ -2932,11 +3095,11 @@ MC Service Client 拿着 <strong>Access Token</strong>，去访问 MCPTT、MCDat
     3.  合作伙伴的 IdM Server 验证后，发给你一个针对他们域名的 <strong>Access Token</strong>。[§4.1]
     4.  现在你可以用这个新令牌访问合作伙伴的资源了。
 *   <strong>规范依据</strong>：参见 Clause 6.2.3 和 6.3.3。[§4.1]</p>
-<p><img alt="图 3" src="../figs/24482-%E5%9B%BE3_%E4%BB%A4%E7%89%8C%E4%BA%A4%E6%8D%A2%E6%B5%81%E7%A8%8B.svg" /></p>
+<p><img alt="图 3" src="figs/24482-图3_令牌交换流程.svg" /></p>
 <p><em>图 3 · 令牌交换流程：认证成功 → 换令牌 → 业务可用。</em></p>
 <h3 id="53">5.3 认证失败怎么办？<a class="headerlink" href="#53" title="Permanent link">&para;</a></h3>
 <p>如果用户名密码错了，或者 TLS 握手失败，流程会中断，IdM Client 会收到错误响应，MC Service Client 会收到“认证失败”的通知，用户可能需要重新输入凭据，或者检查网络连接。令牌过期或失效后，先走刷新流程（§6.2.2）；刷新拿不到新令牌，就只能重新走用户认证（§6.2.1）。</p>
-<p><img alt="图 4" src="../figs/24482-%E5%9B%BE4_%E4%BB%A4%E7%89%8C%E8%BF%87%E6%9C%9F%E4%B8%8E%E9%87%8D%E8%AE%A4%E8%AF%81.svg" /></p>
+<p><img alt="图 4" src="figs/24482-图4_令牌过期与重认证.svg" /></p>
 <p><em>图 4 · 令牌过期与重新认证：过期怎么办、失败怎么办。</em></p>
 <h2 id="6-vs">6. 身份管理 vs. 业务协议的区别<a class="headerlink" href="#6-vs" title="Permanent link">&para;</a></h2>
 <p>很多初学者容易混淆 TS 24.482 和其他 MC 协议。这里做一个清晰的切割：</p>
