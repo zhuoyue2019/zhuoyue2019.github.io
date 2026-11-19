@@ -79,6 +79,10 @@ nav:
         - QoS 优先级保障: mcx/faq-mcx-qos-priority.md
         - MCVideo vs 视频通话: mcx/faq-mcvideo-vs-video-call.md
         - 国内应急行业现状: mcx/faq-mcx-china-emergency.md
+  - 6G 追踪:
+      - 总览: 6g/index.md
+      - 三条路线之争: 6g/core-routes.md
+      - 跟踪动态: 6g/tracking.md
   - 应急政策:
       - 总览: emergency/index.md
       - 近五年政策清单（2021–2026）: emergency/policy-list-2021-2026.md
